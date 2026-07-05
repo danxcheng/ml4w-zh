@@ -1,14 +1,8 @@
 [package]
 name = "ml4w-zh"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
-description = "ML4W dotfiles Chinese localization tool — apply, revert, and maintain zh-CN translations"
+description = "ML4W dotfiles 汉化工具 — 备份原文、下载翻译、一键汉化"
 authors = ["danxcheng"]
 license = "MIT"
-
-[dependencies]
-serde = { version = "1", features = ["derive"] }
-serde_yaml = "0.9"
-clap = { version = "4", features = ["derive"] }
-anyhow = "1"
-walkdir = "2"
+repository = "https://github.com/danxcheng/ml4w-zh"

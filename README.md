@@ -1,60 +1,47 @@
 # ml4w-zh
 
-ML4W Hyprland dotfiles 中文汉化工具
-
-一键汉化 ML4W 桌面环境的菜单、提示、通知、快捷键说明等所有界面文字。
+ML4W Hyprland dotfiles 汉化工具。零依赖。
 
 ## 用法
 
 ```bash
-# 查看状态 — 检查哪些文件已汉化、哪些需要更新
+# 一键汉化（自动下载翻译定义 → 备份原文件 → 替换）
+ml4w-zh
+
+# 预览（不实际修改）
+ml4w-zh --dry-run
+
+# 检查汉化状态
 ml4w-zh check
 
-# 预览改动（不实际修改）
-ml4w-zh apply --dry-run
-
-# 应用所有汉化
-ml4w-zh apply
-
-# 从备份恢复英文原版
+# 恢复英文原版
 ml4w-zh revert
 
-# 初始化：备份原文件 + 创建 PROTECTED 保护文件
+# 仅备份 + 创建 PROTECTED 文件
 ml4w-zh init
 ```
 
-## 项目结构
+## 原理
 
-```
-ml4w-zh/
-├── src/main.rs              # Rust CLI 工具
-├── patches/
-│   └── translations.yaml    # 翻译定义（文件路径 + 查找替换对）
-├── docs/
-│   └── 注意事项.md           # 详细技术说明
-├── .github/workflows/       # CI：自动检查 ml4w 更新后补丁是否冲突
-└── README.md
-```
+1. 从 GitHub 拉取 `patches.json`（翻译定义）
+2. 备份原文件到 `.ml4w-zh-backups/`
+3. 对 `scripts/` 目录自动创建 `PROTECTED` 文件（ml4w 安装器会跳过）
+4. 逐条替换
 
-## 翻译定义格式
+翻译定义在 `patches/patches.json`，欢迎 PR。
 
-`patches/translations.yaml` 定义了每个文件要改什么：
+## 构建
 
-```yaml
-translations:
-  - path: ".config/hypr/scripts/gamemode.sh"
-    backup: true                    # 改前自动备份
-    create_protected: true          # 创建 PROTECTED 文件防止 ml4w 更新覆盖
-    patches:
-      - old: '--s "Gamemode activated"'
-        new: '--s "游戏模式已开启"'
-      - old: '--m "Animations and blur are now disabled."'
-        new: '--m "动画和模糊效果已禁用。"'
+```bash
+cargo build --release
+# 产物在 target/release/ml4w-zh
 ```
 
-## 实现思路
+零外部依赖，只调系统自带的 `curl`。
 
-- **备份优先**：改任何文件前先备份到 `.ml4w-zh-backups/`
-- **PROTECTED 保护**：对 `hypr/scripts/` 下的文件自动创建 PROTECTED 文件，ml4w 安装器会跳过
-- **幂等操作**：重复执行 `apply` 不会重复修改（除非用 `--force`）
-- **Check 模式**：检查当前文件是否已被汉化，方便 ml4w 更新后确认哪些需要重新应用
+## 注意
+
+- 不搞自动构建，不搞 CI 检测
+- ml4w 更新后重新跑一次 `ml4w-zh` 即可
+- 备份在 `~/.config/hypr/scripts/.ml4w-zh-backups/`
+- 技术力有限，不保证覆盖所有界面
