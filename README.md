@@ -70,6 +70,7 @@ ml4w-zh init
 - **仅测试于 Arch Linux + ml4w 默认配置**。如果你改了 ml4w 源码，`check` 会检测到"与官方不一致"并跳过
 - ml4w 更新后重新跑一次 `ml4w-zh` 即可
 - 备份在 `~/.config/hypr/scripts/.ml4w-zh-backups/`
+- 更新不定时，不保证有用
 - 技术力有限，欢迎 PR
 
 ## 项目结构
