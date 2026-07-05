@@ -1,0 +1,161 @@
+[[file]]
+path = ".mydotfiles/com.ml4w.dotfiles.stable/.config/quickshell/WelcomeApp/WelcomeWindow.qml"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'title: "ML4W Welcome"'
+new = 'title: "ML4W 欢迎"'
+
+[[file.patch]]
+old = 'title: qsTr("Settings")'
+new = 'title: qsTr("设置")'
+
+[[file.patch]]
+old = 'title: qsTr("System")'
+new = 'title: qsTr("系统")'
+
+[[file.patch]]
+old = 'title: qsTr("Help")'
+new = 'title: qsTr("帮助")'
+
+[[file.patch]]
+old = 'text: qsTr("Input")'
+new = 'text: qsTr("输入")'
+
+[[file.patch]]
+old = 'text: qsTr("Gestures")'
+new = 'text: qsTr("手势")'
+
+[[file.patch]]
+old = 'text: qsTr("Monitors")'
+new = 'text: qsTr("显示器")'
+
+[[file.patch]]
+old = 'text: qsTr("Network")'
+new = 'text: qsTr("网络")'
+
+[[file.patch]]
+old = 'text: qsTr("Bluetooth")'
+new = 'text: qsTr("蓝牙")'
+
+[[file.patch]]
+old = 'text: qsTr("Wallpaper")'
+new = 'text: qsTr("壁纸")'
+
+[[file.patch]]
+old = 'text: qsTr("Theme")'
+new = 'text: qsTr("主题")'
+
+[[file.patch]]
+old = 'text: qsTr("Sidebar")'
+new = 'text: qsTr("侧边栏")'
+
+[[file.patch]]
+old = 'text: qsTr("Dotfiles Settings")'
+new = 'text: qsTr("Dotfiles 设置")'
+
+[[file.patch]]
+old = 'text: qsTr("Install HyprMod")'
+new = 'text: qsTr("安装 HyprMod")'
+
+[[file.patch]]
+old = 'text: qsTr("Display Manager")'
+new = 'text: qsTr("登录管理器")'
+
+[[file.patch]]
+old = 'text: qsTr("Network Manager Applet")'
+new = 'text: qsTr("网络管理器")'
+
+[[file.patch]]
+old = 'text: qsTr("Change Shell")'
+new = 'text: qsTr("切换 Shell")'
+
+[[file.patch]]
+old = 'text: qsTr("System Info")'
+new = 'text: qsTr("系统信息")'
+
+[[file.patch]]
+old = 'text: qsTr("Exit Hyprland")'
+new = 'text: qsTr("退出 Hyprland")'
+
+[[file.patch]]
+old = 'text: qsTr("ML4W OS Homepage")'
+new = 'text: qsTr("ML4W 官网")'
+
+[[file.patch]]
+old = 'text: qsTr("ML4W OS GitHub")'
+new = 'text: qsTr("ML4W GitHub")'
+
+[[file.patch]]
+old = 'text: qsTr("ML4W OS Changelog")'
+new = 'text: qsTr("更新日志")'
+
+[[file.patch]]
+old = 'text: qsTr("ML4W YouTube Channel")'
+new = 'text: qsTr("ML4W YouTube")'
+
+[[file.patch]]
+old = 'text: qsTr("Get more Wallpapers")'
+new = 'text: qsTr("获取更多壁纸")'
+
+[[file.patch]]
+old = 'text: qsTr("Hyprland Homepage")'
+new = 'text: qsTr("Hyprland 官网")'
+
+[[file.patch]]
+old = 'text: qsTr("Hyprland Wiki")'
+new = 'text: qsTr("Hyprland 文档")'
+
+[[file.patch]]
+old = 'text: qsTr("Update ML4W OS")'
+new = 'text: qsTr("更新 ML4W")'
+
+[[file.patch]]
+old = 'text: "Welcome to ML4W OS"'
+new = 'text: "欢迎使用 ML4W"'
+
+[[file.patch]]
+old = 'text: "Version 2.14.1"'
+new = 'text: "版本 2.14.1"'
+
+[[file.patch]]
+old = 'text: "Dotfiles Settings"'
+new = 'text: "Dotfiles 设置"'
+
+[[file.patch]]
+old = 'desc: "to open the terminal"'
+new = 'desc: "打开终端"'
+
+[[file.patch]]
+old = 'desc: "to open the browser"'
+new = 'desc: "打开浏览器"'
+
+[[file.patch]]
+old = 'desc: "to close the active window"'
+new = 'desc: "关闭当前窗口"'
+
+[[file.patch]]
+old = 'desc: "to open the application launcher"'
+new = 'desc: "打开应用启动器"'
+
+[[file.patch]]
+old = 'desc: "to open the sidebar"'
+new = 'desc: "打开侧边栏"'
+
+[[file.patch]]
+old = 'desc: "to set a wallpaper"'
+new = 'desc: "设置壁纸"'
+
+[[file.patch]]
+old = 'text: "All keybindings"'
+new = 'text: "全部快捷键"'
+
+[[file.patch]]
+old = 'text: "Toggle Tiling/Floating"'
+new = 'text: "切换平铺/浮动"'
+
+[[file.patch]]
+old = 'text: qsTr("Show on Startup")'
+new = 'text: qsTr("开机显示")'

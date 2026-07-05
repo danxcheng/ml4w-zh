@@ -1,0 +1,235 @@
+[[file]]
+path = ".config/ml4w/scripts/ml4w-wallpaper-automation"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'echo ":: Start wallpaper automation script"'
+new = 'echo ":: 启动壁纸自动切换脚本"'
+
+[[file.patch]]
+old = 'Wallpaper automation process started.\nWallpaper will be changed every $sec seconds.'
+new = '壁纸自动切换已开启。\n每隔 $sec 秒更换壁纸。'
+
+[[file.patch]]
+old = 'Wallpaper automation process stopped.'
+new = '壁纸自动切换已停止。'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-install-system-updates"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'figlet -f smslant "Updates"'
+new = 'figlet -f smslant "系统更新"'
+
+[[file.patch]]
+old = '"DO YOU WANT TO START THE UPDATE NOW?"'
+new = '"是否开始更新系统？"'
+
+[[file.patch]]
+old = 'echo ":: Update started..."'
+new = 'echo ":: 开始更新..."'
+
+[[file.patch]]
+old = 'echo ":: Update canceled."'
+new = 'echo ":: 已取消更新。"'
+
+[[file.patch]]
+old = 'Press [ENTER] to close.'
+new = '按 [ENTER] 关闭。'
+
+[[file.patch]]
+old = 'Searching for Flatpak updates...'
+new = '正在检查 Flatpak 更新...'
+
+[[file.patch]]
+old = 'Update complete! Press [ENTER] to close.'
+new = '更新完成！按 [ENTER] 关闭。'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-snapshot"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-snapshot"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '--placeholder "Enter a comment for the snapshot..."'
+new = '--placeholder "输入快照备注..."'
+
+[[file.patch]]
+old = '"grub-btrfs not found. DO YOU WANT TO INSTALL IT NOW?"'
+new = '"未安装 grub-btrfs。是否立即安装？"'
+
+[[file.patch]]
+old = '"DO YOU WANT TO INSTALL Timeshift now?"'
+new = '"是否安装 Timeshift？"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-toggle-hyprsunset"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Error: hyprsunset is not installed."'
+new = '"错误：未安装 hyprsunset"'
+
+[[file.patch]]
+old = '"Hyprsunset disabled."'
+new = '"护眼模式已关闭"'
+
+[[file.patch]]
+old = '"Hyprsunset enabled."'
+new = '"护眼模式已开启"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-toggle-theme"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Switched to light theme."'
+new = '"已切换到亮色主题。"'
+
+[[file.patch]]
+old = '"Switched to dark theme."'
+new = '"已切换到暗色主题。"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-power"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-power"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'echo "Error: Unknown option'
+new = 'echo "错误：未知选项'
+
+[[file.patch]]
+old = "-t 'Restarting...'"
+new = "-t '正在重启...'"
+
+[[file.patch]]
+old = "-t 'Shutting down...'"
+new = "-t '正在关机...'"
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-network"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-network"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'is already running.'
+new = '已在运行中。'
+
+[[file.patch]]
+old = 'is not running. Attempting to start it...'
+new = '未在运行，正在尝试启动...'
+
+[[file.patch]]
+old = 'was successfully started.'
+new = '已成功启动。'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-check-system-updates"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Click to update your system"'
+new = '"点击更新系统"'
+
+[[file.patch]]
+old = '"No updates available"'
+new = '"没有可用更新"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-ascii-header"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'Enter the text for ascii encoding:'
+new = '请输入 ASCII 编码文本：'
+
+[[file.patch]]
+old = 'Text copied to clipboard!'
+new = '文字已复制到剪贴板！'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-toggle-fastfetch"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '":: Show fastfetch"'
+new = '":: 显示 fastfetch"'
+
+[[file.patch]]
+old = '":: Hide fastfetch"'
+new = '":: 隐藏 fastfetch"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-toggle-nmapplet"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Running"'
+new = '"运行中"'
+
+[[file.patch]]
+old = '"Stopped"'
+new = '"已停止"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-unlock-pacman"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '":: Unlock complete"'
+new = '":: 解锁完成"'
+
+[[file.patch]]
+old = '":: Pacman database is not locked"'
+new = '":: Pacman 数据库未被锁定"'
+
+[[file]]
+path = ".config/ml4w/scripts/ml4w-toggle-statusbar"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'echo "Unknown statusbar'
+new = 'echo "未知的状态栏'
+
+[[file]]
+path = ".config/waybar/themeswitcher.sh"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/themeswitcher.sh"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '-p "Search Theme"'
+new = '-p "搜索主题"'
+
+[[file.patch]]
+old = '-p "Themes"'
+new = '-p "主题"'
+
+[[file.patch]]
+old = '"Loading waybar theme..."'
+new = '"正在加载顶栏主题..."'

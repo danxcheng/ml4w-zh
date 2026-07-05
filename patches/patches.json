@@ -2,276 +2,1221 @@
   {
     "path": ".config/hypr/scripts/screenshot.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/screenshot.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"APP_NAME=\"Screen Capture\"","new":"APP_NAME=\"截图\""},
-      {"old":"option_1=\"Immediate\"","new":"option_1=\"立即截图\""},
-      {"old":"option_2=\"Delayed\"","new":"option_2=\"延时截图\""},
-      {"old":"option_capture_1=\"Capture Everything\"","new":"option_capture_1=\"全屏\""},
-      {"old":"option_capture_2=\"Capture Active Display\"","new":"option_capture_2=\"当前显示器\""},
-      {"old":"option_capture_3=\"Capture Selection\"","new":"option_capture_3=\"框选区域\""},
-      {"old":"option_time_1=\"5s\"","new":"option_time_1=\"5秒\""},
-      {"old":"option_time_2=\"10s\"","new":"option_time_2=\"10秒\""},
-      {"old":"option_time_3=\"20s\"","new":"option_time_3=\"20秒\""},
-      {"old":"option_time_4=\"30s\"","new":"option_time_4=\"30秒\""},
-      {"old":"option_time_5=\"60s\"","new":"option_time_5=\"60秒\""},
-      {"old":"copy='Copy'","new":"copy='复制'"},{"old":"save='Save'","new":"save='保存'"},
-      {"old":"copy_save='Copy & Save'","new":"copy_save='复制并保存'"},{"old":"edit='Edit'","new":"edit='编辑'"},
-      {"old":"-p \"Take screenshot\"","new":"-p \"截图方式\""},
-      {"old":"-p \"Choose timer\"","new":"-p \"选择延时\""},
-      {"old":"-p \"Type of screenshot\"","new":"-p \"截图范围\""},
-      {"old":"-p \"How to save\"","new":"-p \"保存方式\""},
-      {"old":"Taking screenshot in ${countdown} seconds","new":"${countdown} 秒后截图"}
+      {
+        "old": "APP_NAME=\"Screen Capture\"",
+        "new": "APP_NAME=\"截图\""
+      },
+      {
+        "old": "option_1=\"Immediate\"",
+        "new": "option_1=\"立即截图\""
+      },
+      {
+        "old": "option_2=\"Delayed\"",
+        "new": "option_2=\"延时截图\""
+      },
+      {
+        "old": "option_capture_1=\"Capture Everything\"",
+        "new": "option_capture_1=\"全屏\""
+      },
+      {
+        "old": "option_capture_2=\"Capture Active Display\"",
+        "new": "option_capture_2=\"当前显示器\""
+      },
+      {
+        "old": "option_capture_3=\"Capture Selection\"",
+        "new": "option_capture_3=\"框选区域\""
+      },
+      {
+        "old": "option_time_1=\"5s\"",
+        "new": "option_time_1=\"5秒\""
+      },
+      {
+        "old": "option_time_2=\"10s\"",
+        "new": "option_time_2=\"10秒\""
+      },
+      {
+        "old": "option_time_3=\"20s\"",
+        "new": "option_time_3=\"20秒\""
+      },
+      {
+        "old": "option_time_4=\"30s\"",
+        "new": "option_time_4=\"30秒\""
+      },
+      {
+        "old": "option_time_5=\"60s\"",
+        "new": "option_time_5=\"60秒\""
+      },
+      {
+        "old": "copy='Copy'",
+        "new": "copy='复制'"
+      },
+      {
+        "old": "save='Save'",
+        "new": "save='保存'"
+      },
+      {
+        "old": "copy_save='Copy & Save'",
+        "new": "copy_save='复制并保存'"
+      },
+      {
+        "old": "edit='Edit'",
+        "new": "edit='编辑'"
+      },
+      {
+        "old": "-p \"Take screenshot\"",
+        "new": "-p \"截图方式\""
+      },
+      {
+        "old": "-p \"Choose timer\"",
+        "new": "-p \"选择延时\""
+      },
+      {
+        "old": "-p \"Type of screenshot\"",
+        "new": "-p \"截图范围\""
+      },
+      {
+        "old": "-p \"How to save\"",
+        "new": "-p \"保存方式\""
+      },
+      {
+        "old": "Taking screenshot in ${countdown} seconds",
+        "new": "${countdown} 秒后截图"
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/gamemode.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/gamemode.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"APP_NAME=\"System\"","new":"APP_NAME=\"系统\""},
-      {"old":"--s \"Gamemode deactivated\"","new":"--s \"游戏模式已关闭\""},
-      {"old":"--m \"Animations and blur are now enabled.\"","new":"--m \"动画和模糊效果已恢复。\""},
-      {"old":"--s \"Gamemode activated\"","new":"--s \"游戏模式已开启\""},
-      {"old":"--m \"Animations and blur are now disabled.\"","new":"--m \"动画和模糊效果已禁用。\""}
+      {
+        "old": "APP_NAME=\"System\"",
+        "new": "APP_NAME=\"系统\""
+      },
+      {
+        "old": "--s \"Gamemode deactivated\"",
+        "new": "--s \"游戏模式已关闭\""
+      },
+      {
+        "old": "--m \"Animations and blur are now enabled.\"",
+        "new": "--m \"动画和模糊效果已恢复。\""
+      },
+      {
+        "old": "--s \"Gamemode activated\"",
+        "new": "--s \"游戏模式已开启\""
+      },
+      {
+        "old": "--m \"Animations and blur are now disabled.\"",
+        "new": "--m \"动画和模糊效果已禁用。\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/load-gamemode.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/load-gamemode.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"--s \"Gamemode activated\"","new":"--s \"游戏模式已开启\""},
-      {"old":"--m \"Animations and blur are now disabled.\"","new":"--m \"动画和模糊效果已禁用。\""}
+      {
+        "old": "--s \"Gamemode activated\"",
+        "new": "--s \"游戏模式已开启\""
+      },
+      {
+        "old": "--m \"Animations and blur are now disabled.\"",
+        "new": "--m \"动画和模糊效果已禁用。\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/keybindings.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/keybindings.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"-p \"Keybinds\"","new":"-p \"快捷键\""}
+      {
+        "old": "-p \"Keybinds\"",
+        "new": "-p \"快捷键\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/text-extractor.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/text-extractor.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"-p \"Select the OCR language\"","new":"-p \"选择 OCR 语言\""},
-      {"old":"die \"No region selected (timeout or cancelled)\"","new":"die \"取消选择或超时\""},
-      {"old":"die \"No region selected\"","new":"die \"未选择区域\""},
-      {"old":"die \"Failed to capture or process text\"","new":"die \"截图或文字识别失败\""}
+      {
+        "old": "-p \"Select the OCR language\"",
+        "new": "-p \"选择 OCR 语言\""
+      },
+      {
+        "old": "die \"No region selected (timeout or cancelled)\"",
+        "new": "die \"取消选择或超时\""
+      },
+      {
+        "old": "die \"No region selected\"",
+        "new": "die \"未选择区域\""
+      },
+      {
+        "old": "die \"Failed to capture or process text\"",
+        "new": "die \"截图或文字识别失败\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/hypridle.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/hypridle.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"\"text\": \"RUNNING\"","new":"\"text\": \"运行中\""},
-      {"old":"\"NOT RUNNING\"","new":"\"未运行\""},
-      {"old":"Screen locking active","new":"屏幕锁定已开启"},
-      {"old":"Screen locking deactivated","new":"屏幕锁定已关闭"},
-      {"old":"Left: Deactivate","new":"左键: 关闭"},{"old":"Left: Activate","new":"左键: 开启"},
-      {"old":"Right: Lock Screen","new":"右键: 锁屏"}
+      {
+        "old": "\"text\": \"RUNNING\"",
+        "new": "\"text\": \"运行中\""
+      },
+      {
+        "old": "\"NOT RUNNING\"",
+        "new": "\"未运行\""
+      },
+      {
+        "old": "Screen locking active",
+        "new": "屏幕锁定已开启"
+      },
+      {
+        "old": "Screen locking deactivated",
+        "new": "屏幕锁定已关闭"
+      },
+      {
+        "old": "Left: Deactivate",
+        "new": "左键: 关闭"
+      },
+      {
+        "old": "Left: Activate",
+        "new": "左键: 开启"
+      },
+      {
+        "old": "Right: Lock Screen",
+        "new": "右键: 锁屏"
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/toggleallfloat.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggleallfloat.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"\"System\"","new":"\"系统\""},
-      {"old":"\"Windows on this workspace toggled to floating/tiling\"","new":"\"当前工作区窗口已切换为浮动/平铺\""}
+      {
+        "old": "\"System\"",
+        "new": "\"系统\""
+      },
+      {
+        "old": "\"Windows on this workspace toggled to floating/tiling\"",
+        "new": "\"当前工作区窗口已切换为浮动/平铺\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/power.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/power.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"echo \":: Exit\"","new":"echo \":: 退出\""},{"old":"echo \":: Lock\"","new":"echo \":: 锁屏\""},
-      {"old":"echo \":: Reboot\"","new":"echo \":: 重启\""},{"old":"echo \":: Shutdown\"","new":"echo \":: 关机\""},
-      {"old":"echo \":: Suspend\"","new":"echo \":: 休眠\""},{"old":"echo \":: Hibernate\"","new":"echo \":: 深度休眠\""}
+      {
+        "old": "echo \":: Exit\"",
+        "new": "echo \":: 退出\""
+      },
+      {
+        "old": "echo \":: Lock\"",
+        "new": "echo \":: 锁屏\""
+      },
+      {
+        "old": "echo \":: Reboot\"",
+        "new": "echo \":: 重启\""
+      },
+      {
+        "old": "echo \":: Shutdown\"",
+        "new": "echo \":: 关机\""
+      },
+      {
+        "old": "echo \":: Suspend\"",
+        "new": "echo \":: 休眠\""
+      },
+      {
+        "old": "echo \":: Hibernate\"",
+        "new": "echo \":: 深度休眠\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/systeminfo.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/systeminfo.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"figlet -f smslant \"Systeminfo\"","new":"figlet -f smslant \"系统信息\""},
-      {"old":"echo \"Press return to exit\"","new":"echo \"按回车退出\""}
+      {
+        "old": "figlet -f smslant \"Systeminfo\"",
+        "new": "figlet -f smslant \"系统信息\""
+      },
+      {
+        "old": "echo \"Press return to exit\"",
+        "new": "echo \"按回车退出\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/toggle-animations.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggle-animations.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"echo \":: Toggle blocked by disabled.conf variation.\"","new":"echo \":: 动画切换被 disabled.conf 配置阻止。\""}
+      {
+        "old": "echo \":: Toggle blocked by disabled.conf variation.\"",
+        "new": "echo \":: 动画切换被 disabled.conf 配置阻止。\""
+      }
     ]
   },
   {
     "path": ".config/hypr/scripts/cleanup.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/cleanup.sh",
-    "backup": true, "protect": true,
+    "backup": true,
+    "protect": true,
     "patches": [
-      {"old":"echo \":: ~/.cache/gamemode removed\"","new":"echo \":: 已清理游戏模式缓存\""}
+      {
+        "old": "echo \":: ~/.cache/gamemode removed\"",
+        "new": "echo \":: 已清理游戏模式缓存\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-wallpaper-automation",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"echo \":: Start wallpaper automation script\"","new":"echo \":: 启动壁纸自动切换脚本\""},
-      {"old":"Wallpaper automation process started.\\nWallpaper will be changed every $sec seconds.","new":"壁纸自动切换已开启。\\n每隔 $sec 秒更换壁纸。"},
-      {"old":"Wallpaper automation process stopped.","new":"壁纸自动切换已停止。"}
+      {
+        "old": "echo \":: Start wallpaper automation script\"",
+        "new": "echo \":: 启动壁纸自动切换脚本\""
+      },
+      {
+        "old": "Wallpaper automation process started.\\nWallpaper will be changed every $sec seconds.",
+        "new": "壁纸自动切换已开启。\\n每隔 $sec 秒更换壁纸。"
+      },
+      {
+        "old": "Wallpaper automation process stopped.",
+        "new": "壁纸自动切换已停止。"
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-install-system-updates",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"figlet -f smslant \"Updates\"","new":"figlet -f smslant \"系统更新\""},
-      {"old":"\"DO YOU WANT TO START THE UPDATE NOW?\"","new":"\"是否开始更新系统？\""},
-      {"old":"echo \":: Update started...\"","new":"echo \":: 开始更新...\""},
-      {"old":"echo \":: Update canceled.\"","new":"echo \":: 已取消更新。\""},
-      {"old":"Press [ENTER] to close.","new":"按 [ENTER] 关闭。"},
-      {"old":"Searching for Flatpak updates...","new":"正在检查 Flatpak 更新..."},
-      {"old":"Update complete! Press [ENTER] to close.","new":"更新完成！按 [ENTER] 关闭。"}
+      {
+        "old": "figlet -f smslant \"Updates\"",
+        "new": "figlet -f smslant \"系统更新\""
+      },
+      {
+        "old": "\"DO YOU WANT TO START THE UPDATE NOW?\"",
+        "new": "\"是否开始更新系统？\""
+      },
+      {
+        "old": "echo \":: Update started...\"",
+        "new": "echo \":: 开始更新...\""
+      },
+      {
+        "old": "echo \":: Update canceled.\"",
+        "new": "echo \":: 已取消更新。\""
+      },
+      {
+        "old": "Press [ENTER] to close.",
+        "new": "按 [ENTER] 关闭。"
+      },
+      {
+        "old": "Searching for Flatpak updates...",
+        "new": "正在检查 Flatpak 更新..."
+      },
+      {
+        "old": "Update complete! Press [ENTER] to close.",
+        "new": "更新完成！按 [ENTER] 关闭。"
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-snapshot",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-snapshot",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"--placeholder \"Enter a comment for the snapshot...\"","new":"--placeholder \"输入快照备注...\""},
-      {"old":"\"grub-btrfs not found. DO YOU WANT TO INSTALL IT NOW?\"","new":"\"未安装 grub-btrfs。是否立即安装？\""},
-      {"old":"\"DO YOU WANT TO INSTALL Timeshift now?\"","new":"\"是否安装 Timeshift？\""}
+      {
+        "old": "--placeholder \"Enter a comment for the snapshot...\"",
+        "new": "--placeholder \"输入快照备注...\""
+      },
+      {
+        "old": "\"grub-btrfs not found. DO YOU WANT TO INSTALL IT NOW?\"",
+        "new": "\"未安装 grub-btrfs。是否立即安装？\""
+      },
+      {
+        "old": "\"DO YOU WANT TO INSTALL Timeshift now?\"",
+        "new": "\"是否安装 Timeshift？\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-hyprsunset",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\"Error: hyprsunset is not installed.\"","new":"\"错误：未安装 hyprsunset\""},
-      {"old":"\"Hyprsunset disabled.\"","new":"\"护眼模式已关闭\""},
-      {"old":"\"Hyprsunset enabled.\"","new":"\"护眼模式已开启\""}
+      {
+        "old": "\"Error: hyprsunset is not installed.\"",
+        "new": "\"错误：未安装 hyprsunset\""
+      },
+      {
+        "old": "\"Hyprsunset disabled.\"",
+        "new": "\"护眼模式已关闭\""
+      },
+      {
+        "old": "\"Hyprsunset enabled.\"",
+        "new": "\"护眼模式已开启\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-theme",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\"Switched to light theme.\"","new":"\"已切换到亮色主题。\""},
-      {"old":"\"Switched to dark theme.\"","new":"\"已切换到暗色主题。\""}
+      {
+        "old": "\"Switched to light theme.\"",
+        "new": "\"已切换到亮色主题。\""
+      },
+      {
+        "old": "\"Switched to dark theme.\"",
+        "new": "\"已切换到暗色主题。\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-power",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-power",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"echo \"Error: Unknown option","new":"echo \"错误：未知选项"}
+      {
+        "old": "echo \"Error: Unknown option",
+        "new": "echo \"错误：未知选项"
+      },
+      {
+        "old": "-t 'Restarting...'",
+        "new": "-t '正在重启...'"
+      },
+      {
+        "old": "-t 'Shutting down...'",
+        "new": "-t '正在关机...'"
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-network",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-network",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"is already running.","new":"已在运行中。"},
-      {"old":"is not running. Attempting to start it...","new":"未在运行，正在尝试启动..."},
-      {"old":"was successfully started.","new":"已成功启动。"}
+      {
+        "old": "is already running.",
+        "new": "已在运行中。"
+      },
+      {
+        "old": "is not running. Attempting to start it...",
+        "new": "未在运行，正在尝试启动..."
+      },
+      {
+        "old": "was successfully started.",
+        "new": "已成功启动。"
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-check-system-updates",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\"Click to update your system\"","new":"\"点击更新系统\""},
-      {"old":"\"No updates available\"","new":"\"没有可用更新\""}
+      {
+        "old": "\"Click to update your system\"",
+        "new": "\"点击更新系统\""
+      },
+      {
+        "old": "\"No updates available\"",
+        "new": "\"没有可用更新\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-ascii-header",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"Enter the text for ascii encoding:","new":"请输入 ASCII 编码文本："},
-      {"old":"Text copied to clipboard!","new":"文字已复制到剪贴板！"}
+      {
+        "old": "Enter the text for ascii encoding:",
+        "new": "请输入 ASCII 编码文本："
+      },
+      {
+        "old": "Text copied to clipboard!",
+        "new": "文字已复制到剪贴板！"
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-fastfetch",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\":: Show fastfetch\"","new":"\":: 显示 fastfetch\""},
-      {"old":"\":: Hide fastfetch\"","new":"\":: 隐藏 fastfetch\""}
+      {
+        "old": "\":: Show fastfetch\"",
+        "new": "\":: 显示 fastfetch\""
+      },
+      {
+        "old": "\":: Hide fastfetch\"",
+        "new": "\":: 隐藏 fastfetch\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-nmapplet",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\"Running\"","new":"\"运行中\""},{"old":"\"Stopped\"","new":"\"已停止\""}
+      {
+        "old": "\"Running\"",
+        "new": "\"运行中\""
+      },
+      {
+        "old": "\"Stopped\"",
+        "new": "\"已停止\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-unlock-pacman",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\":: Unlock complete\"","new":"\":: 解锁完成\""},
-      {"old":"\":: Pacman database is not locked\"","new":"\":: Pacman 数据库未被锁定\""}
+      {
+        "old": "\":: Unlock complete\"",
+        "new": "\":: 解锁完成\""
+      },
+      {
+        "old": "\":: Pacman database is not locked\"",
+        "new": "\":: Pacman 数据库未被锁定\""
+      }
     ]
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-statusbar",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"echo \"Unknown statusbar","new":"echo \"未知的状态栏"}
+      {
+        "old": "echo \"Unknown statusbar",
+        "new": "echo \"未知的状态栏"
+      }
     ]
   },
   {
     "path": ".config/waybar/themeswitcher.sh",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/themeswitcher.sh",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"-p \"Search Theme\"","new":"-p \"搜索主题\""},
-      {"old":"-p \"Themes\"","new":"-p \"主题\""},
-      {"old":"\"Loading waybar theme...\"","new":"\"正在加载顶栏主题...\""}
+      {
+        "old": "-p \"Search Theme\"",
+        "new": "-p \"搜索主题\""
+      },
+      {
+        "old": "-p \"Themes\"",
+        "new": "-p \"主题\""
+      },
+      {
+        "old": "\"Loading waybar theme...\"",
+        "new": "\"正在加载顶栏主题...\""
+      }
     ]
   },
   {
     "path": ".config/hypr/conf/keybindings/default.lua",
     "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/conf/keybindings/default.lua",
-    "backup": true, "protect": false,
+    "backup": true,
+    "protect": false,
     "patches": [
-      {"old":"\"Open the terminal\"","new":"\"打开终端\""},
-      {"old":"\"Open the browser\"","new":"\"打开浏览器\""},
-      {"old":"\"Open the filemanager\"","new":"\"打开文件管理器\""},
-      {"old":"\"Kill active window\"","new":"\"关闭当前窗口\""},
-      {"old":"\"Toggle Fullscreen\"","new":"\"切换全屏\""},
-      {"old":"\"Toggle Maximize Window\"","new":"\"切换最大化\""},
-      {"old":"\"Toggle Floating\"","new":"\"切换浮动\""},
-      {"old":"\"Toggle split\"","new":"\"切换分屏方向\""},
-      {"old":"\"Swapsplit\"","new":"\"交换分屏\""},
-      {"old":"\"Toggle window group\"","new":"\"切换窗口分组\""},
-      {"old":"\"Take a screenshot\"","new":"\"截图菜单\""},
-      {"old":"\"Lock Screen\"","new":"\"锁屏\""},
-      {"old":"\"Show keybindings\"","new":"\"显示快捷键\""}
+      {
+        "old": "\"Open the terminal\"",
+        "new": "\"打开终端\""
+      },
+      {
+        "old": "\"Open the browser\"",
+        "new": "\"打开浏览器\""
+      },
+      {
+        "old": "\"Open the filemanager\"",
+        "new": "\"打开文件管理器\""
+      },
+      {
+        "old": "\"Kill active window\"",
+        "new": "\"关闭当前窗口\""
+      },
+      {
+        "old": "\"Toggle Fullscreen\"",
+        "new": "\"切换全屏\""
+      },
+      {
+        "old": "\"Toggle Maximize Window\"",
+        "new": "\"切换最大化\""
+      },
+      {
+        "old": "\"Toggle Floating\"",
+        "new": "\"切换浮动\""
+      },
+      {
+        "old": "\"Toggle split\"",
+        "new": "\"切换分屏方向\""
+      },
+      {
+        "old": "\"Swapsplit\"",
+        "new": "\"交换分屏\""
+      },
+      {
+        "old": "\"Toggle window group\"",
+        "new": "\"切换窗口分组\""
+      },
+      {
+        "old": "\"Take a screenshot\"",
+        "new": "\"截图菜单\""
+      },
+      {
+        "old": "\"Lock Screen\"",
+        "new": "\"锁屏\""
+      },
+      {
+        "old": "\"Show keybindings\"",
+        "new": "\"显示快捷键\""
+      }
+    ]
+  },
+  {
+    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "title: \"ML4W Welcome\"",
+        "new": "title: \"ML4W 欢迎\""
+      },
+      {
+        "old": "title: qsTr(\"Settings\")",
+        "new": "title: qsTr(\"设置\")"
+      },
+      {
+        "old": "title: qsTr(\"System\")",
+        "new": "title: qsTr(\"系统\")"
+      },
+      {
+        "old": "title: qsTr(\"Help\")",
+        "new": "title: qsTr(\"帮助\")"
+      },
+      {
+        "old": "text: qsTr(\"Input\")",
+        "new": "text: qsTr(\"输入\")"
+      },
+      {
+        "old": "text: qsTr(\"Gestures\")",
+        "new": "text: qsTr(\"手势\")"
+      },
+      {
+        "old": "text: qsTr(\"Monitors\")",
+        "new": "text: qsTr(\"显示器\")"
+      },
+      {
+        "old": "text: qsTr(\"Network\")",
+        "new": "text: qsTr(\"网络\")"
+      },
+      {
+        "old": "text: qsTr(\"Bluetooth\")",
+        "new": "text: qsTr(\"蓝牙\")"
+      },
+      {
+        "old": "text: qsTr(\"Wallpaper\")",
+        "new": "text: qsTr(\"壁纸\")"
+      },
+      {
+        "old": "text: qsTr(\"Theme\")",
+        "new": "text: qsTr(\"主题\")"
+      },
+      {
+        "old": "text: qsTr(\"Sidebar\")",
+        "new": "text: qsTr(\"侧边栏\")"
+      },
+      {
+        "old": "text: qsTr(\"Dotfiles Settings\")",
+        "new": "text: qsTr(\"Dotfiles 设置\")"
+      },
+      {
+        "old": "text: qsTr(\"Install HyprMod\")",
+        "new": "text: qsTr(\"安装 HyprMod\")"
+      },
+      {
+        "old": "text: qsTr(\"Display Manager\")",
+        "new": "text: qsTr(\"登录管理器\")"
+      },
+      {
+        "old": "text: qsTr(\"Network Manager Applet\")",
+        "new": "text: qsTr(\"网络管理器\")"
+      },
+      {
+        "old": "text: qsTr(\"Change Shell\")",
+        "new": "text: qsTr(\"切换 Shell\")"
+      },
+      {
+        "old": "text: qsTr(\"System Info\")",
+        "new": "text: qsTr(\"系统信息\")"
+      },
+      {
+        "old": "text: qsTr(\"Exit Hyprland\")",
+        "new": "text: qsTr(\"退出 Hyprland\")"
+      },
+      {
+        "old": "text: qsTr(\"ML4W OS Homepage\")",
+        "new": "text: qsTr(\"ML4W 官网\")"
+      },
+      {
+        "old": "text: qsTr(\"ML4W OS GitHub\")",
+        "new": "text: qsTr(\"ML4W GitHub\")"
+      },
+      {
+        "old": "text: qsTr(\"ML4W OS Changelog\")",
+        "new": "text: qsTr(\"更新日志\")"
+      },
+      {
+        "old": "text: qsTr(\"ML4W YouTube Channel\")",
+        "new": "text: qsTr(\"ML4W YouTube\")"
+      },
+      {
+        "old": "text: qsTr(\"Get more Wallpapers\")",
+        "new": "text: qsTr(\"获取更多壁纸\")"
+      },
+      {
+        "old": "text: qsTr(\"Hyprland Homepage\")",
+        "new": "text: qsTr(\"Hyprland 官网\")"
+      },
+      {
+        "old": "text: qsTr(\"Hyprland Wiki\")",
+        "new": "text: qsTr(\"Hyprland 文档\")"
+      },
+      {
+        "old": "text: qsTr(\"Update ML4W OS\")",
+        "new": "text: qsTr(\"更新 ML4W\")"
+      },
+      {
+        "old": "text: \"Welcome to ML4W OS\"",
+        "new": "text: \"欢迎使用 ML4W\""
+      },
+      {
+        "old": "text: \"Version 2.14.1\"",
+        "new": "text: \"版本 2.14.1\""
+      },
+      {
+        "old": "text: \"Dotfiles Settings\"",
+        "new": "text: \"Dotfiles 设置\""
+      },
+      {
+        "old": "desc: \"to open the terminal\"",
+        "new": "desc: \"打开终端\""
+      },
+      {
+        "old": "desc: \"to open the browser\"",
+        "new": "desc: \"打开浏览器\""
+      },
+      {
+        "old": "desc: \"to close the active window\"",
+        "new": "desc: \"关闭当前窗口\""
+      },
+      {
+        "old": "desc: \"to open the application launcher\"",
+        "new": "desc: \"打开应用启动器\""
+      },
+      {
+        "old": "desc: \"to open the sidebar\"",
+        "new": "desc: \"打开侧边栏\""
+      },
+      {
+        "old": "desc: \"to set a wallpaper\"",
+        "new": "desc: \"设置壁纸\""
+      },
+      {
+        "old": "text: \"All keybindings\"",
+        "new": "text: \"全部快捷键\""
+      },
+      {
+        "old": "text: \"Toggle Tiling/Floating\"",
+        "new": "text: \"切换平铺/浮动\""
+      },
+      {
+        "old": "text: qsTr(\"Show on Startup\")",
+        "new": "text: qsTr(\"开机显示\")"
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "text: \"Welcome\"",
+        "new": "text: \"欢迎\""
+      },
+      {
+        "old": "text: \"Settings\"",
+        "new": "text: \"设置\""
+      },
+      {
+        "old": "\"No Media Playing\"",
+        "new": "\"无播放内容\""
+      },
+      {
+        "old": "\"Unknown Artist\"",
+        "new": "\"未知艺术家\""
+      },
+      {
+        "old": "\"Status Bar Engine\"",
+        "new": "\"顶栏引擎\""
+      },
+      {
+        "old": "\"Status Bar\"",
+        "new": "\"顶栏\""
+      },
+      {
+        "old": "\"Statusbar Expanded\"",
+        "new": "\"顶栏展开\""
+      },
+      {
+        "old": "\"Dock\"",
+        "new": "\"停靠栏\""
+      },
+      {
+        "old": "\"Dock Autohide\"",
+        "new": "\"自动隐藏停靠栏\""
+      },
+      {
+        "old": "\"Gamemode\"",
+        "new": "\"游戏模式\""
+      },
+      {
+        "old": "\"Fastfetch\"",
+        "new": "\"系统信息\""
+      },
+      {
+        "old": "\"Wallpaper\"",
+        "new": "\"壁纸\""
+      },
+      {
+        "old": "\"Theme\"",
+        "new": "\"主题\""
+      },
+      {
+        "old": "\"Reload Status Bar\"",
+        "new": "\"重载顶栏\""
+      },
+      {
+        "old": "\"Select Waybar Theme\"",
+        "new": "\"选择顶栏主题\""
+      },
+      {
+        "old": "\"Edit Quicklinks\"",
+        "new": "\"编辑快捷链接\""
+      },
+      {
+        "old": "\"Edit Settings\"",
+        "new": "\"编辑设置\""
+      },
+      {
+        "old": "\"Set GTK Theme\"",
+        "new": "\"设置 GTK 主题\""
+      },
+      {
+        "old": "\"Set QT Theme\"",
+        "new": "\"设置 QT 主题\""
+      },
+      {
+        "old": "\"Refresh GTK Theme\"",
+        "new": "\"刷新 GTK 主题\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/CalendarApp/CalendarWindow.qml",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"January\"",
+        "new": "\"一月\""
+      },
+      {
+        "old": "\"February\"",
+        "new": "\"二月\""
+      },
+      {
+        "old": "\"March\"",
+        "new": "\"三月\""
+      },
+      {
+        "old": "\"April\"",
+        "new": "\"四月\""
+      },
+      {
+        "old": "\"May\"",
+        "new": "\"五月\""
+      },
+      {
+        "old": "\"June\"",
+        "new": "\"六月\""
+      },
+      {
+        "old": "\"July\"",
+        "new": "\"七月\""
+      },
+      {
+        "old": "\"August\"",
+        "new": "\"八月\""
+      },
+      {
+        "old": "\"September\"",
+        "new": "\"九月\""
+      },
+      {
+        "old": "\"October\"",
+        "new": "\"十月\""
+      },
+      {
+        "old": "\"November\"",
+        "new": "\"十一月\""
+      },
+      {
+        "old": "\"December\"",
+        "new": "\"十二月\""
+      },
+      {
+        "old": "\"Mo\"",
+        "new": "\"一\""
+      },
+      {
+        "old": "\"Tu\"",
+        "new": "\"二\""
+      },
+      {
+        "old": "\"We\"",
+        "new": "\"三\""
+      },
+      {
+        "old": "\"Th\"",
+        "new": "\"四\""
+      },
+      {
+        "old": "\"Fr\"",
+        "new": "\"五\""
+      },
+      {
+        "old": "\"Sa\"",
+        "new": "\"六\""
+      },
+      {
+        "old": "\"Su\"",
+        "new": "\"日\""
+      },
+      {
+        "old": "\"Wk\"",
+        "new": "\"周\""
+      },
+      {
+        "old": "text: \"Today\"",
+        "new": "text: \"今天\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "placeholderText: \"Search image\"",
+        "new": "placeholderText: \"搜索图片\""
+      },
+      {
+        "old": "\"Random Wallpaper\"",
+        "new": "\"随机壁纸\""
+      },
+      {
+        "old": "\"Wallpaper Effects\"",
+        "new": "\"壁纸特效\""
+      },
+      {
+        "old": "\"Clear Wallpaper Cache\"",
+        "new": "\"清理壁纸缓存\""
+      },
+      {
+        "old": "\"Reload Images\"",
+        "new": "\"重新加载图片\""
+      },
+      {
+        "old": "\"Show Advanced Options\"",
+        "new": "\"显示高级选项\""
+      },
+      {
+        "old": "\"Hide Advanced Options\"",
+        "new": "\"隐藏高级选项\""
+      },
+      {
+        "old": "\"Wallpaper Folder\"",
+        "new": "\"壁纸文件夹\""
+      },
+      {
+        "old": "\"Transition Effect\"",
+        "new": "\"过渡效果\""
+      },
+      {
+        "old": "\"Output Monitor\"",
+        "new": "\"输出显示器\""
+      },
+      {
+        "old": "\"Wallpaper Positioning\"",
+        "new": "\"壁纸位置\""
+      },
+      {
+        "old": "\"Update theming from wallpaper\"",
+        "new": "\"从壁纸更新主题配色\""
+      },
+      {
+        "old": "\"Wallpaper folder is either empty or invalid.\"",
+        "new": "\"壁纸文件夹为空或无效。\""
+      },
+      {
+        "old": "\"All\"",
+        "new": "\"全部\""
+      },
+      {
+        "old": "\"center\"",
+        "new": "\"居中\""
+      },
+      {
+        "old": "\"top-left\"",
+        "new": "\"左上\""
+      },
+      {
+        "old": "\"top\"",
+        "new": "\"上\""
+      },
+      {
+        "old": "\"top-right\"",
+        "new": "\"右上\""
+      },
+      {
+        "old": "\"left\"",
+        "new": "\"左\""
+      },
+      {
+        "old": "\"right\"",
+        "new": "\"右\""
+      },
+      {
+        "old": "\"bottom-left\"",
+        "new": "\"左下\""
+      },
+      {
+        "old": "\"bottom\"",
+        "new": "\"下\""
+      },
+      {
+        "old": "\"bottom-right\"",
+        "new": "\"右下\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"label\": \"Power Saver\"",
+        "new": "\"label\": \"省电\""
+      },
+      {
+        "old": "\"label\": \"Balanced\"",
+        "new": "\"label\": \"均衡\""
+      },
+      {
+        "old": "\"label\": \"Performance\"",
+        "new": "\"label\": \"性能\""
+      }
+    ]
+  },
+  {
+    "path": ".config/waybar/modules.json",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/modules.json",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Disconnected ⚠\"",
+        "new": "\"已断开 ⚠\""
+      },
+      {
+        "old": "\"Disconnected\"",
+        "new": "\"已断开\""
+      },
+      {
+        "old": "\"Tools\"",
+        "new": "\"工具\""
+      },
+      {
+        "old": "\"ML4W Settings\"",
+        "new": "\"ML4W 设置\""
+      },
+      {
+        "old": "\"Apps\"",
+        "new": "\"应用\""
+      },
+      {
+        "old": "\"Open Power Menu\"",
+        "new": "\"电源菜单\""
+      },
+      {
+        "old": "\"Toggle Screen Shader\"",
+        "new": "\"切换屏幕滤镜\""
+      },
+      {
+        "old": "\"Select a waybar theme\"",
+        "new": "\"选择顶栏主题\""
+      }
+    ]
+  },
+  {
+    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"group\":\"Top Bar\"",
+        "new": "\"group\":\"顶栏\""
+      },
+      {
+        "old": "\"group\":\"Appearance\"",
+        "new": "\"group\":\"外观\""
+      },
+      {
+        "old": "\"group\":\"Default Apps\"",
+        "new": "\"group\":\"默认应用\""
+      },
+      {
+        "old": "\"group\":\"System Settings\"",
+        "new": "\"group\":\"系统设置\""
+      },
+      {
+        "old": "\"description\":\"Configuration for the waybar status bar.\"",
+        "new": "\"description\":\"Waybar 状态栏的配置。\""
+      },
+      {
+        "old": "\"description\":\"Configuration for the look and feel of the desktop.\"",
+        "new": "\"description\":\"桌面外观和视觉风格的配置。\""
+      },
+      {
+        "old": "\"description\":\"Configure your default applications.\"",
+        "new": "\"description\":\"配置默认应用。\""
+      },
+      {
+        "old": "\"description\":\"System-wide settings.\"",
+        "new": "\"description\":\"系统级设置。\""
+      },
+      {
+        "old": "\"Show Application Menu\"",
+        "new": "\"显示应用菜单\""
+      },
+      {
+        "old": "\"Show the application menu?\"",
+        "new": "\"是否显示应用菜单？\""
+      },
+      {
+        "old": "\"Show Workspace Module\"",
+        "new": "\"显示工作区模块\""
+      },
+      {
+        "old": "\"Show the workspace module?\"",
+        "new": "\"是否显示工作区模块？\""
+      },
+      {
+        "old": "\"Show System Tray\"",
+        "new": "\"显示系统托盘\""
+      },
+      {
+        "old": "\"Show the system tray?\"",
+        "new": "\"是否显示系统托盘？\""
+      },
+      {
+        "old": "\"Show Clock\"",
+        "new": "\"显示时钟\""
+      },
+      {
+        "old": "\"Show the clock?\"",
+        "new": "\"是否显示时钟？\""
+      },
+      {
+        "old": "\"Show Notification Area\"",
+        "new": "\"显示通知区域\""
+      },
+      {
+        "old": "\"Show the notification area?\"",
+        "new": "\"是否显示通知区域？\""
+      },
+      {
+        "old": "\"Computer\"",
+        "new": "\"计算机\""
+      },
+      {
+        "old": "\"Folder\"",
+        "new": "\"文件夹\""
+      },
+      {
+        "old": "\"Terminal\"",
+        "new": "\"终端\""
+      },
+      {
+        "old": "\"Browser\"",
+        "new": "\"浏览器\""
+      },
+      {
+        "old": "\"File Manager\"",
+        "new": "\"文件管理器\""
+      }
     ]
   }
 ]

@@ -1,0 +1,291 @@
+[[file]]
+path = ".config/quickshell/SidebarApp/SidebarWindow.qml"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'text: "Welcome"'
+new = 'text: "欢迎"'
+
+[[file.patch]]
+old = 'text: "Settings"'
+new = 'text: "设置"'
+
+[[file.patch]]
+old = '"No Media Playing"'
+new = '"无播放内容"'
+
+[[file.patch]]
+old = '"Unknown Artist"'
+new = '"未知艺术家"'
+
+[[file.patch]]
+old = '"Status Bar Engine"'
+new = '"顶栏引擎"'
+
+[[file.patch]]
+old = '"Status Bar"'
+new = '"顶栏"'
+
+[[file.patch]]
+old = '"Statusbar Expanded"'
+new = '"顶栏展开"'
+
+[[file.patch]]
+old = '"Dock"'
+new = '"停靠栏"'
+
+[[file.patch]]
+old = '"Dock Autohide"'
+new = '"自动隐藏停靠栏"'
+
+[[file.patch]]
+old = '"Gamemode"'
+new = '"游戏模式"'
+
+[[file.patch]]
+old = '"Fastfetch"'
+new = '"系统信息"'
+
+[[file.patch]]
+old = '"Wallpaper"'
+new = '"壁纸"'
+
+[[file.patch]]
+old = '"Theme"'
+new = '"主题"'
+
+[[file.patch]]
+old = '"Reload Status Bar"'
+new = '"重载顶栏"'
+
+[[file.patch]]
+old = '"Select Waybar Theme"'
+new = '"选择顶栏主题"'
+
+[[file.patch]]
+old = '"Edit Quicklinks"'
+new = '"编辑快捷链接"'
+
+[[file.patch]]
+old = '"Edit Settings"'
+new = '"编辑设置"'
+
+[[file.patch]]
+old = '"Set GTK Theme"'
+new = '"设置 GTK 主题"'
+
+[[file.patch]]
+old = '"Set QT Theme"'
+new = '"设置 QT 主题"'
+
+[[file.patch]]
+old = '"Refresh GTK Theme"'
+new = '"刷新 GTK 主题"'
+
+[[file]]
+path = ".config/quickshell/CalendarApp/CalendarWindow.qml"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"January"'
+new = '"一月"'
+
+[[file.patch]]
+old = '"February"'
+new = '"二月"'
+
+[[file.patch]]
+old = '"March"'
+new = '"三月"'
+
+[[file.patch]]
+old = '"April"'
+new = '"四月"'
+
+[[file.patch]]
+old = '"May"'
+new = '"五月"'
+
+[[file.patch]]
+old = '"June"'
+new = '"六月"'
+
+[[file.patch]]
+old = '"July"'
+new = '"七月"'
+
+[[file.patch]]
+old = '"August"'
+new = '"八月"'
+
+[[file.patch]]
+old = '"September"'
+new = '"九月"'
+
+[[file.patch]]
+old = '"October"'
+new = '"十月"'
+
+[[file.patch]]
+old = '"November"'
+new = '"十一月"'
+
+[[file.patch]]
+old = '"December"'
+new = '"十二月"'
+
+[[file.patch]]
+old = '"Mo"'
+new = '"一"'
+
+[[file.patch]]
+old = '"Tu"'
+new = '"二"'
+
+[[file.patch]]
+old = '"We"'
+new = '"三"'
+
+[[file.patch]]
+old = '"Th"'
+new = '"四"'
+
+[[file.patch]]
+old = '"Fr"'
+new = '"五"'
+
+[[file.patch]]
+old = '"Sa"'
+new = '"六"'
+
+[[file.patch]]
+old = '"Su"'
+new = '"日"'
+
+[[file.patch]]
+old = '"Wk"'
+new = '"周"'
+
+[[file.patch]]
+old = 'text: "Today"'
+new = 'text: "今天"'
+
+[[file]]
+path = ".config/quickshell/WallpaperApp/WallpaperWindow.qml"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml"
+backup = true
+protect = false
+
+[[file.patch]]
+old = 'placeholderText: "Search image"'
+new = 'placeholderText: "搜索图片"'
+
+[[file.patch]]
+old = '"Random Wallpaper"'
+new = '"随机壁纸"'
+
+[[file.patch]]
+old = '"Wallpaper Effects"'
+new = '"壁纸特效"'
+
+[[file.patch]]
+old = '"Clear Wallpaper Cache"'
+new = '"清理壁纸缓存"'
+
+[[file.patch]]
+old = '"Reload Images"'
+new = '"重新加载图片"'
+
+[[file.patch]]
+old = '"Show Advanced Options"'
+new = '"显示高级选项"'
+
+[[file.patch]]
+old = '"Hide Advanced Options"'
+new = '"隐藏高级选项"'
+
+[[file.patch]]
+old = '"Wallpaper Folder"'
+new = '"壁纸文件夹"'
+
+[[file.patch]]
+old = '"Transition Effect"'
+new = '"过渡效果"'
+
+[[file.patch]]
+old = '"Output Monitor"'
+new = '"输出显示器"'
+
+[[file.patch]]
+old = '"Wallpaper Positioning"'
+new = '"壁纸位置"'
+
+[[file.patch]]
+old = '"Update theming from wallpaper"'
+new = '"从壁纸更新主题配色"'
+
+[[file.patch]]
+old = '"Wallpaper folder is either empty or invalid."'
+new = '"壁纸文件夹为空或无效。"'
+
+[[file.patch]]
+old = '"All"'
+new = '"全部"'
+
+[[file.patch]]
+old = '"center"'
+new = '"居中"'
+
+[[file.patch]]
+old = '"top-left"'
+new = '"左上"'
+
+[[file.patch]]
+old = '"top"'
+new = '"上"'
+
+[[file.patch]]
+old = '"top-right"'
+new = '"右上"'
+
+[[file.patch]]
+old = '"left"'
+new = '"左"'
+
+[[file.patch]]
+old = '"right"'
+new = '"右"'
+
+[[file.patch]]
+old = '"bottom-left"'
+new = '"左下"'
+
+[[file.patch]]
+old = '"bottom"'
+new = '"下"'
+
+[[file.patch]]
+old = '"bottom-right"'
+new = '"右下"'
+
+[[file]]
+path = ".config/quickshell/StatusbarApp/PowerProfileModule.qml"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"label": "Power Saver"'
+new = '"label": "省电"'
+
+[[file.patch]]
+old = '"label": "Balanced"'
+new = '"label": "均衡"'
+
+[[file.patch]]
+old = '"label": "Performance"'
+new = '"label": "性能"'

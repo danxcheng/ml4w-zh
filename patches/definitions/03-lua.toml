@@ -1,0 +1,57 @@
+[[file]]
+path = ".config/hypr/conf/keybindings/default.lua"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/conf/keybindings/default.lua"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Open the terminal"'
+new = '"打开终端"'
+
+[[file.patch]]
+old = '"Open the browser"'
+new = '"打开浏览器"'
+
+[[file.patch]]
+old = '"Open the filemanager"'
+new = '"打开文件管理器"'
+
+[[file.patch]]
+old = '"Kill active window"'
+new = '"关闭当前窗口"'
+
+[[file.patch]]
+old = '"Toggle Fullscreen"'
+new = '"切换全屏"'
+
+[[file.patch]]
+old = '"Toggle Maximize Window"'
+new = '"切换最大化"'
+
+[[file.patch]]
+old = '"Toggle Floating"'
+new = '"切换浮动"'
+
+[[file.patch]]
+old = '"Toggle split"'
+new = '"切换分屏方向"'
+
+[[file.patch]]
+old = '"Swapsplit"'
+new = '"交换分屏"'
+
+[[file.patch]]
+old = '"Toggle window group"'
+new = '"切换窗口分组"'
+
+[[file.patch]]
+old = '"Take a screenshot"'
+new = '"截图菜单"'
+
+[[file.patch]]
+old = '"Lock Screen"'
+new = '"锁屏"'
+
+[[file.patch]]
+old = '"Show keybindings"'
+new = '"显示快捷键"'

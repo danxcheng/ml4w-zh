@@ -19,7 +19,7 @@ const BACKUP_DIR: &str = ".ml4w-zh-backups";
 const CACHE_FILE: &str = "patches.json";
 // 缓存目录: ~/.cache/ml4w-zh/
 
-#[derive(serde::Deserialize, Debug)]
+#[derive(serde::Deserialize, serde::Serialize, Debug)]
 struct PatchFile {
     path: String,
     source: String,
@@ -28,7 +28,7 @@ struct PatchFile {
     patches: Vec<Patch>,
 }
 
-#[derive(serde::Deserialize, Debug)]
+#[derive(serde::Deserialize, serde::Serialize, Debug)]
 struct Patch {
     old: String,
     new: String,
@@ -116,7 +116,6 @@ fn diff_text(a: &str, b: &str) -> Vec<String> {
 /// 从 GitHub 下载 patches.json，写入缓存
 fn fetch_and_cache(show_progress: bool) -> Result<Vec<PatchFile>, String> {
     let json = download(PATCHES_URL, show_progress)?;
-    // 写入缓存
     fs::create_dir_all(&cache_dir()).ok();
     fs::write(&cache_path(), &json).ok();
     parse_patches(&json)
@@ -140,7 +139,6 @@ fn parse_patches(json: &str) -> Result<Vec<PatchFile>, String> {
 
 /// 校验 patches.json：
 ///   对每个文件的每条 patch，检查 old 字符串是否存在于官方源中
-///   防止加了错误的翻译定义而不自知
 fn validate_patches(files: &[PatchFile]) -> Result<(), String> {
     eprintln!("━━━ 校验翻译定义 ━━━\n");
     let mut errors = 0;
@@ -191,7 +189,7 @@ fn apply_one(pf: &PatchFile, dry_run: bool) -> Result<usize, String> {
     eprint!("  → {} ... ", pf.path);
     let (status, _official) = verify_against_source(pf, &path)?;
     match status.as_str() {
-        "match" => {} // 继续
+        "match" => {}
         "patched" => { eprintln!("⏭️  已汉化"); return Ok(0); }
         "mismatch" => {
             eprintln!("⚠️  与官方不一致，跳过");
@@ -288,12 +286,9 @@ fn cmd_revert(_files: &[PatchFile], dry_run: bool, target: Option<&str>) {
     if !dry_run && !confirm("将从备份恢复，是否继续？") { eprintln!("已取消"); return; }
 
     if let Some(name) = target {
-        // 恢复单个文件
         let scan_dirs = [
-            home().join(".config/hypr/scripts"),
-            home().join(".config/ml4w/scripts"),
-            home().join(".config/rofi"),
-            home().join(".config/waybar"),
+            home().join(".config/hypr/scripts"), home().join(".config/ml4w/scripts"),
+            home().join(".config/rofi"), home().join(".config/waybar"),
             home().join(".config/hypr/conf/keybindings"),
         ];
         for dir in &scan_dirs {
@@ -308,12 +303,9 @@ fn cmd_revert(_files: &[PatchFile], dry_run: bool, target: Option<&str>) {
         }
         eprintln!("  ❌ 未找到备份: {}", name);
     } else {
-        // 恢复全部
         let scan_dirs = [
-            home().join(".config/hypr/scripts"),
-            home().join(".config/ml4w/scripts"),
-            home().join(".config/rofi"),
-            home().join(".config/waybar"),
+            home().join(".config/hypr/scripts"), home().join(".config/ml4w/scripts"),
+            home().join(".config/rofi"), home().join(".config/waybar"),
             home().join(".config/hypr/conf/keybindings"),
         ];
         let mut restored = 0;
@@ -365,11 +357,50 @@ fn cmd_update_patches(validate: bool) {
                 }
             }
         }
-        Err(e) => {
-            eprintln!("❌ 下载失败: {}", e);
-            std::process::exit(1);
-        }
+        Err(e) => { eprintln!("❌ 下载失败: {}", e); std::process::exit(1); }
     }
+}
+
+// ─── TOML 定义生成 ────────────────────────────────────────
+
+#[derive(serde::Deserialize)]
+struct DefFile { file: Vec<DefEntry> }
+
+#[derive(serde::Deserialize)]
+struct DefEntry {
+    path: String, source: String, backup: bool, protect: bool, patch: Vec<DefPatch>,
+}
+
+#[derive(serde::Deserialize)]
+struct DefPatch { old: String, new: String }
+
+fn cmd_generate() {
+    eprintln!("━━━ 生成 patches.json ━━━\n");
+    let def_dir = PathBuf::from("/run/host/home/danxcheng/项目/ml4w-zh/patches/definitions");
+    if !def_dir.is_dir() { eprintln!("❌ 未找到定义目录: {}", def_dir.display()); std::process::exit(1); }
+
+    let mut all_files: Vec<PatchFile> = Vec::new();
+    let mut entries = fs::read_dir(&def_dir).unwrap();
+    while let Some(entry) = entries.next() {
+        let entry = entry.unwrap();
+        let path = entry.path();
+        if !path.extension().map_or(false, |e| e == "toml") { continue; }
+        let content = fs::read_to_string(&path).unwrap();
+        let def: DefFile = match toml::from_str(&content) {
+            Ok(d) => d,
+            Err(e) => { eprintln!("❌ 解析 {} 失败: {}", path.display(), e); std::process::exit(1); }
+        };
+        for fe in &def.file {
+            let patches: Vec<Patch> = fe.patch.iter().map(|p| Patch { old: p.old.clone(), new: p.new.clone() }).collect();
+            all_files.push(PatchFile { path: fe.path.clone(), source: fe.source.clone(), backup: fe.backup, protect: fe.protect, patches });
+        }
+        eprintln!("  ✅ {} ({} 文件)", path.file_name().unwrap().to_string_lossy(), def.file.len());
+    }
+    let json = serde_json::to_string_pretty(&all_files).unwrap();
+    let out_path = PathBuf::from("/run/host/home/danxcheng/项目/ml4w-zh/patches/patches.json");
+    fs::write(&out_path, &json).unwrap();
+    let total = all_files.iter().map(|f| f.patches.len()).sum::<usize>();
+    eprintln!("\n✅ 已生成 — {} 文件, {} 翻译", all_files.len(), total);
 }
 
 // ─── CLI ─────────────────────────────────────────────────
@@ -386,6 +417,7 @@ ml4w-zh v{} — ML4W dotfiles 汉化工具
   revert [文件名]    恢复全部或指定文件（离线）
   init              仅备份 + PROTECTED
   update-patches    下载最新翻译定义到本地缓存
+  generate          从 TOML 定义生成 patches.json（开发者用）
 
 选项:
   --dry-run         预览，不修改
@@ -410,20 +442,14 @@ fn main() {
     if args.contains(&"-h".to_string()) || cmd == "help" { help(); return; }
     if args.contains(&"-V".to_string()) { eprintln!("ml4w-zh v{}", VERSION); return; }
 
-    // revert 离线工作
     if cmd == "revert" {
         let target = args.get(2).map(|s| s.as_str());
         cmd_revert(&[], dry_run, target);
         return;
     }
+    if cmd == "update-patches" { cmd_update_patches(do_validate); return; }
+    if cmd == "generate" { cmd_generate(); return; }
 
-    // update-patches: 只下载，不 apply
-    if cmd == "update-patches" {
-        cmd_update_patches(do_validate);
-        return;
-    }
-
-    // 获取 patches
     let files = if offline {
         eprintln!("ml4w-zh v{} — 使用本地缓存\n", VERSION);
         load_cached()
@@ -434,12 +460,7 @@ fn main() {
 
     let files = match files {
         Ok(f) => f,
-        Err(e) => {
-            eprintln!("❌ {}", e);
-            eprintln!("提示: 首次使用先运行 `ml4w-zh update-patches` 下载。");
-            eprintln!("      或加 --offline 使用本地缓存。");
-            std::process::exit(1);
-        }
+        Err(e) => { eprintln!("❌ {}", e); std::process::exit(1); }
     };
 
     match cmd {

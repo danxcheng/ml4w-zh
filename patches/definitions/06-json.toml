@@ -1,0 +1,135 @@
+[[file]]
+path = ".config/waybar/modules.json"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/modules.json"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"Disconnected ⚠"'
+new = '"已断开 ⚠"'
+
+[[file.patch]]
+old = '"Disconnected"'
+new = '"已断开"'
+
+[[file.patch]]
+old = '"Tools"'
+new = '"工具"'
+
+[[file.patch]]
+old = '"ML4W Settings"'
+new = '"ML4W 设置"'
+
+[[file.patch]]
+old = '"Apps"'
+new = '"应用"'
+
+[[file.patch]]
+old = '"Open Power Menu"'
+new = '"电源菜单"'
+
+[[file.patch]]
+old = '"Toggle Screen Shader"'
+new = '"切换屏幕滤镜"'
+
+[[file.patch]]
+old = '"Select a waybar theme"'
+new = '"选择顶栏主题"'
+
+[[file]]
+path = ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json"
+source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json"
+backup = true
+protect = false
+
+[[file.patch]]
+old = '"group":"Top Bar"'
+new = '"group":"顶栏"'
+
+[[file.patch]]
+old = '"group":"Appearance"'
+new = '"group":"外观"'
+
+[[file.patch]]
+old = '"group":"Default Apps"'
+new = '"group":"默认应用"'
+
+[[file.patch]]
+old = '"group":"System Settings"'
+new = '"group":"系统设置"'
+
+[[file.patch]]
+old = '"description":"Configuration for the waybar status bar."'
+new = '"description":"Waybar 状态栏的配置。"'
+
+[[file.patch]]
+old = '"description":"Configuration for the look and feel of the desktop."'
+new = '"description":"桌面外观和视觉风格的配置。"'
+
+[[file.patch]]
+old = '"description":"Configure your default applications."'
+new = '"description":"配置默认应用。"'
+
+[[file.patch]]
+old = '"description":"System-wide settings."'
+new = '"description":"系统级设置。"'
+
+[[file.patch]]
+old = '"Show Application Menu"'
+new = '"显示应用菜单"'
+
+[[file.patch]]
+old = '"Show the application menu?"'
+new = '"是否显示应用菜单？"'
+
+[[file.patch]]
+old = '"Show Workspace Module"'
+new = '"显示工作区模块"'
+
+[[file.patch]]
+old = '"Show the workspace module?"'
+new = '"是否显示工作区模块？"'
+
+[[file.patch]]
+old = '"Show System Tray"'
+new = '"显示系统托盘"'
+
+[[file.patch]]
+old = '"Show the system tray?"'
+new = '"是否显示系统托盘？"'
+
+[[file.patch]]
+old = '"Show Clock"'
+new = '"显示时钟"'
+
+[[file.patch]]
+old = '"Show the clock?"'
+new = '"是否显示时钟？"'
+
+[[file.patch]]
+old = '"Show Notification Area"'
+new = '"显示通知区域"'
+
+[[file.patch]]
+old = '"Show the notification area?"'
+new = '"是否显示通知区域？"'
+
+[[file.patch]]
+old = '"Computer"'
+new = '"计算机"'
+
+[[file.patch]]
+old = '"Folder"'
+new = '"文件夹"'
+
+[[file.patch]]
+old = '"Terminal"'
+new = '"终端"'
+
+[[file.patch]]
+old = '"Browser"'
+new = '"浏览器"'
+
+[[file.patch]]
+old = '"File Manager"'
+new = '"文件管理器"'
