@@ -143,7 +143,7 @@ fn validate_patches(files: &[PatchFile]) -> Result<(), String> {
     eprintln!("━━━ 校验翻译定义 ━━━\n");
     let mut errors = 0;
     for pf in files {
-        let url = format!("{}/{}/{}", ML4W_RAW, pf.source, pf.path);
+        let url = format!("{}/{}", ML4W_RAW, pf.source);
         let official = match download(&url, false) {
             Ok(s) => s,
             Err(e) => { eprintln!("  ⚠️  无法获取官方源 ({}): {}", pf.path, e); errors += 1; continue; }
@@ -169,7 +169,7 @@ fn validate_patches(files: &[PatchFile]) -> Result<(), String> {
 // ─── 核心 ────────────────────────────────────────────────
 
 fn verify_against_source(pf: &PatchFile, local: &Path) -> Result<(String, String), String> {
-    let url = format!("{}/{}/{}", ML4W_RAW, pf.source, pf.path);
+    let url = format!("{}/{}", ML4W_RAW, pf.source);
     let official = download(&url, false)?;
     let local_content = fs::read_to_string(local).map_err(|e| format!("读取失败: {}", e))?;
 
@@ -264,7 +264,7 @@ fn cmd_check(files: &[PatchFile]) {
         let first_new = &pf.patches.first().map(|p| &p.new[..]).unwrap_or("");
         let is_zh = !first_new.is_empty() && content.contains(first_new);
 
-        let url = format!("{}/{}/{}", ML4W_RAW, pf.source, pf.path);
+        let url = format!("{}/{}", ML4W_RAW, pf.source);
         let official = match download(&url, false) {
             Ok(s) => s, Err(_) => { eprintln!("  ⚠️  无法连接 ml4w 源: {}", pf.path); outdated += 1; continue; }
         };

@@ -1,6 +1,6 @@
 [[file]]
 path = ".config/ml4w/scripts/ml4w-wallpaper-automation"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation"
 backup = true
 protect = false
 
@@ -18,7 +18,7 @@ new = '壁纸自动切换已停止。'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-install-system-updates"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates"
 backup = true
 protect = false
 
@@ -52,7 +52,7 @@ new = '更新完成！按 [ENTER] 关闭。'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-snapshot"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-snapshot"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-snapshot"
 backup = true
 protect = false
 
@@ -70,7 +70,7 @@ new = '"是否安装 Timeshift？"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-hyprsunset"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset"
 backup = true
 protect = false
 
@@ -88,7 +88,7 @@ new = '"护眼模式已开启"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-theme"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme"
 backup = true
 protect = false
 
@@ -102,7 +102,7 @@ new = '"已切换到暗色主题。"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-power"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-power"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-power"
 backup = true
 protect = false
 
@@ -120,7 +120,7 @@ new = "-t '正在关机...'"
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-network"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-network"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-network"
 backup = true
 protect = false
 
@@ -138,7 +138,7 @@ new = '已成功启动。'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-check-system-updates"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates"
 backup = true
 protect = false
 
@@ -152,7 +152,7 @@ new = '"没有可用更新"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-ascii-header"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header"
 backup = true
 protect = false
 
@@ -166,7 +166,7 @@ new = '文字已复制到剪贴板！'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-fastfetch"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch"
 backup = true
 protect = false
 
@@ -180,7 +180,7 @@ new = '":: 隐藏 fastfetch"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-nmapplet"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet"
 backup = true
 protect = false
 
@@ -194,7 +194,7 @@ new = '"已停止"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-unlock-pacman"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman"
 backup = true
 protect = false
 
@@ -208,7 +208,7 @@ new = '":: Pacman 数据库未被锁定"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-statusbar"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar"
+source = "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar"
 backup = true
 protect = false
 
@@ -218,7 +218,7 @@ new = 'echo "未知的状态栏'
 
 [[file]]
 path = ".config/waybar/themeswitcher.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/themeswitcher.sh"
+source = "main/dotfiles/.config/waybar/themeswitcher.sh"
 backup = true
 protect = false
 

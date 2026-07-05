@@ -1,6 +1,6 @@
 [[file]]
 path = ".mydotfiles/com.ml4w.dotfiles.stable/.config/quickshell/WelcomeApp/WelcomeWindow.qml"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml"
+source = "main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml"
 backup = true
 protect = false
 
@@ -57,7 +57,7 @@ old = 'text: qsTr("Dotfiles Settings")'
 new = 'text: qsTr("Dotfiles 设置")'
 
 [[file.patch]]
-old = 'text: qsTr("Install HyprMod")'
+old = 'qsTr("Install HyprMod")'
 new = 'text: qsTr("安装 HyprMod")'
 
 [[file.patch]]

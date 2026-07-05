@@ -1,6 +1,6 @@
 [[file]]
 path = ".config/hypr/conf/keybindings/default.lua"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/conf/keybindings/default.lua"
+source = "main/dotfiles/.config/hypr/conf/keybindings/default.lua"
 backup = true
 protect = false
 

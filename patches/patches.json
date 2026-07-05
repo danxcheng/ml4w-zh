@@ -1,7 +1,7 @@
 [
   {
     "path": ".config/hypr/scripts/screenshot.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/screenshot.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/screenshot.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -89,7 +89,7 @@
   },
   {
     "path": ".config/hypr/scripts/gamemode.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/gamemode.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/gamemode.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -117,7 +117,7 @@
   },
   {
     "path": ".config/hypr/scripts/load-gamemode.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/load-gamemode.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/load-gamemode.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -133,7 +133,7 @@
   },
   {
     "path": ".config/hypr/scripts/keybindings.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/keybindings.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/keybindings.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -145,7 +145,7 @@
   },
   {
     "path": ".config/hypr/scripts/text-extractor.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/text-extractor.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/text-extractor.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -169,7 +169,7 @@
   },
   {
     "path": ".config/hypr/scripts/hypridle.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/hypridle.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/hypridle.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -205,7 +205,7 @@
   },
   {
     "path": ".config/hypr/scripts/toggleallfloat.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggleallfloat.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/toggleallfloat.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -221,7 +221,7 @@
   },
   {
     "path": ".config/hypr/scripts/power.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/power.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/power.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -253,7 +253,7 @@
   },
   {
     "path": ".config/hypr/scripts/systeminfo.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/systeminfo.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/systeminfo.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -269,7 +269,7 @@
   },
   {
     "path": ".config/hypr/scripts/toggle-animations.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggle-animations.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/toggle-animations.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -281,7 +281,7 @@
   },
   {
     "path": ".config/hypr/scripts/cleanup.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/cleanup.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/cleanup.sh",
     "backup": true,
     "protect": true,
     "patches": [
@@ -293,7 +293,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-wallpaper-automation",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation",
     "backup": true,
     "protect": false,
     "patches": [
@@ -313,7 +313,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-install-system-updates",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates",
     "backup": true,
     "protect": false,
     "patches": [
@@ -349,7 +349,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-snapshot",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-snapshot",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-snapshot",
     "backup": true,
     "protect": false,
     "patches": [
@@ -369,7 +369,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-hyprsunset",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
     "backup": true,
     "protect": false,
     "patches": [
@@ -389,7 +389,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-theme",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme",
     "backup": true,
     "protect": false,
     "patches": [
@@ -405,7 +405,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-power",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-power",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-power",
     "backup": true,
     "protect": false,
     "patches": [
@@ -425,7 +425,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-network",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-network",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-network",
     "backup": true,
     "protect": false,
     "patches": [
@@ -445,7 +445,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-check-system-updates",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates",
     "backup": true,
     "protect": false,
     "patches": [
@@ -461,7 +461,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-ascii-header",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header",
     "backup": true,
     "protect": false,
     "patches": [
@@ -477,7 +477,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-fastfetch",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch",
     "backup": true,
     "protect": false,
     "patches": [
@@ -493,7 +493,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-nmapplet",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet",
     "backup": true,
     "protect": false,
     "patches": [
@@ -509,7 +509,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-unlock-pacman",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman",
     "backup": true,
     "protect": false,
     "patches": [
@@ -525,7 +525,7 @@
   },
   {
     "path": ".config/ml4w/scripts/ml4w-toggle-statusbar",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar",
     "backup": true,
     "protect": false,
     "patches": [
@@ -537,7 +537,7 @@
   },
   {
     "path": ".config/waybar/themeswitcher.sh",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/themeswitcher.sh",
+    "source": "main/dotfiles/.config/waybar/themeswitcher.sh",
     "backup": true,
     "protect": false,
     "patches": [
@@ -557,7 +557,7 @@
   },
   {
     "path": ".config/hypr/conf/keybindings/default.lua",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/conf/keybindings/default.lua",
+    "source": "main/dotfiles/.config/hypr/conf/keybindings/default.lua",
     "backup": true,
     "protect": false,
     "patches": [
@@ -616,8 +616,468 @@
     ]
   },
   {
+    "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "text: \"Welcome\"",
+        "new": "text: \"欢迎\""
+      },
+      {
+        "old": "text: \"Settings\"",
+        "new": "text: \"设置\""
+      },
+      {
+        "old": "\"No Media Playing\"",
+        "new": "\"无播放内容\""
+      },
+      {
+        "old": "\"Unknown Artist\"",
+        "new": "\"未知艺术家\""
+      },
+      {
+        "old": "\"Status Bar Engine\"",
+        "new": "\"顶栏引擎\""
+      },
+      {
+        "old": "\"Status Bar\"",
+        "new": "\"顶栏\""
+      },
+      {
+        "old": "\"Statusbar Expanded\"",
+        "new": "\"顶栏展开\""
+      },
+      {
+        "old": "\"Dock\"",
+        "new": "\"停靠栏\""
+      },
+      {
+        "old": "\"Dock Autohide\"",
+        "new": "\"自动隐藏停靠栏\""
+      },
+      {
+        "old": "\"Gamemode\"",
+        "new": "\"游戏模式\""
+      },
+      {
+        "old": "\"Fastfetch\"",
+        "new": "\"系统信息\""
+      },
+      {
+        "old": "\"Wallpaper\"",
+        "new": "\"壁纸\""
+      },
+      {
+        "old": "\"Theme\"",
+        "new": "\"主题\""
+      },
+      {
+        "old": "\"Reload Status Bar\"",
+        "new": "\"重载顶栏\""
+      },
+      {
+        "old": "\"Select Waybar Theme\"",
+        "new": "\"选择顶栏主题\""
+      },
+      {
+        "old": "\"Edit Quicklinks\"",
+        "new": "\"编辑快捷链接\""
+      },
+      {
+        "old": "\"Edit Settings\"",
+        "new": "\"编辑设置\""
+      },
+      {
+        "old": "\"Set GTK Theme\"",
+        "new": "\"设置 GTK 主题\""
+      },
+      {
+        "old": "\"Set QT Theme\"",
+        "new": "\"设置 QT 主题\""
+      },
+      {
+        "old": "\"Refresh GTK Theme\"",
+        "new": "\"刷新 GTK 主题\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/CalendarApp/CalendarWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"January\"",
+        "new": "\"一月\""
+      },
+      {
+        "old": "\"February\"",
+        "new": "\"二月\""
+      },
+      {
+        "old": "\"March\"",
+        "new": "\"三月\""
+      },
+      {
+        "old": "\"April\"",
+        "new": "\"四月\""
+      },
+      {
+        "old": "\"May\"",
+        "new": "\"五月\""
+      },
+      {
+        "old": "\"June\"",
+        "new": "\"六月\""
+      },
+      {
+        "old": "\"July\"",
+        "new": "\"七月\""
+      },
+      {
+        "old": "\"August\"",
+        "new": "\"八月\""
+      },
+      {
+        "old": "\"September\"",
+        "new": "\"九月\""
+      },
+      {
+        "old": "\"October\"",
+        "new": "\"十月\""
+      },
+      {
+        "old": "\"November\"",
+        "new": "\"十一月\""
+      },
+      {
+        "old": "\"December\"",
+        "new": "\"十二月\""
+      },
+      {
+        "old": "\"Mo\"",
+        "new": "\"一\""
+      },
+      {
+        "old": "\"Tu\"",
+        "new": "\"二\""
+      },
+      {
+        "old": "\"We\"",
+        "new": "\"三\""
+      },
+      {
+        "old": "\"Th\"",
+        "new": "\"四\""
+      },
+      {
+        "old": "\"Fr\"",
+        "new": "\"五\""
+      },
+      {
+        "old": "\"Sa\"",
+        "new": "\"六\""
+      },
+      {
+        "old": "\"Su\"",
+        "new": "\"日\""
+      },
+      {
+        "old": "\"Wk\"",
+        "new": "\"周\""
+      },
+      {
+        "old": "text: \"Today\"",
+        "new": "text: \"今天\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "placeholderText: \"Search image\"",
+        "new": "placeholderText: \"搜索图片\""
+      },
+      {
+        "old": "\"Random Wallpaper\"",
+        "new": "\"随机壁纸\""
+      },
+      {
+        "old": "\"Wallpaper Effects\"",
+        "new": "\"壁纸特效\""
+      },
+      {
+        "old": "\"Clear Wallpaper Cache\"",
+        "new": "\"清理壁纸缓存\""
+      },
+      {
+        "old": "\"Reload Images\"",
+        "new": "\"重新加载图片\""
+      },
+      {
+        "old": "return actionText + \" Advanced Options\"",
+        "new": "return actionText + \" 高级选项\""
+      },
+      {
+        "old": "\"Wallpaper Folder\"",
+        "new": "\"壁纸文件夹\""
+      },
+      {
+        "old": "\"Transition Effect\"",
+        "new": "\"过渡效果\""
+      },
+      {
+        "old": "\"Output Monitor\"",
+        "new": "\"输出显示器\""
+      },
+      {
+        "old": "\"Wallpaper Positioning\"",
+        "new": "\"壁纸位置\""
+      },
+      {
+        "old": "\"Update theming from wallpaper\"",
+        "new": "\"从壁纸更新主题配色\""
+      },
+      {
+        "old": "\"Wallpaper folder is either empty or invalid.\"",
+        "new": "\"壁纸文件夹为空或无效。\""
+      },
+      {
+        "old": "\"All\"",
+        "new": "\"全部\""
+      },
+      {
+        "old": "\"center\"",
+        "new": "\"居中\""
+      },
+      {
+        "old": "\"top-left\"",
+        "new": "\"左上\""
+      },
+      {
+        "old": "\"top\"",
+        "new": "\"上\""
+      },
+      {
+        "old": "\"top-right\"",
+        "new": "\"右上\""
+      },
+      {
+        "old": "\"left\"",
+        "new": "\"左\""
+      },
+      {
+        "old": "\"right\"",
+        "new": "\"右\""
+      },
+      {
+        "old": "\"bottom-left\"",
+        "new": "\"左下\""
+      },
+      {
+        "old": "\"bottom\"",
+        "new": "\"下\""
+      },
+      {
+        "old": "\"bottom-right\"",
+        "new": "\"右下\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "source": "main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"label\": \"Power Saver\"",
+        "new": "\"label\": \"省电\""
+      },
+      {
+        "old": "\"label\": \"Balanced\"",
+        "new": "\"label\": \"均衡\""
+      },
+      {
+        "old": "\"label\": \"Performance\"",
+        "new": "\"label\": \"性能\""
+      }
+    ]
+  },
+  {
+    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "source": "main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"group\":\"Waybar\"",
+        "new": "\"group\":\"顶栏\""
+      },
+      {
+        "old": "\"group\":\"Appearance\"",
+        "new": "\"group\":\"外观\""
+      },
+      {
+        "old": "\"group\":\"Default Apps\"",
+        "new": "\"group\":\"默认应用\""
+      },
+      {
+        "old": "\"group\":\"System Settings\"",
+        "new": "\"group\":\"系统设置\""
+      },
+      {
+        "old": "\"description\":\"Configuration of the Waybar status bar.\"",
+        "new": "\"description\":\"Waybar 状态栏配置。\""
+      },
+      {
+        "old": "\"description\":\"Change some settings to customize the look and feel.\"",
+        "new": "\"description\":\"自定义桌面外观和视觉风格。\""
+      },
+      {
+        "old": "\"description\":\"Please setup your default apps.\"",
+        "new": "\"description\":\"请配置默认应用。\""
+      },
+      {
+        "old": "\"description\":\"Overview of core key system settings\"",
+        "new": "\"description\":\"核心系统设置概览\""
+      },
+      {
+        "old": "\"Show App Menu\"",
+        "new": "\"显示应用菜单\""
+      },
+      {
+        "old": "\"Show Taskbar\"",
+        "new": "\"显示任务栏\""
+      },
+      {
+        "old": "\"Show Quicklinks Menu\"",
+        "new": "\"显示快捷链接\""
+      },
+      {
+        "old": "\"Show Window Module\"",
+        "new": "\"显示窗口模块\""
+      },
+      {
+        "old": "\"Show Network Module\"",
+        "new": "\"显示网络模块\""
+      },
+      {
+        "old": "\"Show Systray Module\"",
+        "new": "\"显示系统托盘\""
+      },
+      {
+        "old": "\"Rofi Border Size\"",
+        "new": "\"Rofi 边框大小\""
+      },
+      {
+        "old": "\"Rofi Font\"",
+        "new": "\"Rofi 字体\""
+      },
+      {
+        "old": "\"Blur Effect\"",
+        "new": "\"模糊效果\""
+      },
+      {
+        "old": "\"Select Animation\"",
+        "new": "\"选择动画\""
+      },
+      {
+        "old": "\"Decoration Variants\"",
+        "new": "\"装饰变体\""
+      },
+      {
+        "old": "\"Window Variants\"",
+        "new": "\"窗口变体\""
+      },
+      {
+        "old": "\"Workspace Variants\"",
+        "new": "\"工作区变体\""
+      },
+      {
+        "old": "\"Kitty Cursor Trail\"",
+        "new": "\"Kitty 光标轨迹\""
+      },
+      {
+        "old": "\"Wallpaper App\"",
+        "new": "\"壁纸应用\""
+      },
+      {
+        "old": "\"Default Terminal\"",
+        "new": "\"默认终端\""
+      },
+      {
+        "old": "\"Default Browser\"",
+        "new": "\"默认浏览器\""
+      },
+      {
+        "old": "\"Default Email Client\"",
+        "new": "\"默认邮件客户端\""
+      },
+      {
+        "old": "\"Default Filemanager\"",
+        "new": "\"默认文件管理器\""
+      },
+      {
+        "old": "\"Default Network Manager\"",
+        "new": "\"默认网络管理器\""
+      },
+      {
+        "old": "\"Default Bluetooth Manager\"",
+        "new": "\"默认蓝牙管理器\""
+      },
+      {
+        "old": "\"Default Software Manager\"",
+        "new": "\"默认软件管理器\""
+      },
+      {
+        "old": "\"Default Calculator\"",
+        "new": "\"默认计算器\""
+      },
+      {
+        "old": "\"Default Screenshot Editor\"",
+        "new": "\"默认截图编辑器\""
+      },
+      {
+        "old": "\"Default Systemmonitor\"",
+        "new": "\"默认系统监视器\""
+      },
+      {
+        "old": "\"Default AUR Helper\"",
+        "new": "\"默认 AUR 助手\""
+      },
+      {
+        "old": "\"Keybinding Variants\"",
+        "new": "\"快捷键变体\""
+      },
+      {
+        "old": "\"Monitor Variants\"",
+        "new": "\"显示器变体\""
+      },
+      {
+        "old": "\"Environment Variants\"",
+        "new": "\"环境变体\""
+      },
+      {
+        "old": "\"Windowrule Variants\"",
+        "new": "\"窗口规则变体\""
+      },
+      {
+        "old": "\"Launcher\"",
+        "new": "\"启动器\""
+      }
+    ]
+  },
+  {
     "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
     "backup": true,
     "protect": false,
     "patches": [
@@ -674,7 +1134,7 @@
         "new": "text: qsTr(\"Dotfiles 设置\")"
       },
       {
-        "old": "text: qsTr(\"Install HyprMod\")",
+        "old": "qsTr(\"Install HyprMod\")",
         "new": "text: qsTr(\"安装 HyprMod\")"
       },
       {
@@ -776,446 +1236,6 @@
       {
         "old": "text: qsTr(\"Show on Startup\")",
         "new": "text: qsTr(\"开机显示\")"
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "text: \"Welcome\"",
-        "new": "text: \"欢迎\""
-      },
-      {
-        "old": "text: \"Settings\"",
-        "new": "text: \"设置\""
-      },
-      {
-        "old": "\"No Media Playing\"",
-        "new": "\"无播放内容\""
-      },
-      {
-        "old": "\"Unknown Artist\"",
-        "new": "\"未知艺术家\""
-      },
-      {
-        "old": "\"Status Bar Engine\"",
-        "new": "\"顶栏引擎\""
-      },
-      {
-        "old": "\"Status Bar\"",
-        "new": "\"顶栏\""
-      },
-      {
-        "old": "\"Statusbar Expanded\"",
-        "new": "\"顶栏展开\""
-      },
-      {
-        "old": "\"Dock\"",
-        "new": "\"停靠栏\""
-      },
-      {
-        "old": "\"Dock Autohide\"",
-        "new": "\"自动隐藏停靠栏\""
-      },
-      {
-        "old": "\"Gamemode\"",
-        "new": "\"游戏模式\""
-      },
-      {
-        "old": "\"Fastfetch\"",
-        "new": "\"系统信息\""
-      },
-      {
-        "old": "\"Wallpaper\"",
-        "new": "\"壁纸\""
-      },
-      {
-        "old": "\"Theme\"",
-        "new": "\"主题\""
-      },
-      {
-        "old": "\"Reload Status Bar\"",
-        "new": "\"重载顶栏\""
-      },
-      {
-        "old": "\"Select Waybar Theme\"",
-        "new": "\"选择顶栏主题\""
-      },
-      {
-        "old": "\"Edit Quicklinks\"",
-        "new": "\"编辑快捷链接\""
-      },
-      {
-        "old": "\"Edit Settings\"",
-        "new": "\"编辑设置\""
-      },
-      {
-        "old": "\"Set GTK Theme\"",
-        "new": "\"设置 GTK 主题\""
-      },
-      {
-        "old": "\"Set QT Theme\"",
-        "new": "\"设置 QT 主题\""
-      },
-      {
-        "old": "\"Refresh GTK Theme\"",
-        "new": "\"刷新 GTK 主题\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/CalendarApp/CalendarWindow.qml",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"January\"",
-        "new": "\"一月\""
-      },
-      {
-        "old": "\"February\"",
-        "new": "\"二月\""
-      },
-      {
-        "old": "\"March\"",
-        "new": "\"三月\""
-      },
-      {
-        "old": "\"April\"",
-        "new": "\"四月\""
-      },
-      {
-        "old": "\"May\"",
-        "new": "\"五月\""
-      },
-      {
-        "old": "\"June\"",
-        "new": "\"六月\""
-      },
-      {
-        "old": "\"July\"",
-        "new": "\"七月\""
-      },
-      {
-        "old": "\"August\"",
-        "new": "\"八月\""
-      },
-      {
-        "old": "\"September\"",
-        "new": "\"九月\""
-      },
-      {
-        "old": "\"October\"",
-        "new": "\"十月\""
-      },
-      {
-        "old": "\"November\"",
-        "new": "\"十一月\""
-      },
-      {
-        "old": "\"December\"",
-        "new": "\"十二月\""
-      },
-      {
-        "old": "\"Mo\"",
-        "new": "\"一\""
-      },
-      {
-        "old": "\"Tu\"",
-        "new": "\"二\""
-      },
-      {
-        "old": "\"We\"",
-        "new": "\"三\""
-      },
-      {
-        "old": "\"Th\"",
-        "new": "\"四\""
-      },
-      {
-        "old": "\"Fr\"",
-        "new": "\"五\""
-      },
-      {
-        "old": "\"Sa\"",
-        "new": "\"六\""
-      },
-      {
-        "old": "\"Su\"",
-        "new": "\"日\""
-      },
-      {
-        "old": "\"Wk\"",
-        "new": "\"周\""
-      },
-      {
-        "old": "text: \"Today\"",
-        "new": "text: \"今天\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/WallpaperApp/WallpaperWindow.qml",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "placeholderText: \"Search image\"",
-        "new": "placeholderText: \"搜索图片\""
-      },
-      {
-        "old": "\"Random Wallpaper\"",
-        "new": "\"随机壁纸\""
-      },
-      {
-        "old": "\"Wallpaper Effects\"",
-        "new": "\"壁纸特效\""
-      },
-      {
-        "old": "\"Clear Wallpaper Cache\"",
-        "new": "\"清理壁纸缓存\""
-      },
-      {
-        "old": "\"Reload Images\"",
-        "new": "\"重新加载图片\""
-      },
-      {
-        "old": "\"Show Advanced Options\"",
-        "new": "\"显示高级选项\""
-      },
-      {
-        "old": "\"Hide Advanced Options\"",
-        "new": "\"隐藏高级选项\""
-      },
-      {
-        "old": "\"Wallpaper Folder\"",
-        "new": "\"壁纸文件夹\""
-      },
-      {
-        "old": "\"Transition Effect\"",
-        "new": "\"过渡效果\""
-      },
-      {
-        "old": "\"Output Monitor\"",
-        "new": "\"输出显示器\""
-      },
-      {
-        "old": "\"Wallpaper Positioning\"",
-        "new": "\"壁纸位置\""
-      },
-      {
-        "old": "\"Update theming from wallpaper\"",
-        "new": "\"从壁纸更新主题配色\""
-      },
-      {
-        "old": "\"Wallpaper folder is either empty or invalid.\"",
-        "new": "\"壁纸文件夹为空或无效。\""
-      },
-      {
-        "old": "\"All\"",
-        "new": "\"全部\""
-      },
-      {
-        "old": "\"center\"",
-        "new": "\"居中\""
-      },
-      {
-        "old": "\"top-left\"",
-        "new": "\"左上\""
-      },
-      {
-        "old": "\"top\"",
-        "new": "\"上\""
-      },
-      {
-        "old": "\"top-right\"",
-        "new": "\"右上\""
-      },
-      {
-        "old": "\"left\"",
-        "new": "\"左\""
-      },
-      {
-        "old": "\"right\"",
-        "new": "\"右\""
-      },
-      {
-        "old": "\"bottom-left\"",
-        "new": "\"左下\""
-      },
-      {
-        "old": "\"bottom\"",
-        "new": "\"下\""
-      },
-      {
-        "old": "\"bottom-right\"",
-        "new": "\"右下\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/StatusbarApp/PowerProfileModule.qml",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"label\": \"Power Saver\"",
-        "new": "\"label\": \"省电\""
-      },
-      {
-        "old": "\"label\": \"Balanced\"",
-        "new": "\"label\": \"均衡\""
-      },
-      {
-        "old": "\"label\": \"Performance\"",
-        "new": "\"label\": \"性能\""
-      }
-    ]
-  },
-  {
-    "path": ".config/waybar/modules.json",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/modules.json",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Disconnected ⚠\"",
-        "new": "\"已断开 ⚠\""
-      },
-      {
-        "old": "\"Disconnected\"",
-        "new": "\"已断开\""
-      },
-      {
-        "old": "\"Tools\"",
-        "new": "\"工具\""
-      },
-      {
-        "old": "\"ML4W Settings\"",
-        "new": "\"ML4W 设置\""
-      },
-      {
-        "old": "\"Apps\"",
-        "new": "\"应用\""
-      },
-      {
-        "old": "\"Open Power Menu\"",
-        "new": "\"电源菜单\""
-      },
-      {
-        "old": "\"Toggle Screen Shader\"",
-        "new": "\"切换屏幕滤镜\""
-      },
-      {
-        "old": "\"Select a waybar theme\"",
-        "new": "\"选择顶栏主题\""
-      }
-    ]
-  },
-  {
-    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
-    "source": "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"group\":\"Top Bar\"",
-        "new": "\"group\":\"顶栏\""
-      },
-      {
-        "old": "\"group\":\"Appearance\"",
-        "new": "\"group\":\"外观\""
-      },
-      {
-        "old": "\"group\":\"Default Apps\"",
-        "new": "\"group\":\"默认应用\""
-      },
-      {
-        "old": "\"group\":\"System Settings\"",
-        "new": "\"group\":\"系统设置\""
-      },
-      {
-        "old": "\"description\":\"Configuration for the waybar status bar.\"",
-        "new": "\"description\":\"Waybar 状态栏的配置。\""
-      },
-      {
-        "old": "\"description\":\"Configuration for the look and feel of the desktop.\"",
-        "new": "\"description\":\"桌面外观和视觉风格的配置。\""
-      },
-      {
-        "old": "\"description\":\"Configure your default applications.\"",
-        "new": "\"description\":\"配置默认应用。\""
-      },
-      {
-        "old": "\"description\":\"System-wide settings.\"",
-        "new": "\"description\":\"系统级设置。\""
-      },
-      {
-        "old": "\"Show Application Menu\"",
-        "new": "\"显示应用菜单\""
-      },
-      {
-        "old": "\"Show the application menu?\"",
-        "new": "\"是否显示应用菜单？\""
-      },
-      {
-        "old": "\"Show Workspace Module\"",
-        "new": "\"显示工作区模块\""
-      },
-      {
-        "old": "\"Show the workspace module?\"",
-        "new": "\"是否显示工作区模块？\""
-      },
-      {
-        "old": "\"Show System Tray\"",
-        "new": "\"显示系统托盘\""
-      },
-      {
-        "old": "\"Show the system tray?\"",
-        "new": "\"是否显示系统托盘？\""
-      },
-      {
-        "old": "\"Show Clock\"",
-        "new": "\"显示时钟\""
-      },
-      {
-        "old": "\"Show the clock?\"",
-        "new": "\"是否显示时钟？\""
-      },
-      {
-        "old": "\"Show Notification Area\"",
-        "new": "\"显示通知区域\""
-      },
-      {
-        "old": "\"Show the notification area?\"",
-        "new": "\"是否显示通知区域？\""
-      },
-      {
-        "old": "\"Computer\"",
-        "new": "\"计算机\""
-      },
-      {
-        "old": "\"Folder\"",
-        "new": "\"文件夹\""
-      },
-      {
-        "old": "\"Terminal\"",
-        "new": "\"终端\""
-      },
-      {
-        "old": "\"Browser\"",
-        "new": "\"浏览器\""
-      },
-      {
-        "old": "\"File Manager\"",
-        "new": "\"文件管理器\""
       }
     ]
   }

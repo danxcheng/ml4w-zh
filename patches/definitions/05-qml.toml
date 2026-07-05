@@ -1,6 +1,6 @@
 [[file]]
 path = ".config/quickshell/SidebarApp/SidebarWindow.qml"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml"
+source = "main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml"
 backup = true
 protect = false
 
@@ -86,7 +86,7 @@ new = '"刷新 GTK 主题"'
 
 [[file]]
 path = ".config/quickshell/CalendarApp/CalendarWindow.qml"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml"
+source = "main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml"
 backup = true
 protect = false
 
@@ -176,7 +176,7 @@ new = 'text: "今天"'
 
 [[file]]
 path = ".config/quickshell/WallpaperApp/WallpaperWindow.qml"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml"
+source = "main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml"
 backup = true
 protect = false
 
@@ -201,12 +201,8 @@ old = '"Reload Images"'
 new = '"重新加载图片"'
 
 [[file.patch]]
-old = '"Show Advanced Options"'
-new = '"显示高级选项"'
-
-[[file.patch]]
-old = '"Hide Advanced Options"'
-new = '"隐藏高级选项"'
+old = 'return actionText + " Advanced Options"'
+new = 'return actionText + " 高级选项"'
 
 [[file.patch]]
 old = '"Wallpaper Folder"'
@@ -274,7 +270,7 @@ new = '"右下"'
 
 [[file]]
 path = ".config/quickshell/StatusbarApp/PowerProfileModule.qml"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml"
+source = "main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml"
 backup = true
 protect = false
 

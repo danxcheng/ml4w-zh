@@ -1,49 +1,11 @@
 [[file]]
-path = ".config/waybar/modules.json"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/waybar/modules.json"
-backup = true
-protect = false
-
-[[file.patch]]
-old = '"Disconnected ⚠"'
-new = '"已断开 ⚠"'
-
-[[file.patch]]
-old = '"Disconnected"'
-new = '"已断开"'
-
-[[file.patch]]
-old = '"Tools"'
-new = '"工具"'
-
-[[file.patch]]
-old = '"ML4W Settings"'
-new = '"ML4W 设置"'
-
-[[file.patch]]
-old = '"Apps"'
-new = '"应用"'
-
-[[file.patch]]
-old = '"Open Power Menu"'
-new = '"电源菜单"'
-
-[[file.patch]]
-old = '"Toggle Screen Shader"'
-new = '"切换屏幕滤镜"'
-
-[[file.patch]]
-old = '"Select a waybar theme"'
-new = '"选择顶栏主题"'
-
-[[file]]
 path = ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json"
+source = "main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json"
 backup = true
 protect = false
 
 [[file.patch]]
-old = '"group":"Top Bar"'
+old = '"group":"Waybar"'
 new = '"group":"顶栏"'
 
 [[file.patch]]
@@ -59,77 +21,141 @@ old = '"group":"System Settings"'
 new = '"group":"系统设置"'
 
 [[file.patch]]
-old = '"description":"Configuration for the waybar status bar."'
-new = '"description":"Waybar 状态栏的配置。"'
+old = '"description":"Configuration of the Waybar status bar."'
+new = '"description":"Waybar 状态栏配置。"'
 
 [[file.patch]]
-old = '"description":"Configuration for the look and feel of the desktop."'
-new = '"description":"桌面外观和视觉风格的配置。"'
+old = '"description":"Change some settings to customize the look and feel."'
+new = '"description":"自定义桌面外观和视觉风格。"'
 
 [[file.patch]]
-old = '"description":"Configure your default applications."'
-new = '"description":"配置默认应用。"'
+old = '"description":"Please setup your default apps."'
+new = '"description":"请配置默认应用。"'
 
 [[file.patch]]
-old = '"description":"System-wide settings."'
-new = '"description":"系统级设置。"'
+old = '"description":"Overview of core key system settings"'
+new = '"description":"核心系统设置概览"'
 
 [[file.patch]]
-old = '"Show Application Menu"'
+old = '"Show App Menu"'
 new = '"显示应用菜单"'
 
 [[file.patch]]
-old = '"Show the application menu?"'
-new = '"是否显示应用菜单？"'
+old = '"Show Taskbar"'
+new = '"显示任务栏"'
 
 [[file.patch]]
-old = '"Show Workspace Module"'
-new = '"显示工作区模块"'
+old = '"Show Quicklinks Menu"'
+new = '"显示快捷链接"'
 
 [[file.patch]]
-old = '"Show the workspace module?"'
-new = '"是否显示工作区模块？"'
+old = '"Show Window Module"'
+new = '"显示窗口模块"'
 
 [[file.patch]]
-old = '"Show System Tray"'
+old = '"Show Network Module"'
+new = '"显示网络模块"'
+
+[[file.patch]]
+old = '"Show Systray Module"'
 new = '"显示系统托盘"'
 
 [[file.patch]]
-old = '"Show the system tray?"'
-new = '"是否显示系统托盘？"'
+old = '"Rofi Border Size"'
+new = '"Rofi 边框大小"'
 
 [[file.patch]]
-old = '"Show Clock"'
-new = '"显示时钟"'
+old = '"Rofi Font"'
+new = '"Rofi 字体"'
 
 [[file.patch]]
-old = '"Show the clock?"'
-new = '"是否显示时钟？"'
+old = '"Blur Effect"'
+new = '"模糊效果"'
 
 [[file.patch]]
-old = '"Show Notification Area"'
-new = '"显示通知区域"'
+old = '"Select Animation"'
+new = '"选择动画"'
 
 [[file.patch]]
-old = '"Show the notification area?"'
-new = '"是否显示通知区域？"'
+old = '"Decoration Variants"'
+new = '"装饰变体"'
 
 [[file.patch]]
-old = '"Computer"'
-new = '"计算机"'
+old = '"Window Variants"'
+new = '"窗口变体"'
 
 [[file.patch]]
-old = '"Folder"'
-new = '"文件夹"'
+old = '"Workspace Variants"'
+new = '"工作区变体"'
 
 [[file.patch]]
-old = '"Terminal"'
-new = '"终端"'
+old = '"Kitty Cursor Trail"'
+new = '"Kitty 光标轨迹"'
 
 [[file.patch]]
-old = '"Browser"'
-new = '"浏览器"'
+old = '"Wallpaper App"'
+new = '"壁纸应用"'
 
 [[file.patch]]
-old = '"File Manager"'
-new = '"文件管理器"'
+old = '"Default Terminal"'
+new = '"默认终端"'
+
+[[file.patch]]
+old = '"Default Browser"'
+new = '"默认浏览器"'
+
+[[file.patch]]
+old = '"Default Email Client"'
+new = '"默认邮件客户端"'
+
+[[file.patch]]
+old = '"Default Filemanager"'
+new = '"默认文件管理器"'
+
+[[file.patch]]
+old = '"Default Network Manager"'
+new = '"默认网络管理器"'
+
+[[file.patch]]
+old = '"Default Bluetooth Manager"'
+new = '"默认蓝牙管理器"'
+
+[[file.patch]]
+old = '"Default Software Manager"'
+new = '"默认软件管理器"'
+
+[[file.patch]]
+old = '"Default Calculator"'
+new = '"默认计算器"'
+
+[[file.patch]]
+old = '"Default Screenshot Editor"'
+new = '"默认截图编辑器"'
+
+[[file.patch]]
+old = '"Default Systemmonitor"'
+new = '"默认系统监视器"'
+
+[[file.patch]]
+old = '"Default AUR Helper"'
+new = '"默认 AUR 助手"'
+
+[[file.patch]]
+old = '"Keybinding Variants"'
+new = '"快捷键变体"'
+
+[[file.patch]]
+old = '"Monitor Variants"'
+new = '"显示器变体"'
+
+[[file.patch]]
+old = '"Environment Variants"'
+new = '"环境变体"'
+
+[[file.patch]]
+old = '"Windowrule Variants"'
+new = '"窗口规则变体"'
+
+[[file.patch]]
+old = '"Launcher"'
+new = '"启动器"'

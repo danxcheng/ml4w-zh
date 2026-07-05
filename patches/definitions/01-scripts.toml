@@ -1,6 +1,6 @@
 [[file]]
 path = ".config/hypr/scripts/screenshot.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/screenshot.sh"
+source = "main/dotfiles/.config/hypr/scripts/screenshot.sh"
 backup = true
 protect = true
 
@@ -86,7 +86,7 @@ new = '${countdown} 秒后截图'
 
 [[file]]
 path = ".config/hypr/scripts/gamemode.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/gamemode.sh"
+source = "main/dotfiles/.config/hypr/scripts/gamemode.sh"
 backup = true
 protect = true
 
@@ -112,7 +112,7 @@ new = '--m "动画和模糊效果已禁用。"'
 
 [[file]]
 path = ".config/hypr/scripts/load-gamemode.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/load-gamemode.sh"
+source = "main/dotfiles/.config/hypr/scripts/load-gamemode.sh"
 backup = true
 protect = true
 
@@ -126,7 +126,7 @@ new = '--m "动画和模糊效果已禁用。"'
 
 [[file]]
 path = ".config/hypr/scripts/keybindings.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/keybindings.sh"
+source = "main/dotfiles/.config/hypr/scripts/keybindings.sh"
 backup = true
 protect = true
 
@@ -136,7 +136,7 @@ new = '-p "快捷键"'
 
 [[file]]
 path = ".config/hypr/scripts/text-extractor.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/text-extractor.sh"
+source = "main/dotfiles/.config/hypr/scripts/text-extractor.sh"
 backup = true
 protect = true
 
@@ -158,7 +158,7 @@ new = 'die "截图或文字识别失败"'
 
 [[file]]
 path = ".config/hypr/scripts/hypridle.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/hypridle.sh"
+source = "main/dotfiles/.config/hypr/scripts/hypridle.sh"
 backup = true
 protect = true
 
@@ -192,7 +192,7 @@ new = '右键: 锁屏'
 
 [[file]]
 path = ".config/hypr/scripts/toggleallfloat.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggleallfloat.sh"
+source = "main/dotfiles/.config/hypr/scripts/toggleallfloat.sh"
 backup = true
 protect = true
 
@@ -206,7 +206,7 @@ new = '"当前工作区窗口已切换为浮动/平铺"'
 
 [[file]]
 path = ".config/hypr/scripts/power.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/power.sh"
+source = "main/dotfiles/.config/hypr/scripts/power.sh"
 backup = true
 protect = true
 
@@ -236,7 +236,7 @@ new = 'echo ":: 深度休眠"'
 
 [[file]]
 path = ".config/hypr/scripts/systeminfo.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/systeminfo.sh"
+source = "main/dotfiles/.config/hypr/scripts/systeminfo.sh"
 backup = true
 protect = true
 
@@ -250,7 +250,7 @@ new = 'echo "按回车退出"'
 
 [[file]]
 path = ".config/hypr/scripts/toggle-animations.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/toggle-animations.sh"
+source = "main/dotfiles/.config/hypr/scripts/toggle-animations.sh"
 backup = true
 protect = true
 
@@ -260,7 +260,7 @@ new = 'echo ":: 动画切换被 disabled.conf 配置阻止。"'
 
 [[file]]
 path = ".config/hypr/scripts/cleanup.sh"
-source = "mylinuxforwork/dotfiles/main/dotfiles/.config/hypr/scripts/cleanup.sh"
+source = "main/dotfiles/.config/hypr/scripts/cleanup.sh"
 backup = true
 protect = true
 
