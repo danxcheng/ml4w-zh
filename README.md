@@ -2,8 +2,6 @@
 
 ML4W Hyprland dotfiles 汉化工具。**仅测试于 Arch Linux + ml4w 默认配置。**
 
-## 运行逻辑
-
 ```
                                     ┌─ 拉 patches.json（翻译定义）
                                     │   https://github.com/danxcheng/ml4w-zh/patches/patches.json
@@ -63,9 +61,9 @@ ml4w-zh init
 
 ## 依赖
 
-- **运行时**: `curl`（几乎所有 Linux 都有）
-- **编译时**: Rust 工具链 + `serde` + `serde_json`
-- **系统**: 仅测试于 **Arch Linux** + **ml4w 默认配置**
+- **运行时**: `curl`
+- **编译时**: Rust + `serde` + `serde_json`
+- **仅测试于 Arch Linux + ml4w 默认配置**
 
 ## ⚠️ 注意
 
