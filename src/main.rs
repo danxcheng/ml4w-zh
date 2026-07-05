@@ -1,517 +1,355 @@
-// ml4w-zh — ML4W dotfiles 汉化工具
+// ml4w-zh v0.3 — ML4W dotfiles 汉化工具
 //
-// 设计原则：
-//   1. 零依赖（仅依赖 curl，所有 Linux 都有）
-//   2. 翻译定义从 GitHub 拉取，二进制本身不捆绑
-//   3. 备份优先，改前必备份
-//   4. 不搞自动构建，提醒用户自己判断
+// 流程:
+//   1. 从 GitHub 拉 patches.json（翻译定义）
+//   2. 对每个文件，从 ml4w 官方源下载原版对比
+//   3. 本地文件 = 官方原版 → 可以安全汉化
+//   4. 本地文件 ≠ 官方原版 → ml4w 更新了或用户改过 → 警告，不盲改
+//   5. 改前必备份，scripts/ 下自动加 PROTECTED
+//
+// 依赖: serde_json (JSON 解析), curl (系统自带)
 
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
-// ─── 常量 ────────────────────────────────────────────────
-const VERSION: &str = "0.2.0";
+const VERSION: &str = "0.3.0";
 const PATCHES_URL: &str = "https://raw.githubusercontent.com/danxcheng/ml4w-zh/main/patches/patches.json";
-const BACKUP_DIR_NAME: &str = ".ml4w-zh-backups";
+const ML4W_RAW: &str = "https://raw.githubusercontent.com/mylinuxforwork/dotfiles";
+const BACKUP_DIR: &str = ".ml4w-zh-backups";
 
-// ─── 补丁定义（从 JSON 反序列化）────────────────────────
-#[derive(Debug)]
+// ─── 数据结构 ────────────────────────────────────────────
+
+#[derive(serde::Deserialize)]
 struct PatchFile {
     path: String,
+    source: String,
     backup: bool,
     protect: bool,
     patches: Vec<Patch>,
 }
 
-#[derive(Debug)]
+#[derive(serde::Deserialize)]
 struct Patch {
     old: String,
     new: String,
 }
 
-// ─── 简易 JSON 解析器（零依赖，够用就好）────────────────
-fn parse_patches_json(text: &str) -> Result<Vec<PatchFile>, String> {
-    let mut files = Vec::new();
-    let text = text.trim();
+// ─── 工具函数 ────────────────────────────────────────────
 
-    // 最外层必须是数组 [...]
-    if !text.starts_with('[') || !text.ends_with(']') {
-        return Err("patches.json 格式错误：需要 JSON 数组".into());
-    }
-    let inner = &text[1..text.len()-1].trim();
-    if inner.is_empty() {
-        return Ok(files);
-    }
-
-    // 逐对象解析（不依赖 serde，手拆大括号）
-    let mut depth = 0;
-    let mut start = 0;
-    for (i, ch) in inner.char_indices() {
-        match ch {
-            '{' if depth == 0 => start = i,
-            '{' => depth += 1,
-            '}' if depth > 0 => depth -= 1,
-            '}' if depth == 0 => {
-                let obj = &inner[start..=i];
-                if let Ok(pf) = parse_one_file(obj) {
-                    files.push(pf);
-                }
-            }
-            _ => {}
-        }
-    }
-    Ok(files)
-}
-
-fn parse_one_file(s: &str) -> Result<PatchFile, String> {
-    let mut path = String::new();
-    let mut backup = false;
-    let mut protect = false;
-    let mut patches = Vec::new();
-
-    let inner = s.trim();
-    let inner = inner.strip_prefix('{').and_then(|s| s.strip_suffix('}')).unwrap_or("");
-    let inner = inner.trim();
-
-    // 拆出顶层 key: value 对
-    let mut depth = 0;
-    let mut in_str = false;
-    let mut key_start = None;
-    let mut val_start = None;
-
-    for (i, ch) in inner.char_indices() {
-        if ch == '"' {
-            in_str = !in_str;
-            continue;
-        }
-        if in_str { continue; }
-
-        match ch {
-            '{' | '[' => depth += 1,
-            '}' | ']' => depth -= 1,
-            ':' if depth == 0 && key_start.is_none() => {
-                key_start = Some(inner[..i].rfind(|c: char| c == ',' || c == '{')
-                    .map(|p| p + 1).unwrap_or(0));
-                val_start = Some(i + 1);
-            }
-            ',' if depth == 0 && val_start.is_some() => {
-                let k = extract_string(&inner[key_start.unwrap()..val_start.unwrap()]);
-                let v = inner[val_start.unwrap()..i].trim().trim_end_matches(',');
-                set_field(&mut path, &mut backup, &mut protect, &k, v);
-                key_start = None;
-                val_start = None;
-            }
-            _ => {}
-        }
-    }
-    // 最后一个字段
-    if let (Some(ks), Some(vs)) = (key_start, val_start) {
-        let k = extract_string(&inner[ks..vs]);
-        let v = inner[vs..].trim().trim_end_matches('}').trim().trim_end_matches(',');
-        set_field(&mut path, &mut backup, &mut protect, &k, v);
-    }
-
-    // 解析 patches 数组
-    if let Some(arr_start) = inner.find("\"patches\"") {
-        let after_colon = &inner[arr_start..];
-        if let Some(arr_begin) = after_colon.find('[') {
-            let arr_begin_abs = arr_start + arr_begin;
-            if let Some(arr_end) = find_matching_bracket(&inner[arr_begin_abs..]) {
-                let arr_body = &inner[arr_begin_abs + 1..arr_begin_abs + arr_end];
-                parse_patch_array(arr_body, &mut patches);
-            }
-        }
-    }
-
-    if path.is_empty() {
-        return Err("缺少 path 字段".into());
-    }
-    Ok(PatchFile { path, backup, protect, patches })
-}
-
-fn extract_string(s: &str) -> String {
-    let s = s.trim();
-    if let Some(start) = s.find('"') {
-        if let Some(end) = s[start+1..].find('"') {
-            return s[start+1..start+1+end].to_string();
-        }
-    }
-    s.trim().trim_end_matches(':').trim().to_string()
-}
-
-fn set_field(path: &mut String, backup: &mut bool, protect: &mut bool,
-              key: &str, val: &str) {
-    match key {
-        "path" => *path = val.trim_matches('"').to_string(),
-        "backup" => *backup = val.trim() == "true",
-        "protect" => *protect = val.trim() == "true",
-        _ => {}
-    }
-}
-
-fn find_matching_bracket(s: &str) -> Option<usize> {
-    let mut depth = 0;
-    for (i, ch) in s.char_indices() {
-        match ch {
-            '[' => depth += 1,
-            ']' => {
-                depth -= 1;
-                if depth == 0 { return Some(i); }
-            }
-            _ => {}
-        }
-    }
-    None
-}
-
-fn parse_patch_array(s: &str, out: &mut Vec<Patch>) {
-    let mut depth = 0;
-    let mut start = 0;
-    for (i, ch) in s.char_indices() {
-        match ch {
-            '{' if depth == 0 => start = i,
-            '{' => depth += 1,
-            '}' if depth > 0 => depth -= 1,
-            '}' if depth == 0 => {
-                let obj = &s[start..=i];
-                let old = extract_json_str(obj, "old");
-                let new = extract_json_str(obj, "new");
-                if !old.is_empty() || !new.is_empty() {
-                    out.push(Patch { old, new });
-                }
-            }
-            _ => {}
-        }
-    }
-}
-
-fn extract_json_str(s: &str, key: &str) -> String {
-    if let Some(pos) = s.find(&format!("\"{}\"", key)) {
-        let after = &s[pos + key.len() + 2..];
-        if let Some(col) = after.find(':') {
-            let after_colon = after[col + 1..].trim();
-            if after_colon.starts_with('"') {
-                if let Some(end) = after_colon[1..].find('"') {
-                    return after_colon[1..1 + end].to_string();
-                }
-            }
-        }
-    }
-    String::new()
-}
-
-// ─── 路径展开 ────────────────────────────────────────────
 fn home() -> PathBuf {
     PathBuf::from(std::env::var("HOME").unwrap_or_else(|_| "/home/danxcheng".into()))
 }
 
 fn expand(path: &str) -> PathBuf {
-    let p = path.replace("~", home().to_str().unwrap_or(""));
-    if p.starts_with('/') { PathBuf::from(p) }
-    else { home().join(&p) }
+    let p = path.replace('~', home().to_str().unwrap_or(""));
+    if p.starts_with('/') { PathBuf::from(p) } else { home().join(&p) }
 }
 
-fn backup_dir_for(path: &Path) -> PathBuf {
-    path.parent().unwrap_or(Path::new(".")).join(BACKUP_DIR_NAME)
-}
-
-// ─── 核心功能 ────────────────────────────────────────────
-fn download_patches(url: &str) -> Result<String, String> {
-    let output = Command::new("curl")
-        .args(["-sL", url])
-        .output()
-        .map_err(|e| format!("无法执行 curl: {}", e))?;
-    if !output.status.success() {
-        return Err(format!("curl 下载失败 (exit: {:?})", output.status.code()));
+fn kurwa(url: &str) -> Result<String, String> {
+    let out = Command::new("curl").args(["-sL", url]).output()
+        .map_err(|e| format!("curl 失败: {}", e))?;
+    if !out.status.success() {
+        return Err(format!("HTTP {}", out.status.code().unwrap_or(0)));
     }
-    String::from_utf8(output.stdout).map_err(|e| format!("编码错误: {}", e))
+    String::from_utf8(out.stdout).map_err(|e| format!("编码: {}", e))
 }
 
 fn confirm(msg: &str) -> bool {
     eprint!("{} [y/N] ", msg);
-    let mut input = String::new();
-    std::io::stdin().read_line(&mut input).ok();
-    matches!(input.trim().to_lowercase().as_str(), "y" | "yes")
+    let mut s = String::new();
+    std::io::stdin().read_line(&mut s).ok();
+    matches!(s.trim().to_lowercase().as_str(), "y" | "yes")
 }
 
-fn backup(file: &Path) -> Result<(), String> {
+fn backup_dir_for(path: &Path) -> PathBuf {
+    path.parent().map(|p| p.join(BACKUP_DIR)).unwrap_or_else(|| PathBuf::from(BACKUP_DIR))
+}
+
+fn do_backup(file: &Path) {
     let dir = backup_dir_for(file);
-    fs::create_dir_all(&dir).map_err(|e| format!("创建备份目录失败: {}", e))?;
+    fs::create_dir_all(&dir).ok();
     let bak = dir.join(file.file_name().unwrap());
-    if bak.exists() {
-        eprintln!("  ⏭️  已有备份: {}", bak.display());
-        return Ok(());
-    }
-    fs::copy(file, &bak).map_err(|e| format!("备份失败 {}: {}", file.display(), e))?;
+    if bak.exists() { return; }
+    fs::copy(file, &bak).ok();
     eprintln!("  📦 已备份: {}", file.display());
-    Ok(())
 }
 
-fn create_protected(file: &Path) -> Result<(), String> {
+fn do_protect(file: &Path) {
     let dir = file.parent().unwrap();
     let pf = dir.join("PROTECTED");
-    if pf.exists() { return Ok(()); }
-    fs::write(&pf, "").map_err(|e| format!("创建 PROTECTED 失败: {}", e))?;
+    if pf.exists() { return; }
+    fs::write(&pf, "").ok();
     eprintln!("  🛡️  已保护: {}/", dir.file_name().unwrap_or_default().to_string_lossy());
-    Ok(())
 }
 
-fn apply_patches(file: &Path, patches: &[Patch], dry_run: bool) -> Result<usize, String> {
-    let content = fs::read_to_string(file)
-        .map_err(|e| format!("读取失败 {}: {}", file.display(), e))?;
+
+fn diff_text(a: &str, b: &str) -> String {
+    let mut lines = Vec::new();
+    for (i, (la, lb)) in a.lines().zip(b.lines()).enumerate() {
+        if la != lb {
+            lines.push(format!("  L{}: -{}+{}", i+1, la, lb));
+        }
+    }
+    let alines: Vec<&str> = a.lines().collect();
+    let blines: Vec<&str> = b.lines().collect();
+    if alines.len() != blines.len() {
+        lines.push(format!("  行数差异: {} vs {}", alines.len(), blines.len()));
+    }
+    lines.join("\n")
+}
+
+// ─── 核心 ────────────────────────────────────────────────
+
+fn fetch_patches() -> Result<Vec<PatchFile>, String> {
+    let json = kurwa(PATCHES_URL)?;
+    serde_json::from_str(&json).map_err(|e| format!("patches.json 解析失败: {}", e))
+}
+
+/// 下载官方文件，对比本地，返回状态
+fn verify_against_source(pf: &PatchFile, local: &Path) -> Result<(String, String), String> {
+    let url = format!("{}/{}/{}", ML4W_RAW, pf.source, pf.path);
+    let official = kurwa(&url)?;
+    let local_content = fs::read_to_string(local).map_err(|e| format!("读取本地文件失败: {}", e))?;
+
+    if local_content == official {
+        Ok(("match".into(), official))
+    } else if local_content.contains(&pf.patches.first().map(|p| &p.new[..]).unwrap_or("")) {
+        // 本地已经是汉化版 → 跳过
+        Ok(("patched".into(), official))
+    } else {
+        // 不匹配 → 官方有更新
+        Ok(("mismatch".into(), official))
+    }
+}
+
+fn apply_one(pf: &PatchFile, dry_run: bool) -> Result<usize, String> {
+    let path = expand(&pf.path);
+    if !path.exists() { return Err("文件不存在".into()); }
+
+    // 对比官方源
+    let (status, official) = verify_against_source(pf, &path)?;
+    match status.as_str() {
+        "match" => {} // 可以汉化
+        "patched" => {
+            eprintln!("  ⏭️  已汉化: {}", pf.path);
+            return Ok(0);
+        }
+        "mismatch" => {
+            let local = fs::read_to_string(&path).unwrap_or_default();
+            eprintln!("  ⚠️  {} 与官方版本不一致！", pf.path);
+            eprintln!("     可能 ml4w 已更新，跳过此文件。");
+            if dry_run {
+                let d = diff_text(&official, &local);
+                if !d.is_empty() { eprintln!("     差异:\n{}", d); }
+            }
+            return Ok(0);
+        }
+        _ => {}
+    }
+
+    // 备份 + PROTECTED
+    if !dry_run {
+        if pf.backup { do_backup(&path); }
+        if pf.protect { do_protect(&path); }
+    }
+
+    // 逐条替换
+    let content = fs::read_to_string(&path).map_err(|e| format!("读取失败: {}", e))?;
     let mut result = content.clone();
     let mut count = 0;
-
-    for p in patches {
-        if result.contains(&p.new) { continue; } // 已汉化
-        if !result.contains(&p.old) {
-            eprintln!("  ⚠️  未找到原文 '{}' 于 {}", &p.old[..p.old.len().min(40)], file.display());
-            continue;
-        }
+    for p in &pf.patches {
+        if result.contains(&p.new) { continue; }
         result = result.replace(&p.old, &p.new);
         count += 1;
     }
 
     if count > 0 {
         if dry_run {
-            eprintln!("  📝 将汉化: {} ({} 处)", file.display(), count);
+            eprintln!("  📝 将汉化: {} ({}处)", pf.path, count);
         } else {
-            fs::write(file, &result).map_err(|e| format!("写入失败 {}: {}", file.display(), e))?;
-            eprintln!("  ✅ 已汉化: {} ({} 处)", file.display(), count);
+            fs::write(&path, &result).map_err(|e| format!("写入失败: {}", e))?;
+            eprintln!("  ✅ 已汉化: {} ({}处)", pf.path, count);
         }
     }
     Ok(count)
 }
 
-fn check_file(file: &Path, patches: &[Patch]) -> (bool, usize) {
-    let content = match fs::read_to_string(file) {
-        Ok(c) => c,
-        Err(_) => return (false, 0),
-    };
-    let mut applied = 0;
-    for p in patches {
-        if content.contains(&p.new) { applied += 1; }
-    }
-    (applied == patches.len(), applied)
-}
+// ─── 命令 ────────────────────────────────────────────────
 
-// ─── 子命令 ──────────────────────────────────────────────
-fn cmd_apply(patch_files: &[PatchFile], dry_run: bool, skip_confirm: bool) {
+fn cmd_apply(files: &[PatchFile], dry_run: bool, skip_confirm: bool) {
     eprintln!("━━━ ML4W 中文汉化 ━━━\n");
-
-    if !skip_confirm && !confirm("将备份并汉化相关文件，是否继续？") {
-        eprintln!("已取消");
-        return;
+    if !skip_confirm && !dry_run && !confirm("将备份并汉化，是否继续？") {
+        eprintln!("已取消"); return;
     }
 
-    let mut total = 0;
-    for pf in patch_files {
-        let path = expand(&pf.path);
-        if !path.exists() {
-            eprintln!("  ⚠️  文件不存在，跳过: {}", path.display());
-            continue;
-        }
-
-        if pf.backup && !dry_run { let _ = backup(&path); }
-        if pf.protect && !dry_run { let _ = create_protected(&path); }
-
-        match apply_patches(&path, &pf.patches, dry_run) {
+    let mut total = 0; let skipped = 0; let mut errors = 0;
+    for pf in files {
+        match apply_one(pf, dry_run) {
             Ok(n) => total += n,
-            Err(e) => eprintln!("  ❌ {}", e),
+            Err(e) => { eprintln!("  ❌ {}: {}", pf.path, e); errors += 1; }
         }
     }
-
     if dry_run {
-        eprintln!("\n预览结束，实际修改 {} 处。去掉 --dry-run 执行。", total);
+        eprintln!("\n预览结束，将修改 {} 处。去掉 --dry-run 执行。", total);
     } else {
-        eprintln!("\n✅ 完成！共处理 {} 处翻译。", total);
-        eprintln!("   按 Super + Ctrl + R 重载配置。");
-        eprintln!("\n━━━ 注意事项 ━━━");
-        eprintln!("  • ml4w 更新后可能需要重新运行本工具");
-        eprintln!("  • 备份文件在 ~/.config/hypr/scripts/.ml4w-zh-backups/");
-        eprintln!("  • 运行 `ml4w-zh revert` 可恢复英文原版");
-        eprintln!("  • 技术力有限，不保证覆盖所有界面。欢迎 PR！\n");
+        eprintln!("\n✅ 完成！{} 处翻译已应用 (跳过 {}，错误 {})", total, skipped, errors);
+        eprintln!("   按 Super + Ctrl + R 重载 Hyprland 配置\n");
     }
 }
 
-fn cmd_check(patch_files: &[PatchFile]) {
+fn cmd_check(files: &[PatchFile]) {
     eprintln!("━━━ 翻译状态检查 ━━━\n");
-    let mut ok = 0;
-    let mut outdated = 0;
-    let mut missing = 0;
-    let mut total_patches = 0;
+    let mut ok = 0; let mut outdated = 0; let mut missing = 0; let mut updated = 0;
 
-    for pf in patch_files {
+    for pf in files {
         let path = expand(&pf.path);
-        total_patches += pf.patches.len();
-        if !path.exists() {
-            eprintln!("  ❌ 文件缺失: {}", pf.path);
-            missing += 1;
-            continue;
-        }
-        let (done, count) = check_file(&path, &pf.patches);
-        if done {
+        if !path.exists() { eprintln!("  ❌ 文件缺失: {}", pf.path); missing += 1; continue; }
+
+        let content = match fs::read_to_string(&path) {
+            Ok(c) => c, Err(_) => { eprintln!("  ❌ 无法读取: {}", pf.path); missing += 1; continue; }
+        };
+
+        // 检查是否已汉化
+        let first_new = &pf.patches.first().map(|p| &p.new[..]).unwrap_or("");
+        let is_zh = !first_new.is_empty() && content.contains(first_new);
+
+        // 从官方源验证
+        let url = format!("{}/{}/{}", ML4W_RAW, pf.source, pf.path);
+        let official = match kurwa(&url) {
+            Ok(s) => s, Err(_) => { eprintln!("  ⚠️  无法连接 ml4w 源: {}", pf.path); outdated += 1; continue; }
+        };
+
+        if content == official && !is_zh {
+            eprintln!("  📝 未汉化，官方一致: {}", pf.path);
+            outdated += 1;
+        } else if content == official && is_zh {
+            eprintln!("  ✅ 已汉化: {}", pf.path);
             ok += 1;
+        } else if content != official && is_zh {
+            eprintln!("  🔄 已汉化但官方已更新: {}", pf.path);
+            eprintln!("     （运行 apply 重新汉化）");
+            updated += 1;
         } else {
-            eprintln!("  ⚠️  未完全汉化: {} ({}/{})", pf.path, count, pf.patches.len());
+            eprintln!("  ⚠️  本地与官方不一致（用户自定义？）: {}", pf.path);
             outdated += 1;
         }
     }
-
-    eprintln!("\n总计 {} 个文件，{} 条翻译", patch_files.len(), total_patches);
-    eprintln!("  ✅ 已汉化: {}", ok);
-    eprintln!("  ⚠️  未完全: {}", outdated);
+    eprintln!("\n总计 {} 个文件", files.len());
+    eprintln!("  ✅ 已汉化且最新: {}", ok);
+    eprintln!("  🔄 已汉化但需更新: {}", updated);
+    eprintln!("  📝 未汉化: {}", outdated);
     eprintln!("  ❌ 缺失:   {}", missing);
 }
 
-fn cmd_revert(patch_files: &[PatchFile], dry_run: bool) {
+fn cmd_revert(_files: &[PatchFile], dry_run: bool) {
     eprintln!("━━━ 恢复英文原版 ━━━\n");
-    if !dry_run && !confirm("将从备份恢复原文，是否继续？") {
-        eprintln!("已取消");
-        return;
-    }
+    if !dry_run && !confirm("将从备份恢复，是否继续？") { eprintln!("已取消"); return; }
+
+    // 扫描所有 .ml4w-zh-backups 目录
+    let scan_dirs = [
+        home().join(".config/hypr/scripts"),
+        home().join(".config/ml4w/scripts"),
+        home().join(".config/rofi"),
+        home().join(".config/waybar"),
+        home().join(".config/hypr/conf/keybindings"),
+    ];
 
     let mut restored = 0;
-    for pf in patch_files {
-        let path = expand(&pf.path);
-        let dir = backup_dir_for(&path);
-        let bak = dir.join(path.file_name().unwrap());
-        if !bak.exists() { continue; }
-
-        if dry_run {
-            eprintln!("  📝 将恢复: {}", path.display());
-        } else {
-            fs::copy(&bak, &path).ok();
-            eprintln!("  ↩️  已恢复: {}", path.display());
+    for dir in &scan_dirs {
+        let bak_dir = dir.join(BACKUP_DIR);
+        if !bak_dir.is_dir() { continue; }
+        for entry in fs::read_dir(&bak_dir).ok().into_iter().flatten() {
+            let entry = entry.ok().filter(|e| e.path().is_file());
+            if let Some(bak) = entry {
+                let target = dir.join(bak.file_name());
+                if dry_run {
+                    eprintln!("  📝 将恢复: {}", target.display());
+                } else {
+                    fs::copy(bak.path(), &target).ok();
+                    eprintln!("  ↩️  已恢复: {}", target.display());
+                }
+                restored += 1;
+            }
         }
-        restored += 1;
     }
-
-    if restored == 0 {
-        eprintln!("  没有找到备份文件。");
-    }
-    eprintln!("\n✅ 完成，恢复 {} 个文件。", restored);
+    if restored == 0 { eprintln!("  没有找到备份。"); }
+    if !dry_run { eprintln!("\n✅ 完成，恢复 {} 个文件。", restored); }
 }
 
-fn cmd_init(patch_files: &[PatchFile], dry_run: bool) {
+fn cmd_init(files: &[PatchFile], dry_run: bool) {
     eprintln!("━━━ 初始化（备份 + PROTECTED）━━━\n");
-    for pf in patch_files {
+    for pf in files {
         let path = expand(&pf.path);
         if !path.exists() { continue; }
-        if pf.backup && !dry_run { let _ = backup(&path); }
-        if pf.protect && !dry_run { let _ = create_protected(&path); }
+        if dry_run {
+            if pf.backup { eprintln!("  📦 将备份: {}", pf.path); }
+            if pf.protect { eprintln!("  🛡️  将创建 PROTECTED"); }
+        } else {
+            if pf.backup { do_backup(&path); }
+            if pf.protect { do_protect(&path); }
+        }
     }
-    eprintln!("\n✅ 初始化完成");
+    if !dry_run { eprintln!("\n✅ 初始化完成"); }
 }
 
-fn print_welcome() {
-    eprintln!("\
-╔══════════════════════════════════════╗
-║       ml4w-zh  v{}                    ║
-║   ML4W Hyprland 中文汉化工具         ║
-╚══════════════════════════════════════╝
-", VERSION);
-    eprintln!("注意：本工具技术力有限，作者懒得搞自动构建。");
-    eprintln!("推荐用法：ml4w 默认配置下运行 `ml4w-zh apply` 直接替换。");
-    eprintln!("有问题/改进 → https://github.com/danxcheng/ml4w-zh\n");
-}
+// ─── CLI ─────────────────────────────────────────────────
 
-fn print_usage() {
+fn help() {
     eprintln!("\
+ml4w-zh v{} — ML4W dotfiles 汉化工具
+
 用法: ml4w-zh <命令> [选项]
 
 命令:
-  apply       下载翻译并汉化（默认）
-  check       检查哪些文件已汉化
-  revert      从备份恢复英文原版
-  init        仅备份 + 创建 PROTECTED 文件
+  apply      从 ml4w 官方源校验后汉化（默认）
+  check      检查汉化状态，对比官方源
+  revert     从备份恢复英文（离线可用）
+  init       仅备份 + PROTECTED
 
 选项:
-  --dry-run   预览，不实际修改
-  -y          跳过确认
-  -h          显示此帮助
-  -V          显示版本
+  --dry-run  预览，不修改
+  -y         跳过确认
+  -h         帮助
 
-示例:
-  ml4w-zh                 一键汉化
-  ml4w-zh --dry-run       预览
-  ml4w-zh check           检查状态
-  ml4w-zh revert          恢复英文
-");
+原理:
+  1. 拉 patches.json（翻译定义）
+  2. 对每个文件，从 ml4w GitHub 下载原版对比
+  3. 本地 = 官方 → 安全汉化
+  4. 本地 ≠ 官方 → 警告，不盲改（ml4w 可能已更新）
+  5. revert 离线工作，扫描备份目录
+
+项目: https://github.com/danxcheng/ml4w-zh
+", VERSION);
 }
 
-// ─── 入口 ────────────────────────────────────────────────
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     let cmd = args.get(1).map(|s| s.as_str()).unwrap_or("apply");
     let dry_run = args.contains(&"--dry-run".to_string());
     let skip_confirm = args.contains(&"-y".to_string());
 
-    if args.contains(&"-h".to_string()) || args.contains(&"--help".to_string()) {
-        print_welcome();
-        print_usage();
-        return;
-    }
-    if args.contains(&"-V".to_string()) {
-        eprintln!("ml4w-zh v{}", VERSION);
-        return;
-    }
-    if cmd == "help" {
-        print_usage();
+    if args.contains(&"-h".to_string()) || cmd == "help" { help(); return; }
+    if args.contains(&"-V".to_string()) { eprintln!("ml4w-zh v{}", VERSION); return; }
+
+    // revert 离线工作，不需要下载 patches
+    if cmd == "revert" {
+        cmd_revert(&[], dry_run);
         return;
     }
 
-    // 下载补丁定义
-    print_welcome();
-    if cmd != "revert" && cmd != "init" {
-        eprint!("正在下载翻译定义... ");
-        match download_patches(PATCHES_URL) {
-            Ok(json) => {
-                eprintln!("OK ({})", json.len());
-                match parse_patches_json(&json) {
-                    Ok(files) => {
-                        match cmd {
-                            "apply" | "install" => cmd_apply(&files, dry_run, skip_confirm),
-                            "check" => cmd_check(&files),
-                            "init" => cmd_init(&files, dry_run),
-                            _ => print_usage(),
-                        }
-                    }
-                    Err(e) => {
-                        eprintln!("解析失败: {}", e);
-                        std::process::exit(1);
-                    }
-                }
-            }
-            Err(e) => {
-                eprintln!("失败!");
-                eprintln!("错误: {}", e);
-                eprintln!("请检查网络连接，或手动下载:");
-                eprintln!("  curl -sL {} -o /tmp/patches.json", PATCHES_URL);
-                std::process::exit(1);
-            }
-        }
-    } else {
-        // revert/init 不需要下载补丁，但需要补丁定义找文件
-        match download_patches(PATCHES_URL) {
-            Ok(json) => {
-                match parse_patches_json(&json) {
-                    Ok(files) => {
-                        match cmd {
-                            "revert" => cmd_revert(&files, dry_run),
-                            "init" => cmd_init(&files, dry_run),
-                            _ => print_usage(),
-                        }
-                    }
-                    Err(e) => { eprintln!("解析失败: {}", e); std::process::exit(1); }
-                }
-            }
-            Err(e) => {
-                eprintln!("下载补丁定义失败: {}", e);
-                eprintln!("revert 需要补丁定义来找备份文件，请确保网络可用。");
-                std::process::exit(1);
-            }
-        }
+    // 下载翻译定义
+    eprintln!("ml4w-zh v{} — 正在获取翻译定义...", VERSION);
+    let files = match fetch_patches() {
+        Ok(f) => f,
+        Err(e) => { eprintln!("❌ 获取 patches.json 失败: {}", e); std::process::exit(1); }
+    };
+    eprintln!("   已加载 {} 个文件的翻译定义\n", files.len());
+
+    match cmd {
+        "apply" | "install" => cmd_apply(&files, dry_run, skip_confirm),
+        "check" => cmd_check(&files),
+        "init" => cmd_init(&files, dry_run),
+        _ => { eprintln!("未知命令: {}", cmd); help(); }
     }
 }
