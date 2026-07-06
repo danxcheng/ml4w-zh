@@ -58,7 +58,7 @@ new = 'text: qsTr("Dotfiles 设置")'
 
 [[file.patch]]
 old = 'qsTr("Install HyprMod")'
-new = 'text: qsTr("安装 HyprMod")'
+new = 'qsTr("安装 HyprMod")'
 
 [[file.patch]]
 old = 'text: qsTr("Display Manager")'

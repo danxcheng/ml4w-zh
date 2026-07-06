@@ -167,6 +167,27 @@ fn cmd_check(files: &[PatchFile]) {
     eprintln!("  ❌ 缺失:   {missing}");
 }
 
+/// 递归扫描 base 下所有名为 `.ml4w-zh-backups` 的目录
+fn find_backup_dirs(base: &std::path::Path) -> Vec<PathBuf> {
+    let mut results = Vec::new();
+    if !base.is_dir() {
+        return results;
+    }
+    if let Ok(entries) = fs::read_dir(base) {
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.is_dir() {
+                if path.file_name().is_some_and(|n| n == util::BACKUP_DIR) {
+                    results.push(path);
+                } else {
+                    results.extend(find_backup_dirs(&path));
+                }
+            }
+        }
+    }
+    results
+}
+
 fn cmd_revert(dry_run: bool, target: Option<&str>) -> Result<()> {
     eprintln!("━━━ 恢复英文原版 ━━━\n");
     if !dry_run && !confirm("将从备份恢复，是否继续？") {
@@ -174,20 +195,23 @@ fn cmd_revert(dry_run: bool, target: Option<&str>) -> Result<()> {
         return Ok(());
     }
 
-    let scan_dirs = [
-        util::home().join(".config/hypr/scripts"),
-        util::home().join(".config/ml4w/scripts"),
-        util::home().join(".config/rofi"),
-        util::home().join(".config/waybar"),
-        util::home().join(".config/hypr/conf/keybindings"),
+    // 动态扫描所有备份目录
+    let scan_bases = [
+        util::home().join(".config"),
+        util::home().join(".mydotfiles"),
     ];
+    let mut backup_dirs: Vec<PathBuf> = Vec::new();
+    for base in &scan_bases {
+        backup_dirs.extend(find_backup_dirs(base));
+    }
 
     if let Some(name) = target {
-        for dir in &scan_dirs {
-            let bak_dir = dir.join(util::BACKUP_DIR);
+        for bak_dir in &backup_dirs {
             let bak = bak_dir.join(name);
             if bak.exists() {
-                let target_path = dir.join(name);
+                // parent of .ml4w-zh-backups is the restore target dir
+                let parent = bak_dir.parent().expect("backup dir has parent");
+                let target_path = parent.join(name);
                 if dry_run {
                     eprintln!("  📝 将恢复: {}", target_path.display());
                 } else {
@@ -200,15 +224,12 @@ fn cmd_revert(dry_run: bool, target: Option<&str>) -> Result<()> {
         eprintln!("  ❌ 未找到备份: {name}");
     } else {
         let mut restored = 0;
-        for dir in &scan_dirs {
-            let bak_dir = dir.join(util::BACKUP_DIR);
-            if !bak_dir.is_dir() {
-                continue;
-            }
-            for entry in fs::read_dir(&bak_dir).ok().into_iter().flatten() {
+        for bak_dir in &backup_dirs {
+            let parent = bak_dir.parent().expect("backup dir has parent");
+            for entry in fs::read_dir(bak_dir).ok().into_iter().flatten() {
                 let entry = entry.ok().filter(|e| e.path().is_file());
                 if let Some(bak) = entry {
-                    let target_path = dir.join(bak.file_name());
+                    let target_path = parent.join(bak.file_name());
                     if dry_run {
                         eprintln!("  📝 将恢复: {}", target_path.display());
                     } else {

@@ -1135,7 +1135,7 @@
       },
       {
         "old": "qsTr(\"Install HyprMod\")",
-        "new": "text: qsTr(\"安装 HyprMod\")"
+        "new": "qsTr(\"安装 HyprMod\")"
       },
       {
         "old": "text: qsTr(\"Display Manager\")",
