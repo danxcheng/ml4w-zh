@@ -159,3 +159,129 @@ new = '"窗口规则变体"'
 [[file.patch]]
 old = '"Launcher"'
 new = '"启动器"'
+
+# ---- instructions 字段翻译 ----
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the app menu?"'
+new = '"instructions": "是否显示应用菜单？"'
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the task bar?"'
+new = '"instructions": "是否显示任务栏？"'
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the quicklinks?"'
+new = '"instructions": "是否显示快捷链接？"'
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the window module?"'
+new = '"instructions": "是否显示窗口模块？"'
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the network module?"'
+new = '"instructions": "是否显示网络模块？"'
+
+[[file.patch]]
+old = '"instructions": "Do you want to show the systray module?"'
+new = '"instructions": "是否显示系统托盘？"'
+
+[[file.patch]]
+old = '"instructions": "Enter the border size for rofi"'
+new = '"instructions": "输入 Rofi 边框大小"'
+
+[[file.patch]]
+old = '"instructions": "Enter the font type for rofi"'
+new = '"instructions": "输入 Rofi 字体"'
+
+[[file.patch]]
+old = '"instructions": "Enter the value for the blur effect"'
+new = '"instructions": "输入模糊效果参数"'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred animation variant:"'
+new = '"instructions": "选择动画变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred decoration variant:"'
+new = '"instructions": "选择装饰变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred window variant:"'
+new = '"instructions": "选择窗口变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred workspace variant:"'
+new = '"instructions": "选择工作区变体："'
+
+[[file.patch]]
+old = '"instructions": "Do you want to enable the Kitty cursor trail?"'
+new = '"instructions": "是否启用 Kitty 光标轨迹？"'
+
+[[file.patch]]
+old = '"instructions": "Select your preferred wallpaper app"'
+new = '"instructions": "选择壁纸应用"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the terminal"'
+new = '"instructions": "输入终端命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the browser"'
+new = '"instructions": "输入浏览器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the email client"'
+new = '"instructions": "输入邮件客户端命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the filemanager"'
+new = '"instructions": "输入文件管理器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the network manager"'
+new = '"instructions": "输入网络管理器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the bluetooth manager"'
+new = '"instructions": "输入蓝牙管理器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the software manager"'
+new = '"instructions": "输入软件管理器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the calculator"'
+new = '"instructions": "输入计算器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the screenshot editor"'
+new = '"instructions": "输入截图编辑器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the system monitor"'
+new = '"instructions": "输入系统监视器命令"'
+
+[[file.patch]]
+old = '"instructions": "Enter the command to execute the AUR helper"'
+new = '"instructions": "输入 AUR 助手命令"'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred keybinding variant:"'
+new = '"instructions": "选择快捷键变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred monitor variant:"'
+new = '"instructions": "选择显示器变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred environmant variant:"'
+new = '"instructions": "选择环境变体："'
+
+[[file.patch]]
+old = '"instructions": "Choose your preferred windowrule variant:"'
+new = '"instructions": "选择窗口规则变体："'
+
+[[file.patch]]
+old = '"instructions": "Please select the launcher. Walker needs to be installed separately."'
+new = '"instructions": "请选择启动器。Walker 需单独安装。"'

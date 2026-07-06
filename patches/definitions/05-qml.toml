@@ -268,6 +268,30 @@ new = '"下"'
 old = '"bottom-right"'
 new = '"右下"'
 
+[[file.patch]]
+old = 'placeholderText: "Specify wallpaper directory"'
+new = 'placeholderText: "指定壁纸文件夹路径"'
+
+[[file.patch]]
+old = 'const actionText = advancedOptions.visible ? "Hide" : "Show"'
+new = 'const actionText = advancedOptions.visible ? "隐藏" : "显示"'
+
+[[file.patch]]
+old = 'qsTr("Enter the full path to your wallpaper folder")'
+new = 'qsTr("输入壁纸文件夹完整路径")'
+
+[[file.patch]]
+old = 'qsTr("Select which output to change the wallpaper (or change for all outputs)")'
+new = 'qsTr("选择要更换壁纸的显示器（或为全部更换）")'
+
+[[file.patch]]
+old = 'qsTr("How to align wallpaper when setting (default is centered)")'
+new = 'qsTr("壁纸对齐方式（默认为居中）")'
+
+[[file.patch]]
+old = 'qsTr("Choose whether to update theming based on the new wallpaper selector")'
+new = 'qsTr("是否根据所选壁纸更新主题配色")'
+
 [[file]]
 path = ".config/quickshell/StatusbarApp/PowerProfileModule.qml"
 source = "main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml"

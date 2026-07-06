@@ -1,1021 +1,5 @@
 [
   {
-    "path": ".config/hypr/scripts/screenshot.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/screenshot.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "APP_NAME=\"Screen Capture\"",
-        "new": "APP_NAME=\"截图\""
-      },
-      {
-        "old": "option_1=\"Immediate\"",
-        "new": "option_1=\"立即截图\""
-      },
-      {
-        "old": "option_2=\"Delayed\"",
-        "new": "option_2=\"延时截图\""
-      },
-      {
-        "old": "option_capture_1=\"Capture Everything\"",
-        "new": "option_capture_1=\"全屏\""
-      },
-      {
-        "old": "option_capture_2=\"Capture Active Display\"",
-        "new": "option_capture_2=\"当前显示器\""
-      },
-      {
-        "old": "option_capture_3=\"Capture Selection\"",
-        "new": "option_capture_3=\"框选区域\""
-      },
-      {
-        "old": "option_time_1=\"5s\"",
-        "new": "option_time_1=\"5秒\""
-      },
-      {
-        "old": "option_time_2=\"10s\"",
-        "new": "option_time_2=\"10秒\""
-      },
-      {
-        "old": "option_time_3=\"20s\"",
-        "new": "option_time_3=\"20秒\""
-      },
-      {
-        "old": "option_time_4=\"30s\"",
-        "new": "option_time_4=\"30秒\""
-      },
-      {
-        "old": "option_time_5=\"60s\"",
-        "new": "option_time_5=\"60秒\""
-      },
-      {
-        "old": "copy='Copy'",
-        "new": "copy='复制'"
-      },
-      {
-        "old": "save='Save'",
-        "new": "save='保存'"
-      },
-      {
-        "old": "copy_save='Copy & Save'",
-        "new": "copy_save='复制并保存'"
-      },
-      {
-        "old": "edit='Edit'",
-        "new": "edit='编辑'"
-      },
-      {
-        "old": "-p \"Take screenshot\"",
-        "new": "-p \"截图方式\""
-      },
-      {
-        "old": "-p \"Choose timer\"",
-        "new": "-p \"选择延时\""
-      },
-      {
-        "old": "-p \"Type of screenshot\"",
-        "new": "-p \"截图范围\""
-      },
-      {
-        "old": "-p \"How to save\"",
-        "new": "-p \"保存方式\""
-      },
-      {
-        "old": "Taking screenshot in ${countdown} seconds",
-        "new": "${countdown} 秒后截图"
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/gamemode.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/gamemode.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "APP_NAME=\"System\"",
-        "new": "APP_NAME=\"系统\""
-      },
-      {
-        "old": "--s \"Gamemode deactivated\"",
-        "new": "--s \"游戏模式已关闭\""
-      },
-      {
-        "old": "--m \"Animations and blur are now enabled.\"",
-        "new": "--m \"动画和模糊效果已恢复。\""
-      },
-      {
-        "old": "--s \"Gamemode activated\"",
-        "new": "--s \"游戏模式已开启\""
-      },
-      {
-        "old": "--m \"Animations and blur are now disabled.\"",
-        "new": "--m \"动画和模糊效果已禁用。\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/load-gamemode.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/load-gamemode.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "--s \"Gamemode activated\"",
-        "new": "--s \"游戏模式已开启\""
-      },
-      {
-        "old": "--m \"Animations and blur are now disabled.\"",
-        "new": "--m \"动画和模糊效果已禁用。\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/keybindings.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/keybindings.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "-p \"Keybinds\"",
-        "new": "-p \"快捷键\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/text-extractor.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/text-extractor.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "-p \"Select the OCR language\"",
-        "new": "-p \"选择 OCR 语言\""
-      },
-      {
-        "old": "die \"No region selected (timeout or cancelled)\"",
-        "new": "die \"取消选择或超时\""
-      },
-      {
-        "old": "die \"No region selected\"",
-        "new": "die \"未选择区域\""
-      },
-      {
-        "old": "die \"Failed to capture or process text\"",
-        "new": "die \"截图或文字识别失败\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/hypridle.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/hypridle.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "\"text\": \"RUNNING\"",
-        "new": "\"text\": \"运行中\""
-      },
-      {
-        "old": "\"NOT RUNNING\"",
-        "new": "\"未运行\""
-      },
-      {
-        "old": "Screen locking active",
-        "new": "屏幕锁定已开启"
-      },
-      {
-        "old": "Screen locking deactivated",
-        "new": "屏幕锁定已关闭"
-      },
-      {
-        "old": "Left: Deactivate",
-        "new": "左键: 关闭"
-      },
-      {
-        "old": "Left: Activate",
-        "new": "左键: 开启"
-      },
-      {
-        "old": "Right: Lock Screen",
-        "new": "右键: 锁屏"
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/toggleallfloat.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/toggleallfloat.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "\"System\"",
-        "new": "\"系统\""
-      },
-      {
-        "old": "\"Windows on this workspace toggled to floating/tiling\"",
-        "new": "\"当前工作区窗口已切换为浮动/平铺\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/power.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/power.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "echo \":: Exit\"",
-        "new": "echo \":: 退出\""
-      },
-      {
-        "old": "echo \":: Lock\"",
-        "new": "echo \":: 锁屏\""
-      },
-      {
-        "old": "echo \":: Reboot\"",
-        "new": "echo \":: 重启\""
-      },
-      {
-        "old": "echo \":: Shutdown\"",
-        "new": "echo \":: 关机\""
-      },
-      {
-        "old": "echo \":: Suspend\"",
-        "new": "echo \":: 休眠\""
-      },
-      {
-        "old": "echo \":: Hibernate\"",
-        "new": "echo \":: 深度休眠\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/systeminfo.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/systeminfo.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "figlet -f smslant \"Systeminfo\"",
-        "new": "figlet -f smslant \"系统信息\""
-      },
-      {
-        "old": "echo \"Press return to exit\"",
-        "new": "echo \"按回车退出\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/toggle-animations.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/toggle-animations.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "echo \":: Toggle blocked by disabled.conf variation.\"",
-        "new": "echo \":: 动画切换被 disabled.conf 配置阻止。\""
-      }
-    ]
-  },
-  {
-    "path": ".config/hypr/scripts/cleanup.sh",
-    "source": "main/dotfiles/.config/hypr/scripts/cleanup.sh",
-    "backup": true,
-    "protect": true,
-    "patches": [
-      {
-        "old": "echo \":: ~/.cache/gamemode removed\"",
-        "new": "echo \":: 已清理游戏模式缓存\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-wallpaper-automation",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "echo \":: Start wallpaper automation script\"",
-        "new": "echo \":: 启动壁纸自动切换脚本\""
-      },
-      {
-        "old": "Wallpaper automation process started.\\nWallpaper will be changed every $sec seconds.",
-        "new": "壁纸自动切换已开启。\\n每隔 $sec 秒更换壁纸。"
-      },
-      {
-        "old": "Wallpaper automation process stopped.",
-        "new": "壁纸自动切换已停止。"
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-install-system-updates",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "figlet -f smslant \"Updates\"",
-        "new": "figlet -f smslant \"系统更新\""
-      },
-      {
-        "old": "\"DO YOU WANT TO START THE UPDATE NOW?\"",
-        "new": "\"是否开始更新系统？\""
-      },
-      {
-        "old": "echo \":: Update started...\"",
-        "new": "echo \":: 开始更新...\""
-      },
-      {
-        "old": "echo \":: Update canceled.\"",
-        "new": "echo \":: 已取消更新。\""
-      },
-      {
-        "old": "Press [ENTER] to close.",
-        "new": "按 [ENTER] 关闭。"
-      },
-      {
-        "old": "Searching for Flatpak updates...",
-        "new": "正在检查 Flatpak 更新..."
-      },
-      {
-        "old": "Update complete! Press [ENTER] to close.",
-        "new": "更新完成！按 [ENTER] 关闭。"
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-snapshot",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-snapshot",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "--placeholder \"Enter a comment for the snapshot...\"",
-        "new": "--placeholder \"输入快照备注...\""
-      },
-      {
-        "old": "\"grub-btrfs not found. DO YOU WANT TO INSTALL IT NOW?\"",
-        "new": "\"未安装 grub-btrfs。是否立即安装？\""
-      },
-      {
-        "old": "\"DO YOU WANT TO INSTALL Timeshift now?\"",
-        "new": "\"是否安装 Timeshift？\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-toggle-hyprsunset",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Error: hyprsunset is not installed.\"",
-        "new": "\"错误：未安装 hyprsunset\""
-      },
-      {
-        "old": "\"Hyprsunset disabled.\"",
-        "new": "\"护眼模式已关闭\""
-      },
-      {
-        "old": "\"Hyprsunset enabled.\"",
-        "new": "\"护眼模式已开启\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-toggle-theme",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Switched to light theme.\"",
-        "new": "\"已切换到亮色主题。\""
-      },
-      {
-        "old": "\"Switched to dark theme.\"",
-        "new": "\"已切换到暗色主题。\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-power",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-power",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "echo \"Error: Unknown option",
-        "new": "echo \"错误：未知选项"
-      },
-      {
-        "old": "-t 'Restarting...'",
-        "new": "-t '正在重启...'"
-      },
-      {
-        "old": "-t 'Shutting down...'",
-        "new": "-t '正在关机...'"
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-network",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-network",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "is already running.",
-        "new": "已在运行中。"
-      },
-      {
-        "old": "is not running. Attempting to start it...",
-        "new": "未在运行，正在尝试启动..."
-      },
-      {
-        "old": "was successfully started.",
-        "new": "已成功启动。"
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-check-system-updates",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Click to update your system\"",
-        "new": "\"点击更新系统\""
-      },
-      {
-        "old": "\"No updates available\"",
-        "new": "\"没有可用更新\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-ascii-header",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "Enter the text for ascii encoding:",
-        "new": "请输入 ASCII 编码文本："
-      },
-      {
-        "old": "Text copied to clipboard!",
-        "new": "文字已复制到剪贴板！"
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-toggle-fastfetch",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\":: Show fastfetch\"",
-        "new": "\":: 显示 fastfetch\""
-      },
-      {
-        "old": "\":: Hide fastfetch\"",
-        "new": "\":: 隐藏 fastfetch\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-toggle-nmapplet",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Running\"",
-        "new": "\"运行中\""
-      },
-      {
-        "old": "\"Stopped\"",
-        "new": "\"已停止\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-unlock-pacman",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\":: Unlock complete\"",
-        "new": "\":: 解锁完成\""
-      },
-      {
-        "old": "\":: Pacman database is not locked\"",
-        "new": "\":: Pacman 数据库未被锁定\""
-      }
-    ]
-  },
-  {
-    "path": ".config/ml4w/scripts/ml4w-toggle-statusbar",
-    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "echo \"Unknown statusbar",
-        "new": "echo \"未知的状态栏"
-      }
-    ]
-  },
-  {
-    "path": ".config/waybar/themeswitcher.sh",
-    "source": "main/dotfiles/.config/waybar/themeswitcher.sh",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "-p \"Search Theme\"",
-        "new": "-p \"搜索主题\""
-      },
-      {
-        "old": "-p \"Themes\"",
-        "new": "-p \"主题\""
-      },
-      {
-        "old": "\"Loading waybar theme...\"",
-        "new": "\"正在加载顶栏主题...\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
-    "source": "main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "text: \"Welcome\"",
-        "new": "text: \"欢迎\""
-      },
-      {
-        "old": "text: \"Settings\"",
-        "new": "text: \"设置\""
-      },
-      {
-        "old": "\"No Media Playing\"",
-        "new": "\"无播放内容\""
-      },
-      {
-        "old": "\"Unknown Artist\"",
-        "new": "\"未知艺术家\""
-      },
-      {
-        "old": "\"Status Bar Engine\"",
-        "new": "\"顶栏引擎\""
-      },
-      {
-        "old": "\"Status Bar\"",
-        "new": "\"顶栏\""
-      },
-      {
-        "old": "\"Statusbar Expanded\"",
-        "new": "\"顶栏展开\""
-      },
-      {
-        "old": "\"Dock\"",
-        "new": "\"停靠栏\""
-      },
-      {
-        "old": "\"Dock Autohide\"",
-        "new": "\"自动隐藏停靠栏\""
-      },
-      {
-        "old": "\"Gamemode\"",
-        "new": "\"游戏模式\""
-      },
-      {
-        "old": "\"Fastfetch\"",
-        "new": "\"系统信息\""
-      },
-      {
-        "old": "\"Wallpaper\"",
-        "new": "\"壁纸\""
-      },
-      {
-        "old": "\"Theme\"",
-        "new": "\"主题\""
-      },
-      {
-        "old": "\"Reload Status Bar\"",
-        "new": "\"重载顶栏\""
-      },
-      {
-        "old": "\"Select Waybar Theme\"",
-        "new": "\"选择顶栏主题\""
-      },
-      {
-        "old": "\"Edit Quicklinks\"",
-        "new": "\"编辑快捷链接\""
-      },
-      {
-        "old": "\"Edit Settings\"",
-        "new": "\"编辑设置\""
-      },
-      {
-        "old": "\"Set GTK Theme\"",
-        "new": "\"设置 GTK 主题\""
-      },
-      {
-        "old": "\"Set QT Theme\"",
-        "new": "\"设置 QT 主题\""
-      },
-      {
-        "old": "\"Refresh GTK Theme\"",
-        "new": "\"刷新 GTK 主题\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/CalendarApp/CalendarWindow.qml",
-    "source": "main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"January\"",
-        "new": "\"一月\""
-      },
-      {
-        "old": "\"February\"",
-        "new": "\"二月\""
-      },
-      {
-        "old": "\"March\"",
-        "new": "\"三月\""
-      },
-      {
-        "old": "\"April\"",
-        "new": "\"四月\""
-      },
-      {
-        "old": "\"May\"",
-        "new": "\"五月\""
-      },
-      {
-        "old": "\"June\"",
-        "new": "\"六月\""
-      },
-      {
-        "old": "\"July\"",
-        "new": "\"七月\""
-      },
-      {
-        "old": "\"August\"",
-        "new": "\"八月\""
-      },
-      {
-        "old": "\"September\"",
-        "new": "\"九月\""
-      },
-      {
-        "old": "\"October\"",
-        "new": "\"十月\""
-      },
-      {
-        "old": "\"November\"",
-        "new": "\"十一月\""
-      },
-      {
-        "old": "\"December\"",
-        "new": "\"十二月\""
-      },
-      {
-        "old": "\"Mo\"",
-        "new": "\"一\""
-      },
-      {
-        "old": "\"Tu\"",
-        "new": "\"二\""
-      },
-      {
-        "old": "\"We\"",
-        "new": "\"三\""
-      },
-      {
-        "old": "\"Th\"",
-        "new": "\"四\""
-      },
-      {
-        "old": "\"Fr\"",
-        "new": "\"五\""
-      },
-      {
-        "old": "\"Sa\"",
-        "new": "\"六\""
-      },
-      {
-        "old": "\"Su\"",
-        "new": "\"日\""
-      },
-      {
-        "old": "\"Wk\"",
-        "new": "\"周\""
-      },
-      {
-        "old": "text: \"Today\"",
-        "new": "text: \"今天\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/WallpaperApp/WallpaperWindow.qml",
-    "source": "main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "placeholderText: \"Search image\"",
-        "new": "placeholderText: \"搜索图片\""
-      },
-      {
-        "old": "\"Random Wallpaper\"",
-        "new": "\"随机壁纸\""
-      },
-      {
-        "old": "\"Wallpaper Effects\"",
-        "new": "\"壁纸特效\""
-      },
-      {
-        "old": "\"Clear Wallpaper Cache\"",
-        "new": "\"清理壁纸缓存\""
-      },
-      {
-        "old": "\"Reload Images\"",
-        "new": "\"重新加载图片\""
-      },
-      {
-        "old": "return actionText + \" Advanced Options\"",
-        "new": "return actionText + \" 高级选项\""
-      },
-      {
-        "old": "\"Wallpaper Folder\"",
-        "new": "\"壁纸文件夹\""
-      },
-      {
-        "old": "\"Transition Effect\"",
-        "new": "\"过渡效果\""
-      },
-      {
-        "old": "\"Output Monitor\"",
-        "new": "\"输出显示器\""
-      },
-      {
-        "old": "\"Wallpaper Positioning\"",
-        "new": "\"壁纸位置\""
-      },
-      {
-        "old": "\"Update theming from wallpaper\"",
-        "new": "\"从壁纸更新主题配色\""
-      },
-      {
-        "old": "\"Wallpaper folder is either empty or invalid.\"",
-        "new": "\"壁纸文件夹为空或无效。\""
-      },
-      {
-        "old": "\"All\"",
-        "new": "\"全部\""
-      },
-      {
-        "old": "\"center\"",
-        "new": "\"居中\""
-      },
-      {
-        "old": "\"top-left\"",
-        "new": "\"左上\""
-      },
-      {
-        "old": "\"top\"",
-        "new": "\"上\""
-      },
-      {
-        "old": "\"top-right\"",
-        "new": "\"右上\""
-      },
-      {
-        "old": "\"left\"",
-        "new": "\"左\""
-      },
-      {
-        "old": "\"right\"",
-        "new": "\"右\""
-      },
-      {
-        "old": "\"bottom-left\"",
-        "new": "\"左下\""
-      },
-      {
-        "old": "\"bottom\"",
-        "new": "\"下\""
-      },
-      {
-        "old": "\"bottom-right\"",
-        "new": "\"右下\""
-      }
-    ]
-  },
-  {
-    "path": ".config/quickshell/StatusbarApp/PowerProfileModule.qml",
-    "source": "main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"label\": \"Power Saver\"",
-        "new": "\"label\": \"省电\""
-      },
-      {
-        "old": "\"label\": \"Balanced\"",
-        "new": "\"label\": \"均衡\""
-      },
-      {
-        "old": "\"label\": \"Performance\"",
-        "new": "\"label\": \"性能\""
-      }
-    ]
-  },
-  {
-    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
-    "source": "main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"group\":\"Waybar\"",
-        "new": "\"group\":\"顶栏\""
-      },
-      {
-        "old": "\"group\":\"Appearance\"",
-        "new": "\"group\":\"外观\""
-      },
-      {
-        "old": "\"group\":\"Default Apps\"",
-        "new": "\"group\":\"默认应用\""
-      },
-      {
-        "old": "\"group\":\"System Settings\"",
-        "new": "\"group\":\"系统设置\""
-      },
-      {
-        "old": "\"description\":\"Configuration of the Waybar status bar.\"",
-        "new": "\"description\":\"Waybar 状态栏配置。\""
-      },
-      {
-        "old": "\"description\":\"Change some settings to customize the look and feel.\"",
-        "new": "\"description\":\"自定义桌面外观和视觉风格。\""
-      },
-      {
-        "old": "\"description\":\"Please setup your default apps.\"",
-        "new": "\"description\":\"请配置默认应用。\""
-      },
-      {
-        "old": "\"description\":\"Overview of core key system settings\"",
-        "new": "\"description\":\"核心系统设置概览\""
-      },
-      {
-        "old": "\"Show App Menu\"",
-        "new": "\"显示应用菜单\""
-      },
-      {
-        "old": "\"Show Taskbar\"",
-        "new": "\"显示任务栏\""
-      },
-      {
-        "old": "\"Show Quicklinks Menu\"",
-        "new": "\"显示快捷链接\""
-      },
-      {
-        "old": "\"Show Window Module\"",
-        "new": "\"显示窗口模块\""
-      },
-      {
-        "old": "\"Show Network Module\"",
-        "new": "\"显示网络模块\""
-      },
-      {
-        "old": "\"Show Systray Module\"",
-        "new": "\"显示系统托盘\""
-      },
-      {
-        "old": "\"Rofi Border Size\"",
-        "new": "\"Rofi 边框大小\""
-      },
-      {
-        "old": "\"Rofi Font\"",
-        "new": "\"Rofi 字体\""
-      },
-      {
-        "old": "\"Blur Effect\"",
-        "new": "\"模糊效果\""
-      },
-      {
-        "old": "\"Select Animation\"",
-        "new": "\"选择动画\""
-      },
-      {
-        "old": "\"Decoration Variants\"",
-        "new": "\"装饰变体\""
-      },
-      {
-        "old": "\"Window Variants\"",
-        "new": "\"窗口变体\""
-      },
-      {
-        "old": "\"Workspace Variants\"",
-        "new": "\"工作区变体\""
-      },
-      {
-        "old": "\"Kitty Cursor Trail\"",
-        "new": "\"Kitty 光标轨迹\""
-      },
-      {
-        "old": "\"Wallpaper App\"",
-        "new": "\"壁纸应用\""
-      },
-      {
-        "old": "\"Default Terminal\"",
-        "new": "\"默认终端\""
-      },
-      {
-        "old": "\"Default Browser\"",
-        "new": "\"默认浏览器\""
-      },
-      {
-        "old": "\"Default Email Client\"",
-        "new": "\"默认邮件客户端\""
-      },
-      {
-        "old": "\"Default Filemanager\"",
-        "new": "\"默认文件管理器\""
-      },
-      {
-        "old": "\"Default Network Manager\"",
-        "new": "\"默认网络管理器\""
-      },
-      {
-        "old": "\"Default Bluetooth Manager\"",
-        "new": "\"默认蓝牙管理器\""
-      },
-      {
-        "old": "\"Default Software Manager\"",
-        "new": "\"默认软件管理器\""
-      },
-      {
-        "old": "\"Default Calculator\"",
-        "new": "\"默认计算器\""
-      },
-      {
-        "old": "\"Default Screenshot Editor\"",
-        "new": "\"默认截图编辑器\""
-      },
-      {
-        "old": "\"Default Systemmonitor\"",
-        "new": "\"默认系统监视器\""
-      },
-      {
-        "old": "\"Default AUR Helper\"",
-        "new": "\"默认 AUR 助手\""
-      },
-      {
-        "old": "\"Keybinding Variants\"",
-        "new": "\"快捷键变体\""
-      },
-      {
-        "old": "\"Monitor Variants\"",
-        "new": "\"显示器变体\""
-      },
-      {
-        "old": "\"Environment Variants\"",
-        "new": "\"环境变体\""
-      },
-      {
-        "old": "\"Windowrule Variants\"",
-        "new": "\"窗口规则变体\""
-      },
-      {
-        "old": "\"Launcher\"",
-        "new": "\"启动器\""
-      }
-    ]
-  },
-  {
     "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
     "source": "main/dotfiles/.config/quickshell/WelcomeApp/WelcomeWindow.qml",
     "backup": true,
@@ -1456,6 +440,1238 @@
       {
         "old": "\"Previous track\"",
         "new": "\"上一曲\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/screenshot.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/screenshot.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "APP_NAME=\"Screen Capture\"",
+        "new": "APP_NAME=\"截图\""
+      },
+      {
+        "old": "option_1=\"Immediate\"",
+        "new": "option_1=\"立即截图\""
+      },
+      {
+        "old": "option_2=\"Delayed\"",
+        "new": "option_2=\"延时截图\""
+      },
+      {
+        "old": "option_capture_1=\"Capture Everything\"",
+        "new": "option_capture_1=\"全屏\""
+      },
+      {
+        "old": "option_capture_2=\"Capture Active Display\"",
+        "new": "option_capture_2=\"当前显示器\""
+      },
+      {
+        "old": "option_capture_3=\"Capture Selection\"",
+        "new": "option_capture_3=\"框选区域\""
+      },
+      {
+        "old": "option_time_1=\"5s\"",
+        "new": "option_time_1=\"5秒\""
+      },
+      {
+        "old": "option_time_2=\"10s\"",
+        "new": "option_time_2=\"10秒\""
+      },
+      {
+        "old": "option_time_3=\"20s\"",
+        "new": "option_time_3=\"20秒\""
+      },
+      {
+        "old": "option_time_4=\"30s\"",
+        "new": "option_time_4=\"30秒\""
+      },
+      {
+        "old": "option_time_5=\"60s\"",
+        "new": "option_time_5=\"60秒\""
+      },
+      {
+        "old": "copy='Copy'",
+        "new": "copy='复制'"
+      },
+      {
+        "old": "save='Save'",
+        "new": "save='保存'"
+      },
+      {
+        "old": "copy_save='Copy & Save'",
+        "new": "copy_save='复制并保存'"
+      },
+      {
+        "old": "edit='Edit'",
+        "new": "edit='编辑'"
+      },
+      {
+        "old": "-p \"Take screenshot\"",
+        "new": "-p \"截图方式\""
+      },
+      {
+        "old": "-p \"Choose timer\"",
+        "new": "-p \"选择延时\""
+      },
+      {
+        "old": "-p \"Type of screenshot\"",
+        "new": "-p \"截图范围\""
+      },
+      {
+        "old": "-p \"How to save\"",
+        "new": "-p \"保存方式\""
+      },
+      {
+        "old": "Taking screenshot in ${countdown} seconds",
+        "new": "${countdown} 秒后截图"
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/gamemode.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/gamemode.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "APP_NAME=\"System\"",
+        "new": "APP_NAME=\"系统\""
+      },
+      {
+        "old": "--s \"Gamemode deactivated\"",
+        "new": "--s \"游戏模式已关闭\""
+      },
+      {
+        "old": "--m \"Animations and blur are now enabled.\"",
+        "new": "--m \"动画和模糊效果已恢复。\""
+      },
+      {
+        "old": "--s \"Gamemode activated\"",
+        "new": "--s \"游戏模式已开启\""
+      },
+      {
+        "old": "--m \"Animations and blur are now disabled.\"",
+        "new": "--m \"动画和模糊效果已禁用。\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/load-gamemode.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/load-gamemode.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "--s \"Gamemode activated\"",
+        "new": "--s \"游戏模式已开启\""
+      },
+      {
+        "old": "--m \"Animations and blur are now disabled.\"",
+        "new": "--m \"动画和模糊效果已禁用。\""
+      },
+      {
+        "old": "--a \"System\"",
+        "new": "--a \"系统\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/keybindings.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/keybindings.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "-p \"Keybinds\"",
+        "new": "-p \"快捷键\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/text-extractor.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/text-extractor.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "-p \"Select the OCR language\"",
+        "new": "-p \"选择 OCR 语言\""
+      },
+      {
+        "old": "die \"No region selected (timeout or cancelled)\"",
+        "new": "die \"取消选择或超时\""
+      },
+      {
+        "old": "die \"No region selected\"",
+        "new": "die \"未选择区域\""
+      },
+      {
+        "old": "die \"Failed to capture or process text\"",
+        "new": "die \"截图或文字识别失败\""
+      },
+      {
+        "old": "die() { echo \"Error: $*\" >&2; exit 1; }",
+        "new": "die() { echo \"错误：$*\" >&2; exit 1; }"
+      },
+      {
+        "old": "die \"Missing dependencies: ${missing_dependencies[*]}\"",
+        "new": "die \"缺少依赖：${missing_dependencies[*]}\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/hypridle.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/hypridle.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "\"text\": \"RUNNING\"",
+        "new": "\"text\": \"运行中\""
+      },
+      {
+        "old": "\"NOT RUNNING\"",
+        "new": "\"未运行\""
+      },
+      {
+        "old": "Screen locking active",
+        "new": "屏幕锁定已开启"
+      },
+      {
+        "old": "Screen locking deactivated",
+        "new": "屏幕锁定已关闭"
+      },
+      {
+        "old": "Left: Deactivate",
+        "new": "左键: 关闭"
+      },
+      {
+        "old": "Left: Activate",
+        "new": "左键: 开启"
+      },
+      {
+        "old": "Right: Lock Screen",
+        "new": "右键: 锁屏"
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/toggleallfloat.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/toggleallfloat.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "\"System\"",
+        "new": "\"系统\""
+      },
+      {
+        "old": "\"Windows on this workspace toggled to floating/tiling\"",
+        "new": "\"当前工作区窗口已切换为浮动/平铺\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/power.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/power.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "echo \":: Exit\"",
+        "new": "echo \":: 退出\""
+      },
+      {
+        "old": "echo \":: Lock\"",
+        "new": "echo \":: 锁屏\""
+      },
+      {
+        "old": "echo \":: Reboot\"",
+        "new": "echo \":: 重启\""
+      },
+      {
+        "old": "echo \":: Shutdown\"",
+        "new": "echo \":: 关机\""
+      },
+      {
+        "old": "echo \":: Suspend\"",
+        "new": "echo \":: 休眠\""
+      },
+      {
+        "old": "echo \":: Hibernate\"",
+        "new": "echo \":: 深度休眠\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/systeminfo.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/systeminfo.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "figlet -f smslant \"Systeminfo\"",
+        "new": "figlet -f smslant \"系统信息\""
+      },
+      {
+        "old": "echo \"Press return to exit\"",
+        "new": "echo \"按回车退出\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/toggle-animations.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/toggle-animations.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "echo \":: Toggle blocked by disabled.conf variation.\"",
+        "new": "echo \":: 动画切换被 disabled.conf 配置阻止。\""
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/scripts/cleanup.sh",
+    "source": "main/dotfiles/.config/hypr/scripts/cleanup.sh",
+    "backup": true,
+    "protect": true,
+    "patches": [
+      {
+        "old": "echo \":: ~/.cache/gamemode removed\"",
+        "new": "echo \":: 已清理游戏模式缓存\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "text: \"Welcome\"",
+        "new": "text: \"欢迎\""
+      },
+      {
+        "old": "text: \"Settings\"",
+        "new": "text: \"设置\""
+      },
+      {
+        "old": "\"No Media Playing\"",
+        "new": "\"无播放内容\""
+      },
+      {
+        "old": "\"Unknown Artist\"",
+        "new": "\"未知艺术家\""
+      },
+      {
+        "old": "\"Status Bar Engine\"",
+        "new": "\"顶栏引擎\""
+      },
+      {
+        "old": "\"Status Bar\"",
+        "new": "\"顶栏\""
+      },
+      {
+        "old": "\"Statusbar Expanded\"",
+        "new": "\"顶栏展开\""
+      },
+      {
+        "old": "\"Dock\"",
+        "new": "\"停靠栏\""
+      },
+      {
+        "old": "\"Dock Autohide\"",
+        "new": "\"自动隐藏停靠栏\""
+      },
+      {
+        "old": "\"Gamemode\"",
+        "new": "\"游戏模式\""
+      },
+      {
+        "old": "\"Fastfetch\"",
+        "new": "\"系统信息\""
+      },
+      {
+        "old": "\"Wallpaper\"",
+        "new": "\"壁纸\""
+      },
+      {
+        "old": "\"Theme\"",
+        "new": "\"主题\""
+      },
+      {
+        "old": "\"Reload Status Bar\"",
+        "new": "\"重载顶栏\""
+      },
+      {
+        "old": "\"Select Waybar Theme\"",
+        "new": "\"选择顶栏主题\""
+      },
+      {
+        "old": "\"Edit Quicklinks\"",
+        "new": "\"编辑快捷链接\""
+      },
+      {
+        "old": "\"Edit Settings\"",
+        "new": "\"编辑设置\""
+      },
+      {
+        "old": "\"Set GTK Theme\"",
+        "new": "\"设置 GTK 主题\""
+      },
+      {
+        "old": "\"Set QT Theme\"",
+        "new": "\"设置 QT 主题\""
+      },
+      {
+        "old": "\"Refresh GTK Theme\"",
+        "new": "\"刷新 GTK 主题\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/CalendarApp/CalendarWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/CalendarApp/CalendarWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"January\"",
+        "new": "\"一月\""
+      },
+      {
+        "old": "\"February\"",
+        "new": "\"二月\""
+      },
+      {
+        "old": "\"March\"",
+        "new": "\"三月\""
+      },
+      {
+        "old": "\"April\"",
+        "new": "\"四月\""
+      },
+      {
+        "old": "\"May\"",
+        "new": "\"五月\""
+      },
+      {
+        "old": "\"June\"",
+        "new": "\"六月\""
+      },
+      {
+        "old": "\"July\"",
+        "new": "\"七月\""
+      },
+      {
+        "old": "\"August\"",
+        "new": "\"八月\""
+      },
+      {
+        "old": "\"September\"",
+        "new": "\"九月\""
+      },
+      {
+        "old": "\"October\"",
+        "new": "\"十月\""
+      },
+      {
+        "old": "\"November\"",
+        "new": "\"十一月\""
+      },
+      {
+        "old": "\"December\"",
+        "new": "\"十二月\""
+      },
+      {
+        "old": "\"Mo\"",
+        "new": "\"一\""
+      },
+      {
+        "old": "\"Tu\"",
+        "new": "\"二\""
+      },
+      {
+        "old": "\"We\"",
+        "new": "\"三\""
+      },
+      {
+        "old": "\"Th\"",
+        "new": "\"四\""
+      },
+      {
+        "old": "\"Fr\"",
+        "new": "\"五\""
+      },
+      {
+        "old": "\"Sa\"",
+        "new": "\"六\""
+      },
+      {
+        "old": "\"Su\"",
+        "new": "\"日\""
+      },
+      {
+        "old": "\"Wk\"",
+        "new": "\"周\""
+      },
+      {
+        "old": "text: \"Today\"",
+        "new": "text: \"今天\""
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "source": "main/dotfiles/.config/quickshell/WallpaperApp/WallpaperWindow.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "placeholderText: \"Search image\"",
+        "new": "placeholderText: \"搜索图片\""
+      },
+      {
+        "old": "\"Random Wallpaper\"",
+        "new": "\"随机壁纸\""
+      },
+      {
+        "old": "\"Wallpaper Effects\"",
+        "new": "\"壁纸特效\""
+      },
+      {
+        "old": "\"Clear Wallpaper Cache\"",
+        "new": "\"清理壁纸缓存\""
+      },
+      {
+        "old": "\"Reload Images\"",
+        "new": "\"重新加载图片\""
+      },
+      {
+        "old": "return actionText + \" Advanced Options\"",
+        "new": "return actionText + \" 高级选项\""
+      },
+      {
+        "old": "\"Wallpaper Folder\"",
+        "new": "\"壁纸文件夹\""
+      },
+      {
+        "old": "\"Transition Effect\"",
+        "new": "\"过渡效果\""
+      },
+      {
+        "old": "\"Output Monitor\"",
+        "new": "\"输出显示器\""
+      },
+      {
+        "old": "\"Wallpaper Positioning\"",
+        "new": "\"壁纸位置\""
+      },
+      {
+        "old": "\"Update theming from wallpaper\"",
+        "new": "\"从壁纸更新主题配色\""
+      },
+      {
+        "old": "\"Wallpaper folder is either empty or invalid.\"",
+        "new": "\"壁纸文件夹为空或无效。\""
+      },
+      {
+        "old": "\"All\"",
+        "new": "\"全部\""
+      },
+      {
+        "old": "\"center\"",
+        "new": "\"居中\""
+      },
+      {
+        "old": "\"top-left\"",
+        "new": "\"左上\""
+      },
+      {
+        "old": "\"top\"",
+        "new": "\"上\""
+      },
+      {
+        "old": "\"top-right\"",
+        "new": "\"右上\""
+      },
+      {
+        "old": "\"left\"",
+        "new": "\"左\""
+      },
+      {
+        "old": "\"right\"",
+        "new": "\"右\""
+      },
+      {
+        "old": "\"bottom-left\"",
+        "new": "\"左下\""
+      },
+      {
+        "old": "\"bottom\"",
+        "new": "\"下\""
+      },
+      {
+        "old": "\"bottom-right\"",
+        "new": "\"右下\""
+      },
+      {
+        "old": "placeholderText: \"Specify wallpaper directory\"",
+        "new": "placeholderText: \"指定壁纸文件夹路径\""
+      },
+      {
+        "old": "const actionText = advancedOptions.visible ? \"Hide\" : \"Show\"",
+        "new": "const actionText = advancedOptions.visible ? \"隐藏\" : \"显示\""
+      },
+      {
+        "old": "qsTr(\"Enter the full path to your wallpaper folder\")",
+        "new": "qsTr(\"输入壁纸文件夹完整路径\")"
+      },
+      {
+        "old": "qsTr(\"Select which output to change the wallpaper (or change for all outputs)\")",
+        "new": "qsTr(\"选择要更换壁纸的显示器（或为全部更换）\")"
+      },
+      {
+        "old": "qsTr(\"How to align wallpaper when setting (default is centered)\")",
+        "new": "qsTr(\"壁纸对齐方式（默认为居中）\")"
+      },
+      {
+        "old": "qsTr(\"Choose whether to update theming based on the new wallpaper selector\")",
+        "new": "qsTr(\"是否根据所选壁纸更新主题配色\")"
+      }
+    ]
+  },
+  {
+    "path": ".config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "source": "main/dotfiles/.config/quickshell/StatusbarApp/PowerProfileModule.qml",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"label\": \"Power Saver\"",
+        "new": "\"label\": \"省电\""
+      },
+      {
+        "old": "\"label\": \"Balanced\"",
+        "new": "\"label\": \"均衡\""
+      },
+      {
+        "old": "\"label\": \"Performance\"",
+        "new": "\"label\": \"性能\""
+      }
+    ]
+  },
+  {
+    "path": ".mydotfiles/com.ml4w.dotfiles.stable/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "source": "main/dotfiles/.config/ml4w-dotfiles-settings/com.ml4w.dotfiles/settings.json",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"group\":\"Waybar\"",
+        "new": "\"group\":\"顶栏\""
+      },
+      {
+        "old": "\"group\":\"Appearance\"",
+        "new": "\"group\":\"外观\""
+      },
+      {
+        "old": "\"group\":\"Default Apps\"",
+        "new": "\"group\":\"默认应用\""
+      },
+      {
+        "old": "\"group\":\"System Settings\"",
+        "new": "\"group\":\"系统设置\""
+      },
+      {
+        "old": "\"description\":\"Configuration of the Waybar status bar.\"",
+        "new": "\"description\":\"Waybar 状态栏配置。\""
+      },
+      {
+        "old": "\"description\":\"Change some settings to customize the look and feel.\"",
+        "new": "\"description\":\"自定义桌面外观和视觉风格。\""
+      },
+      {
+        "old": "\"description\":\"Please setup your default apps.\"",
+        "new": "\"description\":\"请配置默认应用。\""
+      },
+      {
+        "old": "\"description\":\"Overview of core key system settings\"",
+        "new": "\"description\":\"核心系统设置概览\""
+      },
+      {
+        "old": "\"Show App Menu\"",
+        "new": "\"显示应用菜单\""
+      },
+      {
+        "old": "\"Show Taskbar\"",
+        "new": "\"显示任务栏\""
+      },
+      {
+        "old": "\"Show Quicklinks Menu\"",
+        "new": "\"显示快捷链接\""
+      },
+      {
+        "old": "\"Show Window Module\"",
+        "new": "\"显示窗口模块\""
+      },
+      {
+        "old": "\"Show Network Module\"",
+        "new": "\"显示网络模块\""
+      },
+      {
+        "old": "\"Show Systray Module\"",
+        "new": "\"显示系统托盘\""
+      },
+      {
+        "old": "\"Rofi Border Size\"",
+        "new": "\"Rofi 边框大小\""
+      },
+      {
+        "old": "\"Rofi Font\"",
+        "new": "\"Rofi 字体\""
+      },
+      {
+        "old": "\"Blur Effect\"",
+        "new": "\"模糊效果\""
+      },
+      {
+        "old": "\"Select Animation\"",
+        "new": "\"选择动画\""
+      },
+      {
+        "old": "\"Decoration Variants\"",
+        "new": "\"装饰变体\""
+      },
+      {
+        "old": "\"Window Variants\"",
+        "new": "\"窗口变体\""
+      },
+      {
+        "old": "\"Workspace Variants\"",
+        "new": "\"工作区变体\""
+      },
+      {
+        "old": "\"Kitty Cursor Trail\"",
+        "new": "\"Kitty 光标轨迹\""
+      },
+      {
+        "old": "\"Wallpaper App\"",
+        "new": "\"壁纸应用\""
+      },
+      {
+        "old": "\"Default Terminal\"",
+        "new": "\"默认终端\""
+      },
+      {
+        "old": "\"Default Browser\"",
+        "new": "\"默认浏览器\""
+      },
+      {
+        "old": "\"Default Email Client\"",
+        "new": "\"默认邮件客户端\""
+      },
+      {
+        "old": "\"Default Filemanager\"",
+        "new": "\"默认文件管理器\""
+      },
+      {
+        "old": "\"Default Network Manager\"",
+        "new": "\"默认网络管理器\""
+      },
+      {
+        "old": "\"Default Bluetooth Manager\"",
+        "new": "\"默认蓝牙管理器\""
+      },
+      {
+        "old": "\"Default Software Manager\"",
+        "new": "\"默认软件管理器\""
+      },
+      {
+        "old": "\"Default Calculator\"",
+        "new": "\"默认计算器\""
+      },
+      {
+        "old": "\"Default Screenshot Editor\"",
+        "new": "\"默认截图编辑器\""
+      },
+      {
+        "old": "\"Default Systemmonitor\"",
+        "new": "\"默认系统监视器\""
+      },
+      {
+        "old": "\"Default AUR Helper\"",
+        "new": "\"默认 AUR 助手\""
+      },
+      {
+        "old": "\"Keybinding Variants\"",
+        "new": "\"快捷键变体\""
+      },
+      {
+        "old": "\"Monitor Variants\"",
+        "new": "\"显示器变体\""
+      },
+      {
+        "old": "\"Environment Variants\"",
+        "new": "\"环境变体\""
+      },
+      {
+        "old": "\"Windowrule Variants\"",
+        "new": "\"窗口规则变体\""
+      },
+      {
+        "old": "\"Launcher\"",
+        "new": "\"启动器\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the app menu?\"",
+        "new": "\"instructions\": \"是否显示应用菜单？\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the task bar?\"",
+        "new": "\"instructions\": \"是否显示任务栏？\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the quicklinks?\"",
+        "new": "\"instructions\": \"是否显示快捷链接？\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the window module?\"",
+        "new": "\"instructions\": \"是否显示窗口模块？\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the network module?\"",
+        "new": "\"instructions\": \"是否显示网络模块？\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to show the systray module?\"",
+        "new": "\"instructions\": \"是否显示系统托盘？\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the border size for rofi\"",
+        "new": "\"instructions\": \"输入 Rofi 边框大小\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the font type for rofi\"",
+        "new": "\"instructions\": \"输入 Rofi 字体\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the value for the blur effect\"",
+        "new": "\"instructions\": \"输入模糊效果参数\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred animation variant:\"",
+        "new": "\"instructions\": \"选择动画变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred decoration variant:\"",
+        "new": "\"instructions\": \"选择装饰变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred window variant:\"",
+        "new": "\"instructions\": \"选择窗口变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred workspace variant:\"",
+        "new": "\"instructions\": \"选择工作区变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Do you want to enable the Kitty cursor trail?\"",
+        "new": "\"instructions\": \"是否启用 Kitty 光标轨迹？\""
+      },
+      {
+        "old": "\"instructions\": \"Select your preferred wallpaper app\"",
+        "new": "\"instructions\": \"选择壁纸应用\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the terminal\"",
+        "new": "\"instructions\": \"输入终端命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the browser\"",
+        "new": "\"instructions\": \"输入浏览器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the email client\"",
+        "new": "\"instructions\": \"输入邮件客户端命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the filemanager\"",
+        "new": "\"instructions\": \"输入文件管理器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the network manager\"",
+        "new": "\"instructions\": \"输入网络管理器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the bluetooth manager\"",
+        "new": "\"instructions\": \"输入蓝牙管理器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the software manager\"",
+        "new": "\"instructions\": \"输入软件管理器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the calculator\"",
+        "new": "\"instructions\": \"输入计算器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the screenshot editor\"",
+        "new": "\"instructions\": \"输入截图编辑器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the system monitor\"",
+        "new": "\"instructions\": \"输入系统监视器命令\""
+      },
+      {
+        "old": "\"instructions\": \"Enter the command to execute the AUR helper\"",
+        "new": "\"instructions\": \"输入 AUR 助手命令\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred keybinding variant:\"",
+        "new": "\"instructions\": \"选择快捷键变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred monitor variant:\"",
+        "new": "\"instructions\": \"选择显示器变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred environmant variant:\"",
+        "new": "\"instructions\": \"选择环境变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Choose your preferred windowrule variant:\"",
+        "new": "\"instructions\": \"选择窗口规则变体：\""
+      },
+      {
+        "old": "\"instructions\": \"Please select the launcher. Walker needs to be installed separately.\"",
+        "new": "\"instructions\": \"请选择启动器。Walker 需单独安装。\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-wallpaper-automation",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-wallpaper-automation",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "echo \":: Start wallpaper automation script\"",
+        "new": "echo \":: 启动壁纸自动切换脚本\""
+      },
+      {
+        "old": "Wallpaper automation process started.\\nWallpaper will be changed every $sec seconds.",
+        "new": "壁纸自动切换已开启。\\n每隔 $sec 秒更换壁纸。"
+      },
+      {
+        "old": "Wallpaper automation process stopped.",
+        "new": "壁纸自动切换已停止。"
+      },
+      {
+        "old": "echo \":: Next wallpaper in $sec seconds...\"",
+        "new": "echo \":: 将在 $sec 秒后切换壁纸...\""
+      },
+      {
+        "old": "echo \":: Wallpaper automation script process $wp stopped\"",
+        "new": "echo \":: 壁纸自动切换进程 $wp 已停止\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-install-system-updates",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "figlet -f smslant \"Updates\"",
+        "new": "figlet -f smslant \"系统更新\""
+      },
+      {
+        "old": "\"DO YOU WANT TO START THE UPDATE NOW?\"",
+        "new": "\"是否开始更新系统？\""
+      },
+      {
+        "old": "echo \":: Update started...\"",
+        "new": "echo \":: 开始更新...\""
+      },
+      {
+        "old": "echo \":: Update canceled.\"",
+        "new": "echo \":: 已取消更新。\""
+      },
+      {
+        "old": "Press [ENTER] to close.",
+        "new": "按 [ENTER] 关闭。"
+      },
+      {
+        "old": "Update complete! Press [ENTER] to close.",
+        "new": "更新完成！按 [ENTER] 关闭。"
+      },
+      {
+        "old": "Searching for Flatpak updates...",
+        "new": "正在检查 Flatpak 更新..."
+      },
+      {
+        "old": "echo \":: ERROR - Platform not supported\"",
+        "new": "echo \":: 错误 - 不支持的平台\""
+      },
+      {
+        "old": "echo \":: Update complete!",
+        "new": "echo \":: 更新完成！"
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-snapshot",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-snapshot",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "--placeholder \"Enter a comment for the snapshot...\"",
+        "new": "--placeholder \"输入快照备注...\""
+      },
+      {
+        "old": "\"grub-btrfs not found. DO YOU WANT TO INSTALL IT NOW?\"",
+        "new": "\"未安装 grub-btrfs。是否立即安装？\""
+      },
+      {
+        "old": "\"DO YOU WANT TO INSTALL Timeshift now?\"",
+        "new": "\"是否安装 Timeshift？\""
+      },
+      {
+        "old": "figlet -f smslant \"Snapshot\"",
+        "new": "figlet -f smslant \"快照\""
+      },
+      {
+        "old": "echo \"--- Snapshot Tool ---\"",
+        "new": "echo \"--- 快照工具 ---\""
+      },
+      {
+        "old": "echo \"ERROR: Unsupported Distribution (No pacman, dnf, or zypper found).\"",
+        "new": "echo \"错误：不支持的发行版（未找到 pacman、dnf 或 zypper）。\""
+      },
+      {
+        "old": "echo \"DONE. Snapshot '$c' created and Grub updated!\"",
+        "new": "echo \"完成。快照 '$c' 已创建，Grub 已更新！\""
+      },
+      {
+        "old": "echo \"ERROR: Timeshift is not installed on $OS.\"",
+        "new": "echo \"错误：$OS 上未安装 Timeshift。\""
+      },
+      {
+        "old": "echo \"Updating Grub configuration at $GRUB_CFG...\"",
+        "new": "echo \"正在更新 $GRUB_CFG 的 Grub 配置...\""
+      },
+      {
+        "old": "echo \":: Timeshift has been installed. Please restart this script.\"",
+        "new": "echo \":: Timeshift 已安装，请重新运行此脚本。\""
+      },
+      {
+        "old": "echo \":: grub-btrfs is recommended to select snapshots at boot.\"",
+        "new": "echo \":: 推荐安装 grub-btrfs 以便在启动时选择快照。\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-toggle-hyprsunset",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-hyprsunset",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Error: hyprsunset is not installed.\"",
+        "new": "\"错误：未安装 hyprsunset\""
+      },
+      {
+        "old": "\"Hyprsunset disabled.\"",
+        "new": "\"护眼模式已关闭\""
+      },
+      {
+        "old": "\"Hyprsunset enabled.\"",
+        "new": "\"护眼模式已开启\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-toggle-theme",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-theme",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Switched to light theme.\"",
+        "new": "\"已切换到亮色主题。\""
+      },
+      {
+        "old": "\"Switched to dark theme.\"",
+        "new": "\"已切换到暗色主题。\""
+      },
+      {
+        "old": "echo \"Error: $GTK3_SETTINGS_FILE not found.\"",
+        "new": "echo \"错误：未找到 $GTK3_SETTINGS_FILE。\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-power",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-power",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "echo \"Error: Unknown option",
+        "new": "echo \"错误：未知选项"
+      },
+      {
+        "old": "-t 'Restarting...'",
+        "new": "-t '正在重启...'"
+      },
+      {
+        "old": "-t 'Shutting down...'",
+        "new": "-t '正在关机...'"
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-network",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-network",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "is already running.",
+        "new": "已在运行中。"
+      },
+      {
+        "old": "is not running. Attempting to start it...",
+        "new": "未在运行，正在尝试启动..."
+      },
+      {
+        "old": "was successfully started.",
+        "new": "已成功启动。"
+      },
+      {
+        "old": "Failed to start $SERVICE. You may need to check 'journalctl -xe' for errors.",
+        "new": "$SERVICE 启动失败。请运行 'journalctl -xe' 检查错误。"
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-check-system-updates",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-check-system-updates",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Click to update your system\"",
+        "new": "\"点击更新系统\""
+      },
+      {
+        "old": "\"No updates available\"",
+        "new": "\"没有可用更新\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-ascii-header",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-ascii-header",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "Enter the text for ascii encoding:",
+        "new": "请输入 ASCII 编码文本："
+      },
+      {
+        "old": "Text copied to clipboard!",
+        "new": "文字已复制到剪贴板！"
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-toggle-fastfetch",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-fastfetch",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\":: Show fastfetch\"",
+        "new": "\":: 显示 fastfetch\""
+      },
+      {
+        "old": "\":: Hide fastfetch\"",
+        "new": "\":: 隐藏 fastfetch\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-toggle-nmapplet",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-nmapplet",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Running\"",
+        "new": "\"运行中\""
+      },
+      {
+        "old": "\"Stopped\"",
+        "new": "\"已停止\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-unlock-pacman",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-unlock-pacman",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\":: Unlock complete\"",
+        "new": "\":: 解锁完成\""
+      },
+      {
+        "old": "\":: Pacman database is not locked\"",
+        "new": "\":: Pacman 数据库未被锁定\""
+      }
+    ]
+  },
+  {
+    "path": ".config/ml4w/scripts/ml4w-toggle-statusbar",
+    "source": "main/dotfiles/.config/ml4w/scripts/ml4w-toggle-statusbar",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "echo \"Unknown statusbar",
+        "new": "echo \"未知的状态栏"
+      }
+    ]
+  },
+  {
+    "path": ".config/waybar/themeswitcher.sh",
+    "source": "main/dotfiles/.config/waybar/themeswitcher.sh",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "-p \"Search Theme\"",
+        "new": "-p \"搜索主题\""
+      },
+      {
+        "old": "-p \"Themes\"",
+        "new": "-p \"主题\""
+      },
+      {
+        "old": "\"Loading waybar theme...\"",
+        "new": "\"正在加载顶栏主题...\""
       }
     ]
   }

@@ -16,6 +16,14 @@ new = '壁纸自动切换已开启。\n每隔 $sec 秒更换壁纸。'
 old = 'Wallpaper automation process stopped.'
 new = '壁纸自动切换已停止。'
 
+[[file.patch]]
+old = 'echo ":: Next wallpaper in $sec seconds..."'
+new = 'echo ":: 将在 $sec 秒后切换壁纸..."'
+
+[[file.patch]]
+old = 'echo ":: Wallpaper automation script process $wp stopped"'
+new = 'echo ":: 壁纸自动切换进程 $wp 已停止"'
+
 [[file]]
 path = ".config/ml4w/scripts/ml4w-install-system-updates"
 source = "main/dotfiles/.config/ml4w/scripts/ml4w-install-system-updates"
@@ -43,12 +51,20 @@ old = 'Press [ENTER] to close.'
 new = '按 [ENTER] 关闭。'
 
 [[file.patch]]
+old = 'Update complete! Press [ENTER] to close.'
+new = '更新完成！按 [ENTER] 关闭。'
+
+[[file.patch]]
 old = 'Searching for Flatpak updates...'
 new = '正在检查 Flatpak 更新...'
 
 [[file.patch]]
-old = 'Update complete! Press [ENTER] to close.'
-new = '更新完成！按 [ENTER] 关闭。'
+old = 'echo ":: ERROR - Platform not supported"'
+new = 'echo ":: 错误 - 不支持的平台"'
+
+[[file.patch]]
+old = 'echo ":: Update complete!'
+new = 'echo ":: 更新完成！'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-snapshot"
@@ -67,6 +83,38 @@ new = '"未安装 grub-btrfs。是否立即安装？"'
 [[file.patch]]
 old = '"DO YOU WANT TO INSTALL Timeshift now?"'
 new = '"是否安装 Timeshift？"'
+
+[[file.patch]]
+old = 'figlet -f smslant "Snapshot"'
+new = 'figlet -f smslant "快照"'
+
+[[file.patch]]
+old = 'echo "--- Snapshot Tool ---"'
+new = 'echo "--- 快照工具 ---"'
+
+[[file.patch]]
+old = 'echo "ERROR: Unsupported Distribution (No pacman, dnf, or zypper found)."'
+new = 'echo "错误：不支持的发行版（未找到 pacman、dnf 或 zypper）。"'
+
+[[file.patch]]
+old = "echo \"DONE. Snapshot '$c' created and Grub updated!\""
+new = "echo \"完成。快照 '$c' 已创建，Grub 已更新！\""
+
+[[file.patch]]
+old = 'echo "ERROR: Timeshift is not installed on $OS."'
+new = 'echo "错误：$OS 上未安装 Timeshift。"'
+
+[[file.patch]]
+old = 'echo "Updating Grub configuration at $GRUB_CFG..."'
+new = 'echo "正在更新 $GRUB_CFG 的 Grub 配置..."'
+
+[[file.patch]]
+old = 'echo ":: Timeshift has been installed. Please restart this script."'
+new = 'echo ":: Timeshift 已安装，请重新运行此脚本。"'
+
+[[file.patch]]
+old = 'echo ":: grub-btrfs is recommended to select snapshots at boot."'
+new = 'echo ":: 推荐安装 grub-btrfs 以便在启动时选择快照。"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-toggle-hyprsunset"
@@ -99,6 +147,10 @@ new = '"已切换到亮色主题。"'
 [[file.patch]]
 old = '"Switched to dark theme."'
 new = '"已切换到暗色主题。"'
+
+[[file.patch]]
+old = 'echo "Error: $GTK3_SETTINGS_FILE not found."'
+new = 'echo "错误：未找到 $GTK3_SETTINGS_FILE。"'
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-power"
@@ -135,6 +187,10 @@ new = '未在运行，正在尝试启动...'
 [[file.patch]]
 old = 'was successfully started.'
 new = '已成功启动。'
+
+[[file.patch]]
+old = "Failed to start $SERVICE. You may need to check 'journalctl -xe' for errors."
+new = "$SERVICE 启动失败。请运行 'journalctl -xe' 检查错误。"
 
 [[file]]
 path = ".config/ml4w/scripts/ml4w-check-system-updates"

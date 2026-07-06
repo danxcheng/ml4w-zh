@@ -124,6 +124,10 @@ new = '--s "游戏模式已开启"'
 old = '--m "Animations and blur are now disabled."'
 new = '--m "动画和模糊效果已禁用。"'
 
+[[file.patch]]
+old = '--a "System"'
+new = '--a "系统"'
+
 [[file]]
 path = ".config/hypr/scripts/keybindings.sh"
 source = "main/dotfiles/.config/hypr/scripts/keybindings.sh"
@@ -155,6 +159,14 @@ new = 'die "未选择区域"'
 [[file.patch]]
 old = 'die "Failed to capture or process text"'
 new = 'die "截图或文字识别失败"'
+
+[[file.patch]]
+old = 'die() { echo "Error: $*" >&2; exit 1; }'
+new = 'die() { echo "错误：$*" >&2; exit 1; }'
+
+[[file.patch]]
+old = 'die "Missing dependencies: ${missing_dependencies[*]}"'
+new = 'die "缺少依赖：${missing_dependencies[*]}"'
 
 [[file]]
 path = ".config/hypr/scripts/hypridle.sh"
