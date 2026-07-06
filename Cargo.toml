@@ -1,13 +1,28 @@
 [package]
 name = "ml4w-zh"
-version = "0.4.0"
+version = "0.5.0"
 edition = "2021"
 description = "ML4W dotfiles 汉化工具 — 从 ml4w 官方源校验后替换，备份优先"
 authors = ["danxcheng"]
 license = "MIT"
 repository = "https://github.com/danxcheng/ml4w-zh"
 
+[lints.rust]
+unsafe_code = "deny"
+
+[lints.clippy]
+all = "warn"
+pedantic = "warn"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+thiserror = "2"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
