@@ -5,10 +5,6 @@ backup = true
 protect = false
 
 [[file.patch]]
-old = 'title: "ML4W Welcome"'
-new = 'title: "ML4W 欢迎"'
-
-[[file.patch]]
 old = 'title: qsTr("Settings")'
 new = 'title: qsTr("设置")'
 

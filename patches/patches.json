@@ -1082,10 +1082,6 @@
     "protect": false,
     "patches": [
       {
-        "old": "title: \"ML4W Welcome\"",
-        "new": "title: \"ML4W 欢迎\""
-      },
-      {
         "old": "title: qsTr(\"Settings\")",
         "new": "title: qsTr(\"设置\")"
       },
