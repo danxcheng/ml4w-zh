@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 use crate::util::{cache_dir, cache_path, download, expand, diff_text, do_backup, do_protect};
 
 pub const PATCHES_URL: &str =
-    "https://raw.githubusercontent.com/danxcheng/ml4w-zh/main/patches/patches.json";
+    "https://raw.githubusercontent.com/danxcheng/ml4w-zh/master/patches/patches.json";
 pub const ML4W_RAW: &str = "https://raw.githubusercontent.com/mylinuxforwork/dotfiles";
 
 /// 一个文件的补丁定义
