@@ -1,84 +1,38 @@
 # ml4w-zh
 
-ML4W Hyprland dotfiles 汉化工具。**仅测试于 Arch Linux + ml4w 默认配置。**
-
-```
-                                    ┌─ 拉 patches.json（翻译定义）
-                                    │   https://github.com/danxcheng/ml4w-zh/patches/patches.json
-                                    │
-ml4w-zh apply ──────────────────────┼─ 对每个文件：
-                                    │   ├─ 从 ml4w 官方 GitHub 下载原版对比
-                                    │   │   raw.githubusercontent.com/mylinuxforwork/dotfiles/...
-                                    │   ├─ 本地 == 官方原版 → 安全，继续汉化
-                                    │   ├─ 已有中文         → 跳过（幂等）
-                                    │   └─ 本地 ≠ 官方     → 警告跳过，不盲改
-                                    │   ├─ 备份原文件 → .ml4w-zh-backups/
-                                    │   └─ 替换 old → new
-                                    │
-ml4w-zh check ──────────────────────┼─ 对比官方源，报告四种状态：
-                                    │   ✅ 已汉化    本地有中文，官方未变
-                                    │   🔄 需更新    有中文但官方已更新
-                                    │   📝 未汉化    官方一致，未翻译
-                                    │   ❌ 缺失      文件不在本地
-                                    │
-ml4w-zh revert ─────────────────────┼─ 离线恢复，扫 .ml4w-zh-backups/ 目录
-                                    │   不依赖网络，不下载任何东西
-                                    │
-ml4w-zh init ───────────────────────┘─ 仅备份 + 创建 PROTECTED 文件
-```
-
-## 安装
-
-```bash
-# 下载二进制
-curl -sL https://github.com/danxcheng/ml4w-zh/releases/latest/download/ml4w-zh-x86_64-linux -o /usr/local/bin/ml4w-zh
-chmod +x /usr/local/bin/ml4w-zh
-
-# 或者从源码编译
-cargo install ml4w-zh
-```
+ML4W dotfiles 汉化工具 — 从 ml4w 官方源校验后替换，备份优先。
 
 ## 用法
 
-```bash
-# 一键汉化（自动下载翻译定义 → 对比官方源 → 备份 → 替换）
-ml4w-zh
-
-# 先看看会改什么
-ml4w-zh --dry-run
-
-# 检查状态
-ml4w-zh check
-
-# 恢复英文
-ml4w-zh revert
-
-# 仅备份 + PROTECTED
-ml4w-zh init
+```
+ml4w-zh apply              从 ml4w 官方源校验后汉化
+ml4w-zh apply --dry-run    预览，不修改
+ml4w-zh check              检查汉化状态
+ml4w-zh revert [文件名]     恢复全部或指定文件
+ml4w-zh init               仅备份 + PROTECTED
+ml4w-zh update-patches     下载最新翻译定义
+ml4w-zh generate           从 TOML 定义生成 patches.json（开发者用）
 ```
 
-汉化后按 **Super + Ctrl + R** 重载 Hyprland 配置。
+## 工作流程
 
-## 依赖
+1. `ml4w-zh apply --dry-run` — 预览将要翻译的内容
+2. `ml4w-zh apply` — 确认后执行汉化
+3. `Super + Ctrl + R` — 重载 Hyprland 配置
 
-- **运行时**: `curl`
-- **编译时**: Rust + `serde` + `serde_json`
-- **仅测试于 Arch Linux + ml4w 默认配置**
+每个文件汉化前自动备份到 `.ml4w-zh-backups/`。恢复用 `ml4w-zh revert`。
 
-## ⚠️ 注意
+## 已知问题
 
-- **仅测试于 Arch Linux + ml4w 默认配置**。如果你改了 ml4w 源码，`check` 会检测到"与官方不一致"并跳过
-- ml4w 更新后重新跑一次 `ml4w-zh` 即可
-- 备份在 `~/.config/hypr/scripts/.ml4w-zh-backups/`
-- 更新不定时，不保证有用
-- 技术力有限，欢迎 PR
+### 1. 欢迎窗口大小
+首次汉化后 Welcome 窗口的默认大小可能不合适。窗口可以手动拉伸，也可以用 `Win + T` 切换平铺/浮动后恢复。
 
-## 项目结构
+### 2. "开机显示"按钮显示不全
+Welcome 窗口底部的"开机显示"复选框在中文下可能显示不全。这是 QML 布局对中文字符宽度适配的问题，不影响功能。
 
-```
-ml4w-zh/
-├── src/main.rs              # 源码
-├── patches/patches.json     # 翻译定义（old → new 对照表）
-├── ml4w-zh-x86_64-linux    # 预编译二进制（strip 后 542KB）
-└── README.md
-```
+### 3. 窗口标题不翻译
+窗口标题（如 `ML4W Welcome`）保留英文，因为 Hyprland 的窗口规则和 killactive 脚本依赖标题匹配来识别窗口。
+
+## 许可
+
+MIT

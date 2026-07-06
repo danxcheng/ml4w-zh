@@ -61,7 +61,7 @@ pub fn run() -> Result<()> {
 
     match cli.command {
         Command::Apply { dry_run, yes } => {
-            let files = fetch_and_cache(false)?;
+            let files = load_cached().or_else(|_| fetch_and_cache(false))?;
             cmd_apply(&files, dry_run, yes)
         }
         Command::Check { offline } => {
