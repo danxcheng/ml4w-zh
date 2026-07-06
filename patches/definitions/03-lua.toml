@@ -17,8 +17,20 @@ old = '"Open the filemanager"'
 new = '"打开文件管理器"'
 
 [[file.patch]]
+old = '"Open the emoji picker"'
+new = '"打开表情选择器"'
+
+[[file.patch]]
+old = '"Open the calculator"'
+new = '"打开计算器"'
+
+[[file.patch]]
 old = '"Kill active window"'
 new = '"关闭当前窗口"'
+
+[[file.patch]]
+old = '"Quit active window and all open instances"'
+new = '"强制退出窗口"'
 
 [[file.patch]]
 old = '"Toggle Fullscreen"'
@@ -33,6 +45,14 @@ old = '"Toggle Floating"'
 new = '"切换浮动"'
 
 [[file.patch]]
+old = '"Toggle floating for all windows of workspace"'
+new = '"切换工作区全部窗口浮动"'
+
+[[file.patch]]
+old = '"Toggle floating + pinned"'
+new = '"切换浮动并置顶"'
+
+[[file.patch]]
 old = '"Toggle split"'
 new = '"切换分屏方向"'
 
@@ -45,8 +65,88 @@ old = '"Toggle window group"'
 new = '"切换窗口分组"'
 
 [[file.patch]]
+old = '"Switch to next group window"'
+new = '"切换到下一分组窗口"'
+
+[[file.patch]]
 old = '"Take a screenshot"'
 new = '"截图菜单"'
+
+[[file.patch]]
+old = '"Take an instant full-screen screenshot"'
+new = '"全屏截图"'
+
+[[file.patch]]
+old = '"Take an instant area screenshot"'
+new = '"区域截图"'
+
+[[file.patch]]
+old = '"Extract text from an area"'
+new = '"提取区域文字"'
+
+[[file.patch]]
+old = '"Move focus left"'
+new = '"焦点向左"'
+
+[[file.patch]]
+old = '"Move focus right"'
+new = '"焦点向右"'
+
+[[file.patch]]
+old = '"Move focus up"'
+new = '"焦点向上"'
+
+[[file.patch]]
+old = '"Move focus down"'
+new = '"焦点向下"'
+
+[[file.patch]]
+old = '"Move window with the mouse"'
+new = '"鼠标拖动窗口"'
+
+[[file.patch]]
+old = '"Resize window with the mouse"'
+new = '"鼠标调整窗口大小"'
+
+[[file.patch]]
+old = '"Increase window width with keyboard"'
+new = '"增加窗口宽度"'
+
+[[file.patch]]
+old = '"Reduce window width with keyboard"'
+new = '"减小窗口宽度"'
+
+[[file.patch]]
+old = '"Increase window height with keyboard"'
+new = '"增加窗口高度"'
+
+[[file.patch]]
+old = '"Reduce window height with keyboard"'
+new = '"减小窗口高度"'
+
+[[file.patch]]
+old = '"Swap tiled window left"'
+new = '"向左交换窗口"'
+
+[[file.patch]]
+old = '"Swap tiled window right"'
+new = '"向右交换窗口"'
+
+[[file.patch]]
+old = '"Swap tiled window up"'
+new = '"向上交换窗口"'
+
+[[file.patch]]
+old = '"Swap tiled window down"'
+new = '"向下交换窗口"'
+
+[[file.patch]]
+old = '"Reload Hyprland configuration"'
+new = '"重载 Hyprland 配置"'
+
+[[file.patch]]
+old = '"Toggle animations"'
+new = '"切换动画"'
 
 [[file.patch]]
 old = '"Lock Screen"'
@@ -55,3 +155,127 @@ new = '"锁屏"'
 [[file.patch]]
 old = '"Show keybindings"'
 new = '"显示快捷键"'
+
+[[file.patch]]
+old = '"Start Power Menu"'
+new = '"电源菜单"'
+
+[[file.patch]]
+old = '"Change the wallpaper"'
+new = '"更换壁纸"'
+
+[[file.patch]]
+old = '"Open wallpaper selector"'
+new = '"选择壁纸"'
+
+[[file.patch]]
+old = '"Start random wallpaper script"'
+new = '"随机壁纸"'
+
+[[file.patch]]
+old = '"Open application launcher"'
+new = '"打开应用启动器"'
+
+[[file.patch]]
+old = '"Reload Status Bar"'
+new = '"重载顶栏"'
+
+[[file.patch]]
+old = '"Toggle Status Bar"'
+new = '"切换顶栏"'
+
+[[file.patch]]
+old = '"Reload hyprland config"'
+new = '"重载 Hyprland 配置"'
+
+[[file.patch]]
+old = '"Open clipboard manager"'
+new = '"打开剪贴板"'
+
+[[file.patch]]
+old = '"Open waybar theme switcher"'
+new = '"顶栏主题切换"'
+
+[[file.patch]]
+old = '"Toggle between light and dark mode"'
+new = '"切换明暗主题"'
+
+[[file.patch]]
+old = '"Open ML4W Sidebar widget"'
+new = '"打开侧边栏"'
+
+[[file.patch]]
+old = '"Open ML4W Calendar widget"'
+new = '"打开日历"'
+
+[[file.patch]]
+old = '"Expand statusbar and focus it for keyboard navigation"'
+new = '"展开顶栏"'
+
+[[file.patch]]
+old = '"Toggle game mode"'
+new = '"切换游戏模式"'
+
+[[file.patch]]
+old = '"Toggle Hyprsunset"'
+new = '"切换护眼模式"'
+
+[[file.patch]]
+old = '"Open Select Window Menu"'
+new = '"打开窗口选择"'
+
+[[file.patch]]
+old = '"Toggle special workspace magic"'
+new = '"切换专用工作区"'
+
+[[file.patch]]
+old = '"Toggle window in/out of special workspace magic"'
+new = '"切换窗口到专用工作区"'
+
+[[file.patch]]
+old = '"Switch to next workspace"'
+new = '"切换到下一工作区"'
+
+[[file.patch]]
+old = '"Switch to previous workspace"'
+new = '"切换到上一工作区"'
+
+[[file.patch]]
+old = '"Raise volume"'
+new = '"提高音量"'
+
+[[file.patch]]
+old = '"Lower volume"'
+new = '"降低音量"'
+
+[[file.patch]]
+old = '"Mute audio"'
+new = '"静音"'
+
+[[file.patch]]
+old = '"Mute microphone"'
+new = '"麦克风静音"'
+
+[[file.patch]]
+old = '"Increase brightness"'
+new = '"提高亮度"'
+
+[[file.patch]]
+old = '"Decrease brightness"'
+new = '"降低亮度"'
+
+[[file.patch]]
+old = '"Next track"'
+new = '"下一曲"'
+
+[[file.patch]]
+old = '"Pause audio"'
+new = '"暂停"'
+
+[[file.patch]]
+old = '"Play audio"'
+new = '"播放"'
+
+[[file.patch]]
+old = '"Previous track"'
+new = '"上一曲"'

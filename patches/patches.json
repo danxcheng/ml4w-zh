@@ -556,66 +556,6 @@
     ]
   },
   {
-    "path": ".config/hypr/conf/keybindings/default.lua",
-    "source": "main/dotfiles/.config/hypr/conf/keybindings/default.lua",
-    "backup": true,
-    "protect": false,
-    "patches": [
-      {
-        "old": "\"Open the terminal\"",
-        "new": "\"打开终端\""
-      },
-      {
-        "old": "\"Open the browser\"",
-        "new": "\"打开浏览器\""
-      },
-      {
-        "old": "\"Open the filemanager\"",
-        "new": "\"打开文件管理器\""
-      },
-      {
-        "old": "\"Kill active window\"",
-        "new": "\"关闭当前窗口\""
-      },
-      {
-        "old": "\"Toggle Fullscreen\"",
-        "new": "\"切换全屏\""
-      },
-      {
-        "old": "\"Toggle Maximize Window\"",
-        "new": "\"切换最大化\""
-      },
-      {
-        "old": "\"Toggle Floating\"",
-        "new": "\"切换浮动\""
-      },
-      {
-        "old": "\"Toggle split\"",
-        "new": "\"切换分屏方向\""
-      },
-      {
-        "old": "\"Swapsplit\"",
-        "new": "\"交换分屏\""
-      },
-      {
-        "old": "\"Toggle window group\"",
-        "new": "\"切换窗口分组\""
-      },
-      {
-        "old": "\"Take a screenshot\"",
-        "new": "\"截图菜单\""
-      },
-      {
-        "old": "\"Lock Screen\"",
-        "new": "\"锁屏\""
-      },
-      {
-        "old": "\"Show keybindings\"",
-        "new": "\"显示快捷键\""
-      }
-    ]
-  },
-  {
     "path": ".config/quickshell/SidebarApp/SidebarWindow.qml",
     "source": "main/dotfiles/.config/quickshell/SidebarApp/SidebarWindow.qml",
     "backup": true,
@@ -1232,6 +1172,290 @@
       {
         "old": "text: qsTr(\"Show on Startup\")",
         "new": "text: qsTr(\"开机显示\")"
+      }
+    ]
+  },
+  {
+    "path": ".config/hypr/conf/keybindings/default.lua",
+    "source": "main/dotfiles/.config/hypr/conf/keybindings/default.lua",
+    "backup": true,
+    "protect": false,
+    "patches": [
+      {
+        "old": "\"Open the terminal\"",
+        "new": "\"打开终端\""
+      },
+      {
+        "old": "\"Open the browser\"",
+        "new": "\"打开浏览器\""
+      },
+      {
+        "old": "\"Open the filemanager\"",
+        "new": "\"打开文件管理器\""
+      },
+      {
+        "old": "\"Open the emoji picker\"",
+        "new": "\"打开表情选择器\""
+      },
+      {
+        "old": "\"Open the calculator\"",
+        "new": "\"打开计算器\""
+      },
+      {
+        "old": "\"Kill active window\"",
+        "new": "\"关闭当前窗口\""
+      },
+      {
+        "old": "\"Quit active window and all open instances\"",
+        "new": "\"强制退出窗口\""
+      },
+      {
+        "old": "\"Toggle Fullscreen\"",
+        "new": "\"切换全屏\""
+      },
+      {
+        "old": "\"Toggle Maximize Window\"",
+        "new": "\"切换最大化\""
+      },
+      {
+        "old": "\"Toggle Floating\"",
+        "new": "\"切换浮动\""
+      },
+      {
+        "old": "\"Toggle floating for all windows of workspace\"",
+        "new": "\"切换工作区全部窗口浮动\""
+      },
+      {
+        "old": "\"Toggle floating + pinned\"",
+        "new": "\"切换浮动并置顶\""
+      },
+      {
+        "old": "\"Toggle split\"",
+        "new": "\"切换分屏方向\""
+      },
+      {
+        "old": "\"Swapsplit\"",
+        "new": "\"交换分屏\""
+      },
+      {
+        "old": "\"Toggle window group\"",
+        "new": "\"切换窗口分组\""
+      },
+      {
+        "old": "\"Switch to next group window\"",
+        "new": "\"切换到下一分组窗口\""
+      },
+      {
+        "old": "\"Take a screenshot\"",
+        "new": "\"截图菜单\""
+      },
+      {
+        "old": "\"Take an instant full-screen screenshot\"",
+        "new": "\"全屏截图\""
+      },
+      {
+        "old": "\"Take an instant area screenshot\"",
+        "new": "\"区域截图\""
+      },
+      {
+        "old": "\"Extract text from an area\"",
+        "new": "\"提取区域文字\""
+      },
+      {
+        "old": "\"Move focus left\"",
+        "new": "\"焦点向左\""
+      },
+      {
+        "old": "\"Move focus right\"",
+        "new": "\"焦点向右\""
+      },
+      {
+        "old": "\"Move focus up\"",
+        "new": "\"焦点向上\""
+      },
+      {
+        "old": "\"Move focus down\"",
+        "new": "\"焦点向下\""
+      },
+      {
+        "old": "\"Move window with the mouse\"",
+        "new": "\"鼠标拖动窗口\""
+      },
+      {
+        "old": "\"Resize window with the mouse\"",
+        "new": "\"鼠标调整窗口大小\""
+      },
+      {
+        "old": "\"Increase window width with keyboard\"",
+        "new": "\"增加窗口宽度\""
+      },
+      {
+        "old": "\"Reduce window width with keyboard\"",
+        "new": "\"减小窗口宽度\""
+      },
+      {
+        "old": "\"Increase window height with keyboard\"",
+        "new": "\"增加窗口高度\""
+      },
+      {
+        "old": "\"Reduce window height with keyboard\"",
+        "new": "\"减小窗口高度\""
+      },
+      {
+        "old": "\"Swap tiled window left\"",
+        "new": "\"向左交换窗口\""
+      },
+      {
+        "old": "\"Swap tiled window right\"",
+        "new": "\"向右交换窗口\""
+      },
+      {
+        "old": "\"Swap tiled window up\"",
+        "new": "\"向上交换窗口\""
+      },
+      {
+        "old": "\"Swap tiled window down\"",
+        "new": "\"向下交换窗口\""
+      },
+      {
+        "old": "\"Reload Hyprland configuration\"",
+        "new": "\"重载 Hyprland 配置\""
+      },
+      {
+        "old": "\"Toggle animations\"",
+        "new": "\"切换动画\""
+      },
+      {
+        "old": "\"Lock Screen\"",
+        "new": "\"锁屏\""
+      },
+      {
+        "old": "\"Show keybindings\"",
+        "new": "\"显示快捷键\""
+      },
+      {
+        "old": "\"Start Power Menu\"",
+        "new": "\"电源菜单\""
+      },
+      {
+        "old": "\"Change the wallpaper\"",
+        "new": "\"更换壁纸\""
+      },
+      {
+        "old": "\"Open wallpaper selector\"",
+        "new": "\"选择壁纸\""
+      },
+      {
+        "old": "\"Start random wallpaper script\"",
+        "new": "\"随机壁纸\""
+      },
+      {
+        "old": "\"Open application launcher\"",
+        "new": "\"打开应用启动器\""
+      },
+      {
+        "old": "\"Reload Status Bar\"",
+        "new": "\"重载顶栏\""
+      },
+      {
+        "old": "\"Toggle Status Bar\"",
+        "new": "\"切换顶栏\""
+      },
+      {
+        "old": "\"Reload hyprland config\"",
+        "new": "\"重载 Hyprland 配置\""
+      },
+      {
+        "old": "\"Open clipboard manager\"",
+        "new": "\"打开剪贴板\""
+      },
+      {
+        "old": "\"Open waybar theme switcher\"",
+        "new": "\"顶栏主题切换\""
+      },
+      {
+        "old": "\"Toggle between light and dark mode\"",
+        "new": "\"切换明暗主题\""
+      },
+      {
+        "old": "\"Open ML4W Sidebar widget\"",
+        "new": "\"打开侧边栏\""
+      },
+      {
+        "old": "\"Open ML4W Calendar widget\"",
+        "new": "\"打开日历\""
+      },
+      {
+        "old": "\"Expand statusbar and focus it for keyboard navigation\"",
+        "new": "\"展开顶栏\""
+      },
+      {
+        "old": "\"Toggle game mode\"",
+        "new": "\"切换游戏模式\""
+      },
+      {
+        "old": "\"Toggle Hyprsunset\"",
+        "new": "\"切换护眼模式\""
+      },
+      {
+        "old": "\"Open Select Window Menu\"",
+        "new": "\"打开窗口选择\""
+      },
+      {
+        "old": "\"Toggle special workspace magic\"",
+        "new": "\"切换专用工作区\""
+      },
+      {
+        "old": "\"Toggle window in/out of special workspace magic\"",
+        "new": "\"切换窗口到专用工作区\""
+      },
+      {
+        "old": "\"Switch to next workspace\"",
+        "new": "\"切换到下一工作区\""
+      },
+      {
+        "old": "\"Switch to previous workspace\"",
+        "new": "\"切换到上一工作区\""
+      },
+      {
+        "old": "\"Raise volume\"",
+        "new": "\"提高音量\""
+      },
+      {
+        "old": "\"Lower volume\"",
+        "new": "\"降低音量\""
+      },
+      {
+        "old": "\"Mute audio\"",
+        "new": "\"静音\""
+      },
+      {
+        "old": "\"Mute microphone\"",
+        "new": "\"麦克风静音\""
+      },
+      {
+        "old": "\"Increase brightness\"",
+        "new": "\"提高亮度\""
+      },
+      {
+        "old": "\"Decrease brightness\"",
+        "new": "\"降低亮度\""
+      },
+      {
+        "old": "\"Next track\"",
+        "new": "\"下一曲\""
+      },
+      {
+        "old": "\"Pause audio\"",
+        "new": "\"暂停\""
+      },
+      {
+        "old": "\"Play audio\"",
+        "new": "\"播放\""
+      },
+      {
+        "old": "\"Previous track\"",
+        "new": "\"上一曲\""
       }
     ]
   }
